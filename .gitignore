@@ -57,9 +57,23 @@ verify_*.py
 AI_RULES.md
 AVATAR_PROGRESS.md
 Anti Hallucination Ruleset.md
+Anti-Hallucination Ruleset.md
 CONTEXT.md
 PPT_Presentation_Guide.md
+Refining PPT Parsing Logic.md
+程式重整指令.md
 [專案進度報告]*
+TESTING_GUIDE.md
+TROUBLESHOOTING.md
+PRD_TDD.md
+QUICKSTART.md
+
+# 開發腳本 (本地使用)
+backup.antigravityrules
+check_env.py
+run_app_mac.sh
+start_app_lan.bat
+
 
 # 大型模型檔案和 checkpoints (超過 GitHub 限制)
 backend/checkpoints/
