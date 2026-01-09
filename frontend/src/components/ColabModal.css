@@ -1,0 +1,306 @@
+/* =============================================
+   Colab Modal - Clean & Simple Design
+   ============================================= */
+
+/* Overlay */
+.colab-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+/* Modal Container */
+.colab-modal {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 900px;
+    max-width: 95vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header */
+.colab-modal-header {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+    gap: 12px;
+}
+
+.colab-modal-header .icon {
+    font-size: 28px;
+}
+
+.colab-modal-header .title {
+    flex: 1;
+}
+
+.colab-modal-header .title h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.colab-modal-header .title p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.colab-modal-header .badge {
+    background: #fbbf24;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.colab-modal-close {
+    background: #e5e7eb;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+}
+
+.colab-modal-close:hover {
+    background: #d1d5db;
+    color: #111827;
+}
+
+/* Body */
+.colab-modal-body {
+    padding: 24px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Step Cards Row */
+.colab-steps {
+    display: flex;
+    gap: 16px;
+}
+
+/* Individual Step Card */
+.colab-step-card {
+    flex: 1;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Step Badge */
+.colab-step-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    width: fit-content;
+}
+
+.colab-step-badge.step-1 {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.colab-step-badge.step-2 {
+    background: #d1fae5;
+    color: #047857;
+}
+
+.colab-step-badge.step-3 {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
+/* Step Content */
+.colab-step-content {
+    flex: 1;
+    margin-bottom: 16px;
+}
+
+.colab-step-content p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 8px;
+}
+
+.colab-step-content .subtext {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.colab-step-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+}
+
+.colab-step-content li {
+    font-size: 13px;
+    color: #4b5563;
+    margin-bottom: 6px;
+}
+
+/* Code Block */
+.colab-code {
+    display: inline-block;
+    font-family: 'Consolas', 'Monaco', monospace;
+    background: #1f2937;
+    color: #fbbf24;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* Tip Box */
+.colab-tip {
+    margin-top: 12px;
+    padding: 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-left: 3px solid #3b82f6;
+    border-radius: 8px;
+}
+
+.colab-tip p {
+    font-size: 12px;
+    color: #1e40af;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Step Buttons */
+.colab-step-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.colab-step-btn.primary {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #fff;
+    border: none;
+}
+
+.colab-step-btn.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.colab-step-btn.secondary {
+    background: #fff;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+.colab-step-btn.secondary:hover {
+    border-color: #3b82f6;
+    color: #2563eb;
+}
+
+/* Button Group */
+.colab-btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+.colab-btn-group .colab-step-btn {
+    flex: 1;
+}
+
+/* Trigger Button - Optimized with High Specificity */
+#colab-trigger-btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #334155, #1e293b) !important;
+    border: none !important;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+#colab-trigger-btn:hover {
+    background: linear-gradient(135deg, #1e293b, #0f172a) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-2px);
+}
+
+#colab-trigger-btn .text h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff !important;
+}
+
+#colab-trigger-btn .text p {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+#colab-trigger-btn .icon {
+    font-size: 28px;
+}
+
+#colab-trigger-btn .text {
+    flex: 1;
+    text-align: left;
+}
+
+#colab-trigger-btn .arrow {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .colab-steps {
+        flex-direction: column;
+    }
+
+    .colab-modal {
+        width: 100%;
+    }
+}

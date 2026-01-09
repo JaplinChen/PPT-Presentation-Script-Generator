@@ -1,0 +1,3823 @@
+{
+  "uploaded_files": {
+    "avatar_afd9cab7-df64-4342-874d-dbb3764a71f1": {
+      "path": "D:\\Works\\PPT_Dev\\backend\\uploads\\avatar_afd9cab7-df64-4342-874d-dbb3764a71f1.jpg"
+    },
+    "5621ed9d-1239-4574-b987-a48f99cfc315": {
+      "filename": "L UiPath 在 UiPath 平台自動化代理.pptx",
+      "path": "D:\\Works\\PPT_Dev\\backend\\uploads\\L_UiPath_在_UiPath_平台自動化代理_20251231_001.pptx",
+      "status": "completed",
+      "slides": [
+        {
+          "slide_no": 1,
+          "title": "",
+          "bullets": [
+            "UIPATH AGENTIC AUTOMATION"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 1
+        },
+        {
+          "slide_no": 2,
+          "title": "AGENTIC AUTOMATION",
+          "bullets": [
+            "AGENTIC AUTOMATION",
+            "Agentic Automation （代理式自動化）是一種新型自動化模型。在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標，無比逐步的人工指令介入",
+            "各項基礎技術",
+            "LLMs: 提供自然語言的理解、推理與生成能力",
+            "GenAI: 支援內容生成與創意回應",
+            "LAMs: 使 Agent 能夠理解並執行複雜行動",
+            "UiPath 自動化: 提供行動執行與流程自動化工具",
+            "原則",
+            "Agentic Automation 可實現自動化決策，同時支援智慧計劃與流程同步化，幫 Agent 解決迷糊問題及適應不可預測的情況"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 1
+        },
+        {
+          "slide_no": 3,
+          "title": "AI AGENT 的功能",
+          "bullets": [
+            "AI AGENT 的功能",
+            "自動化程式生成，無比寫 code",
+            "只需要自然描述需求，AI Agent 即可自動產生可參考的工作流程",
+            "Agent 採用 Human-in-loop 的安全機制運作",
+            "Uipath AI Agent 具備風險空管機制，當遇到例外或不確定的情況時，會自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行",
+            "AI 的知識同步能力",
+            "Agent 能夠讀取並理解如 policy、SOP、內部流程文件等資料自動進行語意（Semantic Understanding）分析，並將這些知識應用於其決策與行動中",
+            "Uipath AI Agent",
+            "05 個功能",
+            "Autopilot",
+            "Context Grounding",
+            "Agent 的空管與評估",
+            "各Agent 皆採用集中式保護與管理機制，確保其運作安全、可控，並在與 AI/LLM 模型及企業資料互動時，嚴格遵循可信賴的政策與規範",
+            "Uipath Agent Builder",
+            "AI 不僅能思考，還能實際行動",
+            "透過設定各種 Action, Tool, 及既有 workflow，並可與奇特的 Agent 協作，AI 能直接與應用程式互動 (UI Automation) ，呼叫與協調 RPA 流程，啟動後續流程或將任務分派給其他 Agent",
+            "Agentic Orchestrator - Meatro",
+            "AI Trust Layer"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 4,
+          "title": "",
+          "bullets": [
+            "UIPATH CONTEXT GROUNDING"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 5,
+          "title": "CONTEXT GROUNDING (1/4)",
+          "bullets": [
+            "1. Context Grounding",
+            "情境是一種關鍵機制，用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆，而非依賴模型本身的通用知識",
+            "為了提供情境，需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯",
+            "機制說明：使用 向量資料庫（Vector Databases） 來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。",
+            "Agent 會在由上傳至 Storage Bucket 的文件所建立的索引上執行 語意搜尋（Semantic Search）。",
+            "這些文件會先被轉換為 Embedding，並儲存在向量資料庫中，使 Autopilot 能夠進行語意層級的搜尋與理解。",
+            "CONTEXT GROUNDING (1/4)",
+            "目前 Orchestrator 已支援 Context Grounding，並呈現在各資料夾的 Index 項目中"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 2
+        },
+        {
+          "slide_no": 6,
+          "title": "CONTEXT GROUNDING (2/4)",
+          "bullets": [
+            "CONTEXT GROUNDING (2/4)",
+            "在 UiPath 中設定 Context Grounding 的方式:",
+            "文件儲存: 將來源文件（例如：包含資訊的 PDF 檔）上傳至 Orchestrator 的 Storage Bucket。Storage Bucket 是LLM/Autopilot 代理可用來參照文件的儲存位置",
+            "在 Orchestrator 流程的莫個流程資料夾中, 選擇 Storage Bucket  Add storage buckage  Create a new storage buckage",
+            "為 Storage buckage 命名 選擇 Add",
+            "選擇剛建立的 Storage buckage",
+            "選擇剛建立的 Storage Bucket  選擇 Upload files 上傳包含背景資訊的資料檔 (SOP, policy, 工作說明等） Upload"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 4
+        },
+        {
+          "slide_no": 7,
+          "title": "CONTEXT GROUNDING (3/4)",
+          "bullets": [
+            "CONTEXT GROUNDING (3/4)",
+            "在 Orchestrator 該資料夾的 Index 項目中 Add Index",
+            "為 Index 命名",
+            "選擇資料夾類型為 Storage Buckage",
+            "選擇包含剛建立之 Storage Bucket 的 Orchestrator 資料夾",
+            "選擇剛建立 Storage Buckage",
+            "選擇包含背景資訊之檔案資料類型（.docx、.xlsx、.json、.txt、.csv、.pdf），或可選擇 All",
+            "選擇 Ingestion：若文件僅包含文字內容，請選擇 Basic；若同時包含文字與圖片，請選擇 Advanced",
+            "選擇 Save",
+            "完成建立 Index",
+            "2. 建立 Index（索引）：在 Orchestrator 的 Index 區域中建立一個新的 Index。該 Index 會與存放來源文件的 Storage Bucket 進行關聯"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 3
+        },
+        {
+          "slide_no": 8,
+          "title": "CONTEXT GROUNDING (4/4)",
+          "bullets": [
+            "CONTEXT GROUNDING (4/4)",
+            "Tham khảo 參考:",
+            "UiPath Context Grounding Tutorial"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 1
+        },
+        {
+          "slide_no": 9,
+          "title": "",
+          "bullets": [
+            "UIPATH AGENT BUILDER"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 10,
+          "title": "UIPATH AGENT BUILDER",
+          "bullets": [
+            "UIPATH AGENT BUILDER",
+            "Agent Builder 可在 Automation Cloud 上建立 Agent。",
+            "步驟三: 設定 Prompt、Context、Tools、Escalation 等元件",
+            "大型語言模型（LLM）與 Prompt: \u000b+ System prompt:定義 Agent 的目標、角色與限制條件\u000b+ User prompt: 提供具體執行步驟，說明輸入參數（input arguments）與預期輸出",
+            "情境 (Context): 透過 Context Grounding 機制提供基礎資料.",
+            "工具 (Tools): 使用內建 UiPath Activities、既有 RPA Processes，並可與其他 Agents 搭配使用Escalation（升級）：",
+            "Escalation:設定規則，讓 Agent 判斷何時需將任務交由人工處理",
+            "步驟四: 將 Agent 發佈至 Orchestrator",
+            " 完成 Agent 建立後，可於 RPA Workflow 中使用，或用於建構 Agentic Automation（Agent Orchestrator／Meatro）"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 4
+        },
+        {
+          "slide_no": 11,
+          "title": "UIPATH AGENT BUILDER",
+          "bullets": [
+            "UIPATH AGENT BUILDER",
+            "品質評估 Agent (Agent Health Score)",
+            "UiPath 提供 Agent 的品質評估機制。Prompt 在 Agent 效能評估中扮演關鍵角色（約佔 30% 權重），並與 Evaluation 能力及 Input Schema 等因素共同影響 Agent 表現，突顯有效 Prompt 設計的重要性。",
+            "評分方式依據四項要素的權重計算：Prompt、Tools、Input Schema、Evaluations。"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 1
+        },
+        {
+          "slide_no": 12,
+          "title": "UIPATH AGENT BUILDER",
+          "bullets": [
+            "UIPATH AGENT BUILDER",
+            "Tham khảo 參考:"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 13,
+          "title": "",
+          "bullets": [
+            "AUTOPILOT",
+            "& GENERATIVE AI ACTIVITIES"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 14,
+          "title": "AUTOPILOT",
+          "bullets": [
+            "AUTOPILOT",
+            "Autopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。",
+            "使用 LLM 模型，如 Claude 3.5 Sonet，可快速、精確地回應，並具備上下文理解能力。",
+            "目的",
+            "支援從自然語言描述撰寫程 code/flow 、建立測試案例 case 、撰寫表達式、將手動 case 轉為 test automation 、提供流程設計建議，並縮短設計時間。",
+            "核心能力",
+            "生成內容 (generative)",
+            "了解預警 (contextual grounding)",
+            "整合執行 UiPath 自動化流程。"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 15,
+          "title": "AUTOPILOT (1/2)",
+          "bullets": [
+            "Autopilot 整合在各 activities",
+            "Uipath studio 裡的 Autopilot",
+            "Autopilot 使用自然語言建立自動流程",
+            "AUTOPILOT (1/2)"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 16,
+          "title": "AUTOPILOT (2/2)",
+          "bullets": [
+            "Sudio Web 上的 Autopilot",
+            "步驟一：訪問 UiPath Cloud → Studio → Template → 使用 Autopilot 生成專案 → Generate",
+            "步驟二：輸入描述流程的 Prompt，Autopilot 將自動生成參考流程",
+            "步驟三: 自訂流程",
+            "AUTOPILOT (2/2)",
+            "Video"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 17,
+          "title": "GENERATIVE AI ACTIVITIES (1/2)",
+          "bullets": [
+            "GENERATIVE AI ACTIVITIES (1/2)",
+            "2. Generative AI Activities",
+            "作為 UiPath 中的一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中，重點使用由 UiPath 管理、受 AI Trust Layer 保護的多家第三方提供的大型語言模型（LLMs），而無需使用者自行處理複雜設定。"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 18,
+          "title": "GENERATIVE AI ACTIVITIES (2/2)",
+          "bullets": [
+            "GENERATIVE AI ACTIVITIES (2/2)",
+            "在 Uipath Stidio, 進入 Manage Package  All Package  安裝 package Uipath.IntergrationService.Activities",
+            "使用方法",
+            "使用屬於 package Uipath GenAI Activities 的各 activity 如",
+            "Connetor Activity",
+            "Summarize Text,…",
+            " 以在 Uipath studio 上建立各 RPA workflow",
+            "將 Uipath 連接至 Uipath GenAI Activities"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 3
+        },
+        {
+          "slide_no": 19,
+          "title": "",
+          "bullets": [
+            "AGENTIC ORCHESTRATION (MAESTRO)"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 20,
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "bullets": [
+            "AGENTIC ORCHESTRATION (MAESTRO)",
+            "Agentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。",
+            "它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。",
+            "多樣化任務整合。",
+            "RPA Workflow: 傳統自動化流程",
+            "Agent (Service Task): 以服務形式發佈的 Agent",
+            "Human-in-the-Loop (人類參與): 透過 Action Center 處理例外",
+            "業務規則 (DMN/BPMN): 在流程之外定義規則",
+            "監督及優化",
+            "追蹤流程版本及即時異常，自動分析流程（Process Mining）以識別瓶頸。"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 2
+        },
+        {
+          "slide_no": 21,
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "bullets": [
+            "AGENTIC ORCHESTRATION (MAESTRO)",
+            "Agentic Orchestration 貫穿流程全生命週期（end-to-end）運作。"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 22,
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "bullets": [
+            "流程建模（BPMN，Business Process Model and Notation）",
+            "AGENTIC ORCHESTRATION (MAESTRO)",
+            "使用 BPMN 流程設計工作流，以利流程標準化並提升流程可視性。",
+            "為執行 BPMN 流程建模，UiPath 提供線上繪圖畫布（canvas），或可整合 Autopilot，透過提供 Prompt 支援自動化設計。"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 23,
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "bullets": [
+            "BPMN 流程建模 (Business Process Model and Notation)",
+            "AGENTIC ORCHESTRATION (MAESTRO)",
+            "Uipath 上 BPMN 的主要組成元素"
+          ],
+          "tables": [
+            {
+              "rows": 3,
+              "cols": 3,
+              "content": [
+                [
+                  "主要元素",
+                  "圖片",
+                  "內容"
+                ],
+                [
+                  "1. 事件(events)",
+                  "",
+                  "+ 開始事件 (Start Event) \u000b+ 結束事件 (End Event).\n+ 中間事件 (Immediate/Intermediate events): 執行過程中發生的.\n+ 訊息事件 (Message Events): 例如接收電子郵件，或透過 Integration Service 從第三方系統生成的任務。"
+                ],
+                [
+                  "2. Task",
+                  "",
+                  "+ user task: 需要人員介入的任務。\n+ service task: 自動執行的任務。\n+ business rule task: 執行位於 RPA 流程之外的業務決策。\n+ script task: 呼叫程式碼片段，如 PowerShell。\n+ agent task: 由 AI Agent 執行的任務。"
+                ]
+              ]
+            }
+          ],
+          "notes": "",
+          "image_count": 2
+        },
+        {
+          "slide_no": 24,
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "bullets": [
+            "BPMN 流程建模 (Business Process Model and Notation)",
+            "AGENTIC ORCHESTRATION (MAESTRO)",
+            "Uipath 上 BPMN 的主要組成元素："
+          ],
+          "tables": [
+            {
+              "rows": 4,
+              "cols": 3,
+              "content": [
+                [
+                  "主要元素",
+                  "圖片",
+                  "內容"
+                ],
+                [
+                  "3. Gateway",
+                  "",
+                  "+ Exclusive Gateway (X):依「是/否」（Yes/No）條件進行分支決策。\n+ Parallel Gateway (+): 允許同時並行執行多個任務。\n+ Event-based Gateway: 根據先發生的事件進行分支。"
+                ],
+                [
+                  "4. Data",
+                  "",
+                  "此元素專注於為流程中的每個步驟定義輸入（Input）與輸出（Output）參數。確保任務之間正確傳遞數據（例如：從 RPA 機器人傳送至 AI Agent 的資料）是流程順暢運行的關鍵因素。"
+                ],
+                [
+                  "4. Participant",
+                  "",
+                  "此元素用於定義執行工作的「誰（Who）」。\n+ Pools: 代表參與流程的組織或大型實體。\n+ Lanes: Pool 內的分支，代表各部門或特定角色。"
+                ]
+              ]
+            }
+          ],
+          "notes": "",
+          "image_count": 3
+        },
+        {
+          "slide_no": 25,
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "bullets": [
+            "AGENTIC ORCHESTRATION (MAESTRO)",
+            "1. 流程可視性受限 （ Limited process visibility ）",
+            "提供整體視角，而不僅僅集中於單一自動化步驟",
+            " 支援偵測與修正問題、改善各步驟，並有助於做出更佳決策",
+            "2. 交叉依賴涵蓋機器人任務 (Cross-dependent task):",
+            "嚴格控制任務處理流程，涵蓋機器人、AI 工具或人工驗證。",
+            "3. 碎片化自動化 (Fragmented automation):",
+            "Agentic Orchestration 協助將多個單一流程的處理任務，以及各部門（如財務、人力資源…）的任務整合，形成完整的端到端業務流程自動化（full end-to-end business process automation）。"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 26,
+          "title": "",
+          "bullets": [
+            "AI TRUST LAYER"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 27,
+          "title": "AI TRUST LAYER (1/3)",
+          "bullets": [
+            "AI TRUST LAYER (1/3)",
+            "1. 概念",
+            "AI Trust Layer 是 UiPath Agentic Automation 架構中的中介層 (governance & control layer)，其職責是確保 AI Agents 在與一下項目時，能安全、可控、符合企業政策且具備可信度：",
+            "AI / LLM 模型 (OpenAI, Azure OpenAI, Google, local model…)",
+            "企業內部資料",
+            "業務系統 (ERP, CRM, MES, File Server, Email…)"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 28,
+          "title": "AI TRUST LAYER (2/3)",
+          "bullets": [
+            "2. AI trust layer 的架構",
+            "AI TRUST LAYER (2/3)",
+            "(1) 從 Uipath 的產品/服務 （如 Uipath studio、Web等）或 Chatbot 發送請求",
+            "(2) 請求會連同 Promt 一併送至 LLM Gateway， LLM Gateway 會透過發送 secure tokens 進行驗證",
+            "(3)檢查是否符合各項資安/安全政策的合規性",
+            "(4) 轉送至 Proxy LLM，由Proxy LLM 將請求準確地轉送至第三方 AI 模型",
+            "(5) 由 AI 模型處理: 第三方模型執行請求處理",
+            "( 這些模型不會儲存資料，以確保隱私權)",
+            "(6) AI 模型將結果回轉至 Uipath 信任層，所有客戶資料皆不會在 Uipath cloud 以外被儲存或記錄",
+            "(7) LLM gateway 知會記錄用於監控的相關資訊（Metadata），不會儲存實際內容資料。",
+            "這些 Metadata 可能包含 API 使用情況、Token  數量，以及請求來源的產品（例如：Uipath studio，Web 應用或 Chatbox）",
+            "(8) LLM gateway 將處理完成的結果回轉給出發請求的 Uipath 產品，以便執行後續動作"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 1
+        },
+        {
+          "slide_no": 29,
+          "title": "AI TRUST LAYER (3/3)",
+          "bullets": [
+            "AI TRUST LAYER (3/3)",
+            "資料空管 (Data Control)",
+            "確保客戶資料不會被儲存在 Uipath 雲端範圍之外，也不會被用來訓練第三方的 LLM 模型。系統僅記錄與 LLM 呼叫相關的中續資料（如使用情況），用於追蹤與稽核的目的，不包含實際資料內容",
+            "遮蔽敏感資料 (PII/PHI Masking)",
+            "對輸入資料中的 個人識別資訊 (PII)、受保護健康資訊 (PHI) 或其他敏感資料進行 遮蔽 (mask)，在送至 LLM 前隱藏敏感資訊，但此功能不適用於所有通過 AI Trust Layer 處理的 prompt",
+            "對 PII 或 PHI 資料的遮蔽僅在 UiPath 指定的 Generative AI (GenAI) 活動 中執行，必須在 UiPath workflow 中手動新增為一個步驟",
+            "對於 UiPath 的 第一方服務（如 Communications Mining (CM) 或 Document Understanding (DU)），GenAI 功能沒有預設的遮蔽機制，因此在資料送入這些服務之前，必須先手動新增資料遮蔽步驟。",
+            "3. 核心組件"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 1
+        },
+        {
+          "slide_no": 30,
+          "title": "利益與戰略影響",
+          "bullets": [
+            "利益與戰略影響",
+            "UiPath Agentic Automation 是一個 全面平台，不僅提供 自主 AI Agent，還作為一個 協調層 (Maestro) 將它們與現有勞動力（人員與 RPA 機器人）整合。",
+            "這使企業能夠從 任務自動化 轉向 自主的端到端流程自動化 (autonomous end-to-end process automation)，開啟 效率與創新的新時代"
+          ],
+          "tables": [
+            {
+              "rows": 6,
+              "cols": 2,
+              "content": [
+                [
+                  "Agentic Automation 的戰略性收益",
+                  ""
+                ],
+                [
+                  "擴大範圍",
+                  "將自動化應用於傳統 RPA 無法處理的 複雜且精細、需要推理的流程"
+                ],
+                [
+                  "提升出決策能力",
+                  "Agent 能夠 即時分析大量數據，提供 精準資訊 並可 直接執行操作"
+                ],
+                [
+                  "待續改善",
+                  "高階 Agent 能 自我監控效能，隨時間 學習並持續改進，無需大量人工干預"
+                ],
+                [
+                  "提升生產能力",
+                  "將員工從 重複性任務 中解放出來，讓他們能專注於 更有價值的創意與策略性工作"
+                ],
+                [
+                  "Futureproofing",
+                  "固有的靈活性與可擴展性 可幫助企業 快速適應市場變化"
+                ]
+              ]
+            }
+          ],
+          "notes": "",
+          "image_count": 0
+        },
+        {
+          "slide_no": 31,
+          "title": "",
+          "bullets": [
+            "THANK YOU"
+          ],
+          "tables": [],
+          "notes": "",
+          "image_count": 0
+        }
+      ],
+      "summary": {
+        "total_slides": 31,
+        "titled_slides": 24,
+        "total_bullets": 168,
+        "slides_with_notes": 0,
+        "slides_with_tables": 3,
+        "total_images": 29
+      },
+      "warnings": []
+    }
+  },
+  "parse_status": {
+    "199c5b77-3649-48e3-91d6-f0d6420b15a9": {
+      "status": "completed",
+      "progress": 100,
+      "message": "Analysis complete"
+    },
+    "5621ed9d-1239-4574-b987-a48f99cfc315": {
+      "status": "completed",
+      "progress": 100,
+      "message": "Analysis complete"
+    }
+  },
+  "generation_cache": {
+    "5621ed9d-1239-4574-b987-a48f99cfc315|ollama|gpt-oss:20b|高階主管|例如：產品介紹、進度報告|Formal meeting|Professional and natural|600|True|Traditional Chinese": {
+      "opening": "各位高階主管，早安／午安，我是 AI 數位人 Emma，今天將為大家介紹 UiPath 的 Agentic Automation 平台。這是一個結合 LLM、GenAI、RPA 與 AI Trust Layer 的完整解決方案，能讓企業從單一任務自動化進化為自主端到端流程自動化。接下來，我們將從概念到實作，逐步說明其核心功能與商業價值。",
+      "slide_scripts": [
+        {
+          "slide_no": "1",
+          "title": "",
+          "script": "=== Opening ===  \n各位高階主管，早安／午安，我是 AI 數位人 Emma，今天將為大家介紹 UiPath 的 Agentic Automation 平台。這是一個結合 LLM、GenAI、RPA 與 AI Trust Layer 的完整解決方案，能讓企業從單一任務自動化進化為自主端到端流程自動化。接下來，我們將從概念到實作，逐步說明其核心功能與商業價值。",
+          "segments": [
+            {
+              "text": "=== Opening ===  \n各位高階主管，早安／午安，我是 AI 數位人 Emma，今天將為大家介紹 UiPath 的 Agentic Automation 平台。",
+              "type": "content"
+            },
+            {
+              "text": "這是一個結合 LLM、GenAI、RPA 與 AI Trust Layer 的完整解決方案，能讓企業從單一任務自動化進化為自主端到端流程自動化。",
+              "type": "content"
+            },
+            {
+              "text": "接下來，我們將從概念到實作，逐步說明其核心功能與商業價值。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "2",
+          "title": "AGENTIC AUTOMATION",
+          "script": "--- Slide 23",
+          "segments": [
+            {
+              "text": "--- Slide 23",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "3",
+          "title": "AI AGENT 的功能",
+          "script": "代理式自動化（Agentic Automation）是一種新型模型，Agent 能感知環境、推理、規劃並執行行動，達成人類設定的目標，並逐步減少人工介入。其基礎技術包括 LLMs、GenAI、LAMs 與 UiPath 自動化工具，實現自動決策、智慧規劃與流程同步化。",
+          "segments": [
+            {
+              "text": "代理式自動化（Agentic Automation）是一種新型模型，Agent 能感知環境、推理、規劃並執行行動，達成人類設定的目標，並逐步減少人工介入。",
+              "type": "content"
+            },
+            {
+              "text": "其基礎技術包括 LLMs、GenAI、LAMs 與 UiPath 自動化工具，實現自動決策、智慧規劃與流程同步化。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "4",
+          "title": "",
+          "script": "AI Agent 的功能涵蓋自動化程式生成、自然語言需求轉流程、Human‑in‑loop 安全機制、風險空管、知識同步與語意分析。Agent 能讀取政策、SOP 等文件，並以 Autopilot、Context Grounding 等功能，確保決策安全且符合企業規範。",
+          "segments": [
+            {
+              "text": "AI Agent 的功能涵蓋自動化程式生成、自然語言需求轉流程、Human‑in‑loop 安全機制、風險空管、知識同步與語意分析。",
+              "type": "content"
+            },
+            {
+              "text": "Agent 能讀取政策、SOP 等文件，並以 Autopilot、Context Grounding 等功能，確保決策安全且符合企業規範。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "5",
+          "title": "CONTEXT GROUNDING (1/4)",
+          "script": "我們接下來介紹「UIPATH CONTEXT GROUNDING」，這是限制 LLM 回應範圍、確保 Agent 依賴驗證資訊的關鍵機制。",
+          "segments": [
+            {
+              "text": "我們接下來介紹「UIPATH CONTEXT GROUNDING」，這是限制 LLM 回應範圍、確保 Agent 依賴驗證資訊的關鍵機制。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "6",
+          "title": "CONTEXT GROUNDING (2/4)",
+          "script": "Context Grounding 的第一步是將文件上傳至 Orchestrator 的 Storage Bucket，建立索引並關聯。利用向量資料庫存儲非結構化資料，Agent 透過語意搜尋取得準確背景資訊，確保 Autopilot 能在正確語境下作答。",
+          "segments": [
+            {
+              "text": "Context Grounding 的第一步是將文件上傳至 Orchestrator 的 Storage Bucket，建立索引並關聯。",
+              "type": "content"
+            },
+            {
+              "text": "利用向量資料庫存儲非結構化資料，Agent 透過語意搜尋取得準確背景資訊，確保 Autopilot 能在正確語境下作答。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "7",
+          "title": "CONTEXT GROUNDING (3/4)",
+          "script": "在 UiPath 中設定 Context Grounding：先在 Storage Bucket 建立並命名，再將相關文件（PDF、SOP 等）上傳。接著在流程資料夾中選擇 Storage Bucket，完成文件上傳步驟。",
+          "segments": [
+            {
+              "text": "在 UiPath 中設定 Context Grounding：先在 Storage Bucket 建立並命名，再將相關文件（PDF、SOP 等）上傳。",
+              "type": "content"
+            },
+            {
+              "text": "接著在流程資料夾中選擇 Storage Bucket，完成文件上傳步驟。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "8",
+          "title": "CONTEXT GROUNDING (4/4)",
+          "script": "接著在 Index 項目中新增 Index，設定資料夾類型為 Storage Bucket，選擇文件類型並設定 Ingestion 為 Basic 或 Advanced，最後儲存完成。這樣 Agent 就能在索引中快速搜尋所需資訊。",
+          "segments": [
+            {
+              "text": "接著在 Index 項目中新增 Index，設定資料夾類型為 Storage Bucket，選擇文件類型並設定 Ingestion 為 Basic 或 Advanced，最後儲存完成。",
+              "type": "content"
+            },
+            {
+              "text": "這樣 Agent 就能在索引中快速搜尋所需資訊。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "9",
+          "title": "",
+          "script": "以上即為 Context Grounding 的完整流程，更多細節可參考 UiPath 官方 Tutorial。",
+          "segments": [
+            {
+              "text": "以上即為 Context Grounding 的完整流程，更多細節可參考 UiPath 官方 Tutorial。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "10",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "現在進入「UIPATH AGENT BUILDER」，這是建立 Agent 的核心工具，讓您在 Automation Cloud 上快速構建自動化 Agent。",
+          "segments": [
+            {
+              "text": "現在進入「UIPATH AGENT BUILDER」，這是建立 Agent 的核心工具，讓您在 Automation Cloud 上快速構建自動化 Agent。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "11",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "Agent Builder 的流程：設定 Prompt（System 與 User）、Context、Tools、Escalation。使用 LLM 生成執行步驟，並透過 Context Grounding 提供基礎資料。最後將 Agent 發佈至 Orchestrator，可直接在 RPA Workflow 或 Agentic Orchestration 中使用。",
+          "segments": [
+            {
+              "text": "Agent Builder 的流程：設定 Prompt（System 與 User）、Context、Tools、Escalation。",
+              "type": "content"
+            },
+            {
+              "text": "使用 LLM 生成執行步驟，並透過 Context Grounding 提供基礎資料。",
+              "type": "content"
+            },
+            {
+              "text": "最後將 Agent 發佈至 Orchestrator，可直接在 RPA Workflow 或 Agentic Orchestration 中使用。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "12",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "品質評估方面，UiPath 提供 Agent Health Score。Prompt 佔 30% 權重，與 Tools、Input Schema、Evaluations 共同影響 Agent 表現，凸顯有效 Prompt 設計的重要性。",
+          "segments": [
+            {
+              "text": "品質評估方面，UiPath 提供 Agent Health Score。",
+              "type": "content"
+            },
+            {
+              "text": "Prompt 佔 30% 權重，與 Tools、Input Schema、Evaluations 共同影響 Agent 表現，凸顯有效 Prompt 設計的重要性。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "13",
+          "title": "",
+          "script": "參考資料與進一步學習可在 UiPath 官方網站查詢。",
+          "segments": [
+            {
+              "text": "參考資料與進一步學習可在 UiPath 官方網站查詢。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "14",
+          "title": "AUTOPILOT",
+          "script": "接下來說明「AUTOPILOT」與「GENERATIVE AI ACTIVITIES」，這兩項功能為開發者、測試人員與商業分析師提供自然語言到流程自動化的橋樑。",
+          "segments": [
+            {
+              "text": "接下來說明「AUTOPILOT」與「GENERATIVE AI ACTIVITIES」，這兩項功能為開發者、測試人員與商業分析師提供自然語言到流程自動化的橋樑。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "15",
+          "title": "AUTOPILOT (1/2)",
+          "script": "Autopilot 以 LLM（如 Claude 3.5 Sonnet）為核心，支援從自然語言描述產生程式碼、測試案例、表達式，並可將手動案例轉為自動化。其核心能力包括生成內容、上下文理解與 UiPath 流程整合。",
+          "segments": [
+            {
+              "text": "Autopilot 以 LLM（如 Claude 3.",
+              "type": "content"
+            },
+            {
+              "text": "5 Sonnet）為核心，支援從自然語言描述產生程式碼、測試案例、表達式，並可將手動案例轉為自動化。",
+              "type": "content"
+            },
+            {
+              "text": "其核心能力包括生成內容、上下文理解與 UiPath 流程整合。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "16",
+          "title": "AUTOPILOT (2/2)",
+          "script": "在 Studio 中使用 Autopilot，您只需輸入流程描述，系統即自動生成參考流程，並可進一步自訂細節，提升設計效率。",
+          "segments": [
+            {
+              "text": "在 Studio 中使用 Autopilot，您只需輸入流程描述，系統即自動生成參考流程，並可進一步自訂細節，提升設計效率。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "17",
+          "title": "GENERATIVE AI ACTIVITIES (1/2)",
+          "script": "在 Studio Web 上的 Autopilot 步驟：進入 UiPath Cloud → Studio → Template → 選擇 Autopilot 生成專案 → Generate。接著輸入 Prompt，Autopilot 產生流程，最後可自行調整。影片示範可作為參考。",
+          "segments": [
+            {
+              "text": "在 Studio Web 上的 Autopilot 步驟：進入 UiPath Cloud → Studio → Template → 選擇 Autopilot 生成專案 → Generate。",
+              "type": "content"
+            },
+            {
+              "text": "接著輸入 Prompt，Autopilot 產生流程，最後可自行調整。",
+              "type": "content"
+            },
+            {
+              "text": "影片示範可作為參考。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "18",
+          "title": "GENERATIVE AI ACTIVITIES (2/2)",
+          "script": "「GENERATIVE AI ACTIVITIES」是 UiPath 內部的一組 Activity，直接將生成式 AI 功能嵌入自動化流程。使用 UiPath 管理的第三方 LLM，無需自行配置複雜設定。",
+          "segments": [
+            {
+              "text": "「GENERATIVE AI ACTIVITIES」是 UiPath 內部的一組 Activity，直接將生成式 AI 功能嵌入自動化流程。",
+              "type": "content"
+            },
+            {
+              "text": "使用 UiPath 管理的第三方 LLM，無需自行配置複雜設定。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "19",
+          "title": "",
+          "script": "在 Studio 中安裝「Uipath.IntergrationService.Activities」套件，並使用其中的 Connetor、Summarize Text 等活動，將 GenAI 功能整合至 RPA 工作流程。",
+          "segments": [
+            {
+              "text": "在 Studio 中安裝「Uipath.",
+              "type": "content"
+            },
+            {
+              "text": "IntergrationService.",
+              "type": "content"
+            },
+            {
+              "text": "Activities」套件，並使用其中的 Connetor、Summarize Text 等活動，將 GenAI 功能整合至 RPA 工作流程。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "20",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "現在進入「AGENTIC ORCHESTRATION（MAESTRO）」，這是管理複雜長期流程的中央協調層，負責部署、監控、運行與優化。",
+          "segments": [
+            {
+              "text": "現在進入「AGENTIC ORCHESTRATION（MAESTRO）」，這是管理複雜長期流程的中央協調層，負責部署、監控、運行與優化。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "21",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "Maestro 透過人員、RPA 機器人、AI Agent 與第三方 Bot 的無縫協調，實現端到端流程管理。它涵蓋 RPA Workflow、Agent Service Task、Action Center 與業務規則（DMN/BPMN），並提供即時異常追蹤與流程挖掘。",
+          "segments": [
+            {
+              "text": "Maestro 透過人員、RPA 機器人、AI Agent 與第三方 Bot 的無縫協調，實現端到端流程管理。",
+              "type": "content"
+            },
+            {
+              "text": "它涵蓋 RPA Workflow、Agent Service Task、Action Center 與業務規則（DMN/BPMN），並提供即時異常追蹤與流程挖掘。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "22",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "Maestro 貫穿整個流程生命週期，從設計、部署到運行與優化，確保流程高效、可控。",
+          "segments": [
+            {
+              "text": "Maestro 貫穿整個流程生命週期，從設計、部署到運行與優化，確保流程高效、可控。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "23",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "--- Slide 23",
+          "segments": [
+            {
+              "text": "--- Slide 23",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "24",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "(Slide 24 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 24 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "25",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "(Slide 25 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 25 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "26",
+          "title": "",
+          "script": "(Slide 26 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 26 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "27",
+          "title": "AI TRUST LAYER (1/3)",
+          "script": "(Slide 27 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 27 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "28",
+          "title": "AI TRUST LAYER (2/3)",
+          "script": "(Slide 28 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 28 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "29",
+          "title": "AI TRUST LAYER (3/3)",
+          "script": "(Slide 29 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 29 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "30",
+          "title": "利益與戰略影響",
+          "script": "(Slide 30 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 30 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "31",
+          "title": "",
+          "script": "(Slide 31 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 31 - No script generated)",
+              "type": "content"
+            }
+          ]
+        }
+      ],
+      "full_script": "=== Opening ===  \n各位高階主管，早安／午安，我是 AI 數位人 Emma，今天將為大家介紹 UiPath 的 Agentic Automation 平台。這是一個結合 LLM、GenAI、RPA 與 AI Trust Layer 的完整解決方案，能讓企業從單一任務自動化進化為自主端到端流程自動化。接下來，我們將從概念到實作，逐步說明其核心功能與商業價值。  \n\n--- Slide 1 ---  \n今天的主題是「UIPATH AGENTIC AUTOMATION」。這個標題代表我們將探討的核心技術：代理式自動化，結合人工智慧與機器人流程自動化，打造全新自動化模型。  \n\n--- Slide 2 ---  \n代理式自動化（Agentic Automation）是一種新型模型，Agent 能感知環境、推理、規劃並執行行動，達成人類設定的目標，並逐步減少人工介入。其基礎技術包括 LLMs、GenAI、LAMs 與 UiPath 自動化工具，實現自動決策、智慧規劃與流程同步化。  \n\n--- Slide 3 ---  \nAI Agent 的功能涵蓋自動化程式生成、自然語言需求轉流程、Human‑in‑loop 安全機制、風險空管、知識同步與語意分析。Agent 能讀取政策、SOP 等文件，並以 Autopilot、Context Grounding 等功能，確保決策安全且符合企業規範。  \n\n--- Slide 4 ---  \n我們接下來介紹「UIPATH CONTEXT GROUNDING」，這是限制 LLM 回應範圍、確保 Agent 依賴驗證資訊的關鍵機制。  \n\n--- Slide 5 ---  \nContext Grounding 的第一步是將文件上傳至 Orchestrator 的 Storage Bucket，建立索引並關聯。利用向量資料庫存儲非結構化資料，Agent 透過語意搜尋取得準確背景資訊，確保 Autopilot 能在正確語境下作答。  \n\n--- Slide 6 ---  \n在 UiPath 中設定 Context Grounding：先在 Storage Bucket 建立並命名，再將相關文件（PDF、SOP 等）上傳。接著在流程資料夾中選擇 Storage Bucket，完成文件上傳步驟。  \n\n--- Slide 7 ---  \n接著在 Index 項目中新增 Index，設定資料夾類型為 Storage Bucket，選擇文件類型並設定 Ingestion 為 Basic 或 Advanced，最後儲存完成。這樣 Agent 就能在索引中快速搜尋所需資訊。  \n\n--- Slide 8 ---  \n以上即為 Context Grounding 的完整流程，更多細節可參考 UiPath 官方 Tutorial。  \n\n--- Slide 9 ---  \n現在進入「UIPATH AGENT BUILDER」，這是建立 Agent 的核心工具，讓您在 Automation Cloud 上快速構建自動化 Agent。  \n\n--- Slide 10 ---  \nAgent Builder 的流程：設定 Prompt（System 與 User）、Context、Tools、Escalation。使用 LLM 生成執行步驟，並透過 Context Grounding 提供基礎資料。最後將 Agent 發佈至 Orchestrator，可直接在 RPA Workflow 或 Agentic Orchestration 中使用。  \n\n--- Slide 11 ---  \n品質評估方面，UiPath 提供 Agent Health Score。Prompt 佔 30% 權重，與 Tools、Input Schema、Evaluations 共同影響 Agent 表現，凸顯有效 Prompt 設計的重要性。  \n\n--- Slide 12 ---  \n參考資料與進一步學習可在 UiPath 官方網站查詢。  \n\n--- Slide 13 ---  \n接下來說明「AUTOPILOT」與「GENERATIVE AI ACTIVITIES」，這兩項功能為開發者、測試人員與商業分析師提供自然語言到流程自動化的橋樑。  \n\n--- Slide 14 ---  \nAutopilot 以 LLM（如 Claude 3.5 Sonnet）為核心，支援從自然語言描述產生程式碼、測試案例、表達式，並可將手動案例轉為自動化。其核心能力包括生成內容、上下文理解與 UiPath 流程整合。  \n\n--- Slide 15 ---  \n在 Studio 中使用 Autopilot，您只需輸入流程描述，系統即自動生成參考流程，並可進一步自訂細節，提升設計效率。  \n\n--- Slide 16 ---  \n在 Studio Web 上的 Autopilot 步驟：進入 UiPath Cloud → Studio → Template → 選擇 Autopilot 生成專案 → Generate。接著輸入 Prompt，Autopilot 產生流程，最後可自行調整。影片示範可作為參考。  \n\n--- Slide 17 ---  \n「GENERATIVE AI ACTIVITIES」是 UiPath 內部的一組 Activity，直接將生成式 AI 功能嵌入自動化流程。使用 UiPath 管理的第三方 LLM，無需自行配置複雜設定。  \n\n--- Slide 18 ---  \n在 Studio 中安裝「Uipath.IntergrationService.Activities」套件，並使用其中的 Connetor、Summarize Text 等活動，將 GenAI 功能整合至 RPA 工作流程。  \n\n--- Slide 19 ---  \n現在進入「AGENTIC ORCHESTRATION（MAESTRO）」，這是管理複雜長期流程的中央協調層，負責部署、監控、運行與優化。  \n\n--- Slide 20 ---  \nMaestro 透過人員、RPA 機器人、AI Agent 與第三方 Bot 的無縫協調，實現端到端流程管理。它涵蓋 RPA Workflow、Agent Service Task、Action Center 與業務規則（DMN/BPMN），並提供即時異常追蹤與流程挖掘。  \n\n--- Slide 21 ---  \nMaestro 貫穿整個流程生命週期，從設計、部署到運行與優化，確保流程高效、可控。  \n\n--- Slide 22 ---  \n使用 BPMN 進行流程建模，提升流程標準化與可視性。UiPath 提供線上繪圖畫布，亦可結合 Autopilot 透過 Prompt 自動化設計。  \n\n--- Slide 23",
+      "metadata": {
+        "total_slides": 31,
+        "has_opening": true,
+        "parser_version": "2.0"
+      }
+    },
+    "5621ed9d-1239-4574-b987-a48f99cfc315|ollama|llama3.2:latest|高階主管|例如：產品介紹、進度報告|Formal meeting|Professional and natural|600|True|Traditional Chinese": {
+      "opening": "各位高階主管，早安/午安，我是Ai數位人Emma，擔任今天的介紹。 UiPath Agentic Automation 的介紹，將在下面對你進行全面解說。",
+      "slide_scripts": [
+        {
+          "slide_no": "1",
+          "title": "",
+          "script": "=== Opening ===\n各位高階主管，早安/午安，我是Ai數位人Emma，擔任今天的介紹。 UiPath Agentic Automation 的介紹，將在下面對你進行全面解說。",
+          "segments": [
+            {
+              "text": "=== Opening ===\n各位高階主管，早安/午安，我是Ai數位人Emma，擔任今天的介紹。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath Agentic Automation 的介紹，將在下面對你進行全面解說。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "2",
+          "title": "AGENTIC AUTOMATION",
+          "script": "UIPATH AGENTIC AUTOMATION\n\nUiPath Agentic Automation 是一種新型自動化模型。在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標，无需過去的逐步的人工指令介入。",
+          "segments": [
+            {
+              "text": "UIPATH AGENTIC AUTOMATION\n\nUiPath Agentic Automation 是一種新型自動化模型。",
+              "type": "content"
+            },
+            {
+              "text": "在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標，无需過去的逐步的人工指令介入。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "3",
+          "title": "AI AGENT 的功能",
+          "script": "AGENTIC AUTOMATION\n\nAgentic Automation 是一種新型自動化模型。在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標，无需過去的逐步的人工指令介入。\n\n* 各項基礎技術：\n + LLMs：提供自然語言的理解、推理與生成能力\n + GenAI：支持內容生成與創意回應\n + LAMs：使 Agent 能夠理解並執行複雜行動\n + UiPath 自動化：提供行動執行與流程自動化工具\n* 原則：\n + Agentic Automation 可實現自動化決策，同時支援智慧計劃與流程同步化，幫 Agent 解決迷糊問題及適應不可預測的情況",
+          "segments": [
+            {
+              "text": "AGENTIC AUTOMATION\n\nAgentic Automation 是一種新型自動化模型。",
+              "type": "content"
+            },
+            {
+              "text": "在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標，无需過去的逐步的人工指令介入。",
+              "type": "content"
+            },
+            {
+              "text": "* 各項基礎技術：\n + LLMs：提供自然語言的理解、推理與生成能力\n + GenAI：支持內容生成與創意回應\n + LAMs：使 Agent 能夠理解並執行複雜行動\n + UiPath 自動化：提供行動執行與流程自動化工具\n* 原則：\n + Agentic Automation 可實現自動化決策，同時支援智慧計劃與流程同步化，幫 Agent 解決迷糊問題及適應不可預測的情況",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "4",
+          "title": "",
+          "script": "AI AGENT 的功能\n\nAI Agent 的功能包括自動化程式生成，無比寫 code， Only 需要自然描述需求，AI Agent 即可自動產生可參考的工作流程。\n\n* Agent 採用 Human-in-loop 的安全機制運作\n* Uipath AI Agent 具備風險空管機制，當遇到例外或不確定的情況時，會自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行",
+          "segments": [
+            {
+              "text": "AI AGENT 的功能\n\nAI Agent 的功能包括自動化程式生成，無比寫 code， Only 需要自然描述需求，AI Agent 即可自動產生可參考的工作流程。",
+              "type": "content"
+            },
+            {
+              "text": "* Agent 採用 Human-in-loop 的安全機制運作\n* Uipath AI Agent 具備風險空管機制，當遇到例外或不確定的情況時，會自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "5",
+          "title": "CONTEXT GROUNDING (1/4)",
+          "script": "AGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。\n\n* 它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。",
+          "segments": [
+            {
+              "text": "AGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。",
+              "type": "content"
+            },
+            {
+              "text": "* 它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "6",
+          "title": "CONTEXT GROUNDING (2/4)",
+          "script": "UIPATH CONTEXT GROUNDING\n\nUiPath Context Grounding 是一種機制，用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆，而非依賴模型本身的通用知識。\n\n* 機制說明：使用 向量資料庫（Vector Databases） 來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。",
+          "segments": [
+            {
+              "text": "UIPATH CONTEXT GROUNDING\n\nUiPath Context Grounding 是一種機制，用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆，而非依賴模型本身的通用知識。",
+              "type": "content"
+            },
+            {
+              "text": "* 機制說明：使用 向量資料庫（Vector Databases） 來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "7",
+          "title": "CONTEXT GROUNDING (3/4)",
+          "script": "UIPATH AGENT BUILDER\n\nUiPath Agent Builder 可在 Automation Cloud 上建立 Agent。\n\n* 步驟三：設定 Prompt、Context、Tools、Escalation 等元件",
+          "segments": [
+            {
+              "text": "UIPATH AGENT BUILDER\n\nUiPath Agent Builder 可在 Automation Cloud 上建立 Agent。",
+              "type": "content"
+            },
+            {
+              "text": "* 步驟三：設定 Prompt、Context、Tools、Escalation 等元件",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "8",
+          "title": "CONTEXT GROUNDING (4/4)",
+          "script": "UIPATH AGENT BUILDER\n\nUiPath Agent Builder 可在 Automation Cloud 上建立 Agent。\n\n* 步驟四：將 Agent 發佈至 Orchestrator",
+          "segments": [
+            {
+              "text": "UIPATH AGENT BUILDER\n\nUiPath Agent Builder 可在 Automation Cloud 上建立 Agent。",
+              "type": "content"
+            },
+            {
+              "text": "* 步驟四：將 Agent 發佈至 Orchestrator",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "9",
+          "title": "",
+          "script": "AUTOPILOT\n\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。\n\n* 使用 LLM 模型，如 Claude 3.5 Sonet，可快速、精確地回應，並具備上下文理解能力。",
+          "segments": [
+            {
+              "text": "AUTOPILOT\n\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。",
+              "type": "content"
+            },
+            {
+              "text": "* 使用 LLM 模型，如 Claude 3.",
+              "type": "content"
+            },
+            {
+              "text": "5 Sonet，可快速、精確地回應，並具備上下文理解能力。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "10",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "AUTOPILOT (1/2)\n\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。\n\n* 使用 LLM 模型，如 Claude 3.5 Sonet，可快速、精確地回應，並具備上下文理解能力。",
+          "segments": [
+            {
+              "text": "AUTOPILOT (1/2)\n\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。",
+              "type": "content"
+            },
+            {
+              "text": "* 使用 LLM 模型，如 Claude 3.",
+              "type": "content"
+            },
+            {
+              "text": "5 Sonet，可快速、精確地回應，並具備上下文理解能力。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "11",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "AUTOPILOT (2/2)\n\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。\n\n* 步驟一：訪問 UiPath Cloud → Studio → Template → 使用 Autopilot 生成專案 → Generate",
+          "segments": [
+            {
+              "text": "AUTOPILOT (2/2)\n\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。",
+              "type": "content"
+            },
+            {
+              "text": "* 步驟一：訪問 UiPath Cloud → Studio → Template → 使用 Autopilot 生成專案 → Generate",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "12",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "GENERATIVE AI ACTIVITIES (1/2)\n\nGenerative AI Activities 是一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中。\n\n* 作為 UiPath 中的一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中，重點使用由 UiPath 管理、受 AI Trust Layer 保護的多家第三方提供的大型語言模型（LLMs），而無需使用者自行處理複雯設定。",
+          "segments": [
+            {
+              "text": "GENERATIVE AI ACTIVITIES (1/2)\n\nGenerative AI Activities 是一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中。",
+              "type": "content"
+            },
+            {
+              "text": "* 作為 UiPath 中的一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中，重點使用由 UiPath 管理、受 AI Trust Layer 保護的多家第三方提供的大型語言模型（LLMs），而無需使用者自行處理複雯設定。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "13",
+          "title": "",
+          "script": "GENERATIVE AI ACTIVITIES (2/2)\n\nGenerative AI Activities 是一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中。\n\n* 使用屬於 package Uipath GenAI Activities 的各 activity 如 Connetor Activity、Summarize Text,…\n*  以在 UiPath studio 上建立各 RPA workflow\n* 將 UiPath 連接至 Uipath GenAI Activities",
+          "segments": [
+            {
+              "text": "GENERATIVE AI ACTIVITIES (2/2)\n\nGenerative AI Activities 是一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中。",
+              "type": "content"
+            },
+            {
+              "text": "* 使用屬於 package Uipath GenAI Activities 的各 activity 如 Connetor Activity、Summarize Text,…\n*  以在 UiPath studio 上建立各 RPA workflow\n* 將 UiPath 連接至 Uipath GenAI Activities",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "14",
+          "title": "AUTOPILOT",
+          "script": "AGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。\n\n* 它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。",
+          "segments": [
+            {
+              "text": "AGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。",
+              "type": "content"
+            },
+            {
+              "text": "* 它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "15",
+          "title": "AUTOPILOT (1/2)",
+          "script": "AGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。\n\n* 它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。",
+          "segments": [
+            {
+              "text": "AGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。",
+              "type": "content"
+            },
+            {
+              "text": "* 它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "16",
+          "title": "AUTOPILOT (2/2)",
+          "script": "AI TRUST LAYER\n\nAi Trust Layer 是 UiPath Agentic Automation 架構中的中介層，設計用於確保 AI Agents 在與上下文交互時，能安全、可控且符合企業政策的有能力。\n\n* 概念：\n + Ai Trust Layer 是 UiPath Agentic Automation 架構中的中介層\n + 它設計用於確保 AI Agents 在與上下文交互時，能安全、可控且符合企業政策的有能力",
+          "segments": [
+            {
+              "text": "AI TRUST LAYER\n\nAi Trust Layer 是 UiPath Agentic Automation 架構中的中介層，設計用於確保 AI Agents 在與上下文交互時，能安全、可控且符合企業政策的有能力。",
+              "type": "content"
+            },
+            {
+              "text": "* 概念：\n + Ai Trust Layer 是 UiPath Agentic Automation 架構中的中介層\n + 它設計用於確保 AI Agents 在與上下文交互時，能安全、可控且符合企業政策的有能力",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "17",
+          "title": "GENERATIVE AI ACTIVITIES (1/2)",
+          "script": "AI TRUST LAYER (2/3)\n\nAi Trust Layer 是 UiPath Agentic Automation 架構中的中介層，設計用於確保 AI Agents 在與上下文交互時，能安全、可控且符合企業政策的有能力。\n\n* 核心組件：\n + (1) 從 Uipath 的產品/服務 （如 Uipath studio、Web等）或 Chatbot 發送請求\n + (2) 請求會連同 Promt 一併送至 LLM Gateway， LLM Gateway 會透過發送 secure tokens 進行驗證",
+          "segments": [
+            {
+              "text": "AI TRUST LAYER (2/3)\n\nAi Trust Layer 是 UiPath Agentic Automation 架構中的中介層，設計用於確保 AI Agents 在與上下文交互時，能安全、可控且符合企業政策的有能力。",
+              "type": "content"
+            },
+            {
+              "text": "* 核心組件：\n + (1) 從 Uipath 的產品/服務 （如 Uipath studio、Web等）或 Chatbot 發送請求\n + (2) 請求會連同 Promt 一併送至 LLM Gateway， LLM Gateway 會透過發送 secure tokens 進行驗證",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "18",
+          "title": "GENERATIVE AI ACTIVITIES (2/2)",
+          "script": "各位高階主管，這是今天的介紹結束。 UiPath Agentic Automation 是一個全面的平台，不僅提供自主 AI Agent，還作為一個 協調層（Maestro） 將它們與現有勞動力（人員與 RPA 機器人）整合。\n\n* 這使企業能夠從 任務自動化 轉向 自主的端到端流程自動化（autonomous end-to-end process automation），開啟 效率與創新的新時代",
+          "segments": [
+            {
+              "text": "各位高階主管，這是今天的介紹結束。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath Agentic Automation 是一個全面的平台，不僅提供自主 AI Agent，還作為一個 協調層（Maestro） 將它們與現有勞動力（人員與 RPA 機器人）整合。",
+              "type": "content"
+            },
+            {
+              "text": "* 這使企業能夠從 任務自動化 轉向 自主的端到端流程自動化（autonomous end-to-end process automation），開啟 效率與創新的新時代",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "19",
+          "title": "",
+          "script": "(Slide 19 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 19 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "20",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "(Slide 20 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 20 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "21",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "(Slide 21 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 21 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "22",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "(Slide 22 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 22 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "23",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "(Slide 23 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 23 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "24",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "(Slide 24 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 24 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "25",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "(Slide 25 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 25 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "26",
+          "title": "",
+          "script": "(Slide 26 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 26 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "27",
+          "title": "AI TRUST LAYER (1/3)",
+          "script": "(Slide 27 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 27 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "28",
+          "title": "AI TRUST LAYER (2/3)",
+          "script": "(Slide 28 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 28 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "29",
+          "title": "AI TRUST LAYER (3/3)",
+          "script": "(Slide 29 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 29 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "30",
+          "title": "利益與戰略影響",
+          "script": "(Slide 30 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 30 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "31",
+          "title": "",
+          "script": "(Slide 31 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 31 - No script generated)",
+              "type": "content"
+            }
+          ]
+        }
+      ],
+      "full_script": "=== Opening ===\n各位高階主管，早安/午安，我是Ai數位人Emma，擔任今天的介紹。 UiPath Agentic Automation 的介紹，將在下面對你進行全面解說。\n\n--- Slide 1 ---\nUIPATH AGENTIC AUTOMATION\n\nUiPath Agentic Automation 是一種新型自動化模型。在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標，无需過去的逐步的人工指令介入。\n\n--- Slide 2 ---\nAGENTIC AUTOMATION\n\nAgentic Automation 是一種新型自動化模型。在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標，无需過去的逐步的人工指令介入。\n\n* 各項基礎技術：\n + LLMs：提供自然語言的理解、推理與生成能力\n + GenAI：支持內容生成與創意回應\n + LAMs：使 Agent 能夠理解並執行複雜行動\n + UiPath 自動化：提供行動執行與流程自動化工具\n* 原則：\n + Agentic Automation 可實現自動化決策，同時支援智慧計劃與流程同步化，幫 Agent 解決迷糊問題及適應不可預測的情況\n\n--- Slide 3 ---\nAI AGENT 的功能\n\nAI Agent 的功能包括自動化程式生成，無比寫 code， Only 需要自然描述需求，AI Agent 即可自動產生可參考的工作流程。\n\n* Agent 採用 Human-in-loop 的安全機制運作\n* Uipath AI Agent 具備風險空管機制，當遇到例外或不確定的情況時，會自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行\n\n--- Slide 4 ---\n \n=== Slide 5 ===\nAGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。\n\n* 它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。\n\n--- Slide 6 ---\n \n=== Slide 7 ===\nUIPATH CONTEXT GROUNDING\n\nUiPath Context Grounding 是一種機制，用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆，而非依賴模型本身的通用知識。\n\n* 機制說明：使用 向量資料庫（Vector Databases） 來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。\n\n--- Slide 8 ---\n \n=== Slide 9 ===\nUIPATH AGENT BUILDER\n\nUiPath Agent Builder 可在 Automation Cloud 上建立 Agent。\n\n* 步驟三：設定 Prompt、Context、Tools、Escalation 等元件\n\n--- Slide 10 ---\n \n=== Slide 11 ===\nUIPATH AGENT BUILDER\n\nUiPath Agent Builder 可在 Automation Cloud 上建立 Agent。\n\n* 步驟四：將 Agent 發佈至 Orchestrator\n\n--- Slide 12 ---\n \n=== Slide 13 ===\nAUTOPILOT\n\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。\n\n* 使用 LLM 模型，如 Claude 3.5 Sonet，可快速、精確地回應，並具備上下文理解能力。\n\n--- Slide 14 ---\n \n=== Slide 15 ===\nAUTOPILOT (1/2)\n\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。\n\n* 使用 LLM 模型，如 Claude 3.5 Sonet，可快速、精確地回應，並具備上下文理解能力。\n\n--- Slide 16 ---\n \n=== Slide 17 ===\nAUTOPILOT (2/2)\n\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。\n\n* 步驟一：訪問 UiPath Cloud → Studio → Template → 使用 Autopilot 生成專案 → Generate\n\n--- Slide 18 ---\n \n=== Slide 19 ===\nGENERATIVE AI ACTIVITIES (1/2)\n\nGenerative AI Activities 是一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中。\n\n* 作為 UiPath 中的一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中，重點使用由 UiPath 管理、受 AI Trust Layer 保護的多家第三方提供的大型語言模型（LLMs），而無需使用者自行處理複雯設定。\n\n--- Slide 20 ---\n \n=== Slide 21 ===\nGENERATIVE AI ACTIVITIES (2/2)\n\nGenerative AI Activities 是一組 Activity，旨在將生成式 AI 功能直接整合至自動化流程中。\n\n* 使用屬於 package Uipath GenAI Activities 的各 activity 如 Connetor Activity、Summarize Text,…\n*  以在 UiPath studio 上建立各 RPA workflow\n* 將 UiPath 連接至 Uipath GenAI Activities\n\n--- Slide 22 ---\n \n=== Slide 23 ===\nAGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。\n\n* 它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。\n\n--- Slide 24 ---\n \n=== Slide 25 ===\nAGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。\n\n* 它不僅僅是流程設計，還包括部署、監控、運行及優化，透過人員、RPA 機器人、AI Agent 及第三方 AI Bot 之間的無縫連接與協調實現。\n\n--- Slide 26 ---\n \n=== Slide 27 ===\nAI TRUST LAYER\n\nAi Trust Layer 是 UiPath Agentic Automation 架構中的中介層，設計用於確保 AI Agents 在與上下文交互時，能安全、可控且符合企業政策的有能力。\n\n* 概念：\n + Ai Trust Layer 是 UiPath Agentic Automation 架構中的中介層\n + 它設計用於確保 AI Agents 在與上下文交互時，能安全、可控且符合企業政策的有能力\n\n--- Slide 28 ---\n \n=== Slide 29 ===\nAI TRUST LAYER (2/3)\n\nAi Trust Layer 是 UiPath Agentic Automation 架構中的中介層，設計用於確保 AI Agents 在與上下文交互時，能安全、可控且符合企業政策的有能力。\n\n* 核心組件：\n + (1) 從 Uipath 的產品/服務 （如 Uipath studio、Web等）或 Chatbot 發送請求\n + (2) 請求會連同 Promt 一併送至 LLM Gateway， LLM Gateway 會透過發送 secure tokens 進行驗證\n\n--- Slide 30 ---\n \n=== Slide 31 ===\n\n各位高階主管，這是今天的介紹結束。 UiPath Agentic Automation 是一個全面的平台，不僅提供自主 AI Agent，還作為一個 協調層（Maestro） 將它們與現有勞動力（人員與 RPA 機器人）整合。\n\n* 這使企業能夠從 任務自動化 轉向 自主的端到端流程自動化（autonomous end-to-end process automation），開啟 效率與創新的新時代\n\n--- Slide 32 ---\n \n=== Slide 33 ===\nTHANK YOU",
+      "metadata": {
+        "total_slides": 31,
+        "has_opening": true,
+        "parser_version": "2.0"
+      }
+    },
+    "5621ed9d-1239-4574-b987-a48f99cfc315|ollama|llama3.2:latest|一般|例如：產品介紹、進度報告|Formal meeting|Professional and natural|600|True|Traditional Chinese": {
+      "opening": "各位高階主管，早安/午安，我是Ai數位人Emma，擔任今天的介紹，並將帶您進入UiPath Agentic Automation的世界。 UiPath Agentic Automation是一種新型自動化模型，能夠以感知環境、推理、規劃與執行一連串行動的能力，達成由人類所定義的目標。\n\n---",
+      "slide_scripts": [
+        {
+          "slide_no": "1",
+          "title": "",
+          "script": "=== Opening ===\n各位高階主管，早安/午安，我是Ai數位人Emma，擔任今天的介紹，並將帶您進入UiPath Agentic Automation的世界。 UiPath Agentic Automation是一種新型自動化模型，能夠以感知環境、推理、規劃與執行一連串行動的能力，達成由人類所定義的目標。\n\n---",
+          "segments": [
+            {
+              "text": "=== Opening ===\n各位高階主管，早安/午安，我是Ai數位人Emma，擔任今天的介紹，並將帶您進入UiPath Agentic Automation的世界。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath Agentic Automation是一種新型自動化模型，能夠以感知環境、推理、規劃與執行一連串行動的能力，達成由人類所定義的目標。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "2",
+          "title": "AGENTIC AUTOMATION",
+          "script": "UIPATH AGENTIC AUTOMATION\n\nUiPath Agentic Automation 是一個新型自動化模型，能夠以感知環境、推理、規劃與執行一連串行動的能力，達成由人類所定義的目標。它是一種代理式自動化模型。\n\n---",
+          "segments": [
+            {
+              "text": "UIPATH AGENTIC AUTOMATION\n\nUiPath Agentic Automation 是一個新型自動化模型，能夠以感知環境、推理、規劃與執行一連串行動的能力，達成由人類所定義的目標。",
+              "type": "content"
+            },
+            {
+              "text": "它是一種代理式自動化模型。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "3",
+          "title": "AI AGENT 的功能",
+          "script": "AGENTIC AUTOMATION\n\nAgentic Automation 是一種代理式自動化模型。這種模型被賦予了感知環境、推理、規劃與執行一連串行動的能力，能夠達成由人類所定義的目標。\n\n---",
+          "segments": [
+            {
+              "text": "AGENTIC AUTOMATION\n\nAgentic Automation 是一種代理式自動化模型。",
+              "type": "content"
+            },
+            {
+              "text": "這種模型被賦予了感知環境、推理、規劃與執行一連串行動的能力，能夠達成由人類所定義的目標。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "4",
+          "title": "",
+          "script": "Agentic Automation 的基礎技術包括：\n\n*   LLMs：提供自然語言的理解、推理與生成能力\n*   GenAI：支持內容生成與創意回應\n*   LAMs：使 Agent 能夠理解並執行複雜行動\n*   UiPath 自動化：提供行動執行與流程自動化工具\n\n---",
+          "segments": [
+            {
+              "text": "Agentic Automation 的基礎技術包括：\n\n*   LLMs：提供自然語言的理解、推理與生成能力\n*   GenAI：支持內容生成與創意回應\n*   LAMs：使 Agent 能夠理解並執行複雜行動\n*   UiPath 自動化：提供行動執行與流程自動化工具\n\n---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "5",
+          "title": "CONTEXT GROUNDING (1/4)",
+          "script": "Agentic Automation 的原則包括：\n\n*   自動化決策：支援智慧計劃與流程同步化\n*   解決迷糊問題：幫 Agent 解決不可預測的情況\n\n---",
+          "segments": [
+            {
+              "text": "Agentic Automation 的原則包括：\n\n*   自動化決策：支援智慧計劃與流程同步化\n*   解決迷糊問題：幫 Agent 解決不可預測的情況\n\n---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "6",
+          "title": "CONTEXT GROUNDING (2/4)",
+          "script": "AI AGENT 的功能\n\nAI Agent 可以自動化程式生成，無需寫 code。它可以Only 需要自然描述需求，AI Agent 即可自動產生可參考的工作流程。\n\n---",
+          "segments": [
+            {
+              "text": "AI AGENT 的功能\n\nAI Agent 可以自動化程式生成，無需寫 code。",
+              "type": "content"
+            },
+            {
+              "text": "它可以Only 需要自然描述需求，AI Agent 即可自動產生可參考的工作流程。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "7",
+          "title": "CONTEXT GROUNDING (3/4)",
+          "script": "AI Agent 採用 Human-in-loop 的安全機制運作。當遇到例外或不確定的情況時，會自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行。\n\n---",
+          "segments": [
+            {
+              "text": "AI Agent 採用 Human-in-loop 的安全機制運作。",
+              "type": "content"
+            },
+            {
+              "text": "當遇到例外或不確定的情況時，會自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "8",
+          "title": "CONTEXT GROUNDING (4/4)",
+          "script": "AI Agent 具備風險空管機制。它可以在遇到例外或不確定的情況時，自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行。\n\n---",
+          "segments": [
+            {
+              "text": "AI Agent 具備風險空管機制。",
+              "type": "content"
+            },
+            {
+              "text": "它可以在遇到例外或不確定的情況時，自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "9",
+          "title": "",
+          "script": "UIPATH CONTEXT GROUNDING\n\nContext Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。\n\n---",
+          "segments": [
+            {
+              "text": "UIPATH CONTEXT GROUNDING\n\nContext Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。",
+              "type": "content"
+            },
+            {
+              "text": "它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "10",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "CONTEXT GROUNDING (1/4)\n\n1. Context Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。\n\n---",
+          "segments": [
+            {
+              "text": "CONTEXT GROUNDING (1/4)\n\n1.",
+              "type": "content"
+            },
+            {
+              "text": "Context Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。",
+              "type": "content"
+            },
+            {
+              "text": "它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "11",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "Context Grounding 可以提供情境，這是限制 LLM 回應範圍的關鍵機制。它需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯。\n\n---",
+          "segments": [
+            {
+              "text": "Context Grounding 可以提供情境，這是限制 LLM 回應範圍的關鍵機制。",
+              "type": "content"
+            },
+            {
+              "text": "它需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "12",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "Context Grounding 的機制是使用向量資料庫（Vector Databases）來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。Agent 會在由上傳至 Storage Bucket 的文件所建立的索引上執行 語意搜尋（Semantic Search）。\n\n---",
+          "segments": [
+            {
+              "text": "Context Grounding 的機制是使用向量資料庫（Vector Databases）來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。",
+              "type": "content"
+            },
+            {
+              "text": "Agent 會在由上傳至 Storage Bucket 的文件所建立的索引上執行 語意搜尋（Semantic Search）。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "13",
+          "title": "",
+          "script": "Context Grounding 目前 Orchestrator 已支援，且呈現在各資料夾的 Index 項目中。\n\n---",
+          "segments": [
+            {
+              "text": "Context Grounding 目前 Orchestrator 已支援，且呈現在各資料夾的 Index 項目中。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "14",
+          "title": "AUTOPILOT",
+          "script": "CONTEXT GROUNDING (2/4)\n\n1. Context Grounding 的設定方式是：\n\n---",
+          "segments": [
+            {
+              "text": "CONTEXT GROUNDING (2/4)\n\n1.",
+              "type": "content"
+            },
+            {
+              "text": "Context Grounding 的設定方式是：\n\n---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "15",
+          "title": "AUTOPILOT (1/2)",
+          "script": "在 UiPath 中設定 Context Grounding 的方式包括：\n\n*   文件儲存：將來源文件（例如：包含資訊的 PDF 檔）上傳至 Orchestrator 的 Storage Bucket。\n*   在 Orchestrator 流程的莫個流程資料夾中，選擇 Storage Bucket  Add storage buckage  Create a new storage buckage。\n\n---",
+          "segments": [
+            {
+              "text": "在 UiPath 中設定 Context Grounding 的方式包括：\n\n*   文件儲存：將來源文件（例如：包含資訊的 PDF 檔）上傳至 Orchestrator 的 Storage Bucket。",
+              "type": "content"
+            },
+            {
+              "text": "*   在 Orchestrator 流程的莫個流程資料夾中，選擇 Storage Bucket  Add storage buckage  Create a new storage buckage。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "16",
+          "title": "AUTOPILOT (2/2)",
+          "script": "在 Orchestrator 該資料夾的 Index 項目中 Add Index。\n\n*   為 Index 命名。\n*   選擇資料夾類型為 Storage Buckage。\n*   選擇包含剛建立之 Storage Bucket 的 Orchestrator 資料夾。\n*   選擇剛建立 Storage Buckage。\n*   選擇包含背景資訊之檔案資料類型（.docx、.xlsx、.json、.txt、.csv、.pdf），或可選擇 All。\n\n---",
+          "segments": [
+            {
+              "text": "在 Orchestrator 該資料夾的 Index 項目中 Add Index。",
+              "type": "content"
+            },
+            {
+              "text": "*   為 Index 命名。",
+              "type": "content"
+            },
+            {
+              "text": "*   選擇資料夾類型為 Storage Buckage。",
+              "type": "content"
+            },
+            {
+              "text": "*   選擇包含剛建立之 Storage Bucket 的 Orchestrator 資料夾。",
+              "type": "content"
+            },
+            {
+              "text": "*   選擇剛建立 Storage Buckage。",
+              "type": "content"
+            },
+            {
+              "text": "*   選擇包含背景資訊之檔案資料類型（.",
+              "type": "content"
+            },
+            {
+              "text": "docx、.",
+              "type": "content"
+            },
+            {
+              "text": "xlsx、.",
+              "type": "content"
+            },
+            {
+              "text": "json、.",
+              "type": "content"
+            },
+            {
+              "text": "txt、.",
+              "type": "content"
+            },
+            {
+              "text": "csv、.",
+              "type": "content"
+            },
+            {
+              "text": "pdf），或可選擇 All。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "17",
+          "title": "GENERATIVE AI ACTIVITIES (1/2)",
+          "script": "為了提供情境，需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯。\n\n---",
+          "segments": [
+            {
+              "text": "為了提供情境，需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "18",
+          "title": "GENERATIVE AI ACTIVITIES (2/2)",
+          "script": "CONTEXT GROUNDING (3/4)\n\n1. Context Grounding 的機制是使用向量資料庫（Vector Databases）來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。\n\n---",
+          "segments": [
+            {
+              "text": "CONTEXT GROUNDING (3/4)\n\n1.",
+              "type": "content"
+            },
+            {
+              "text": "Context Grounding 的機制是使用向量資料庫（Vector Databases）來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "19",
+          "title": "",
+          "script": "Context Grounding 的目的在於提供情境，這是限制 LLM 回應範圍的關鍵機制。它需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯。\n\n---",
+          "segments": [
+            {
+              "text": "Context Grounding 的目的在於提供情境，這是限制 LLM 回應範圍的關鍵機制。",
+              "type": "content"
+            },
+            {
+              "text": "它需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "20",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "Context Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。\n\n---",
+          "segments": [
+            {
+              "text": "Context Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。",
+              "type": "content"
+            },
+            {
+              "text": "它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "21",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "CONTEXT GROUNDING (4/4)\n\n1. Context Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。\n\n---",
+          "segments": [
+            {
+              "text": "CONTEXT GROUNDING (4/4)\n\n1.",
+              "type": "content"
+            },
+            {
+              "text": "Context Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。",
+              "type": "content"
+            },
+            {
+              "text": "它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "22",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "UIPATH AGENT BUILDER\n\nAgent Builder 是 UiPath Agentic Automation 架構中的一個重要組件。它可以在 Automation Cloud 上建立 Agent。\n\n---",
+          "segments": [
+            {
+              "text": "UIPATH AGENT BUILDER\n\nAgent Builder 是 UiPath Agentic Automation 架構中的一個重要組件。",
+              "type": "content"
+            },
+            {
+              "text": "它可以在 Automation Cloud 上建立 Agent。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "23",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "UIPATH AGENT BUILDER\nAgent Builder 可在 Automation Cloud 上建立 Agent。步驟三：設定 Prompt、Context、Tools、Escalation 等元件。\n\n---",
+          "segments": [
+            {
+              "text": "UIPATH AGENT BUILDER\nAgent Builder 可在 Automation Cloud 上建立 Agent。",
+              "type": "content"
+            },
+            {
+              "text": "步驟三：設定 Prompt、Context、Tools、Escalation 等元件。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "24",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "大型語言模型（LLM）與 Prompt：\n\n*   System prompt:定義 Agent 的目標、角色與限制條件\n*   User prompt: 提供具體執行步驟，說明輸入參數（input arguments）與預期輸出\n\n---",
+          "segments": [
+            {
+              "text": "大型語言模型（LLM）與 Prompt：\n\n*   System prompt:定義 Agent 的目標、角色與限制條件\n*   User prompt: 提供具體執行步驟，說明輸入參數（input arguments）與預期輸出\n\n---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "25",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "情境（Context）：透過 Context Grounding 機制提供基礎資料。\n\n---",
+          "segments": [
+            {
+              "text": "情境（Context）：透過 Context Grounding 機制提供基礎資料。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "26",
+          "title": "",
+          "script": "工具（Tools）：使用內建 UiPath Activities、既有 RPA Processes，並可與其他 Agents 搭配使用Escalation：\n\n*   Escalation：設定規則，讓 Agent 判斷何時需將任務交由人工處理\n\n---",
+          "segments": [
+            {
+              "text": "工具（Tools）：使用內建 UiPath Activities、既有 RPA Processes，並可與其他 Agents 搭配使用Escalation：\n\n*   Escalation：設定規則，讓 Agent 判斷何時需將任務交由人工處理\n\n---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "27",
+          "title": "AI TRUST LAYER (1/3)",
+          "script": "步驟四：將 Agent 發佈至 Orchestrator。\n\n*   完成 Agent 建立後，可於 RPA Workflow 中使用，或用於建構 Agentic Automation（Agent Orchestrator／Meatro）\n\n---",
+          "segments": [
+            {
+              "text": "步驟四：將 Agent 發佈至 Orchestrator。",
+              "type": "content"
+            },
+            {
+              "text": "*   完成 Agent 建立後，可於 RPA Workflow 中使用，或用於建構 Agentic Automation（Agent Orchestrator／Meatro）\n\n---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "28",
+          "title": "AI TRUST LAYER (2/3)",
+          "script": "UIPATH AGENT BUILDER\n\nAgent Builder 的品質評估機制。UiPath 提供 Agent 的品質評估機制。Prompt 在 Agent 效能評估中扮演關鍵角色（約佔 30% 權重），並與 Evaluation 能力及 Input Schema 等因素共同影響 Agent 表現，突顯有效 Prompt 設計的重要性。\n\n---",
+          "segments": [
+            {
+              "text": "UIPATH AGENT BUILDER\n\nAgent Builder 的品質評估機制。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath 提供 Agent 的品質評估機制。",
+              "type": "content"
+            },
+            {
+              "text": "Prompt 在 Agent 效能評估中扮演關鍵角色（約佔 30% 權重），並與 Evaluation 能力及 Input Schema 等因素共同影響 Agent 表現，突顯有效 Prompt 設計的重要性。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "29",
+          "title": "AI TRUST LAYER (3/3)",
+          "script": "Agent 的品質評估機制包括：\n\n*   Prompt\n*   Tools\n*   Input Schema\n*   Evaluations\n\n---",
+          "segments": [
+            {
+              "text": "Agent 的品質評估機制包括：\n\n*   Prompt\n*   Tools\n*   Input Schema\n*   Evaluations\n\n---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "30",
+          "title": "利益與戰略影響",
+          "script": "UIPATH AGENT BUILDER\n\nAgent Builder 是 UiPath Agentic Automation 架構中的一個重要組件。它可以在 Automation Cloud 上建立 Agent。\n\n---",
+          "segments": [
+            {
+              "text": "UIPATH AGENT BUILDER\n\nAgent Builder 是 UiPath Agentic Automation 架構中的一個重要組件。",
+              "type": "content"
+            },
+            {
+              "text": "它可以在 Automation Cloud 上建立 Agent。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "31",
+          "title": "",
+          "script": "AUTOPILOT\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。\n\n---",
+          "segments": [
+            {
+              "text": "AUTOPILOT\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        }
+      ],
+      "full_script": "=== Opening ===\n各位高階主管，早安/午安，我是Ai數位人Emma，擔任今天的介紹，並將帶您進入UiPath Agentic Automation的世界。 UiPath Agentic Automation是一種新型自動化模型，能夠以感知環境、推理、規劃與執行一連串行動的能力，達成由人類所定義的目標。\n\n---\n\n--- Slide 1 ---\nUIPATH AGENTIC AUTOMATION\n\nUiPath Agentic Automation 是一個新型自動化模型，能夠以感知環境、推理、規劃與執行一連串行動的能力，達成由人類所定義的目標。它是一種代理式自動化模型。\n\n---\n\n--- Slide 2 ---\nAGENTIC AUTOMATION\n\nAgentic Automation 是一種代理式自動化模型。這種模型被賦予了感知環境、推理、規劃與執行一連串行動的能力，能夠達成由人類所定義的目標。\n\n---\n\n--- Slide 2 (CONTINUED) ---\nAgentic Automation 的基礎技術包括：\n\n*   LLMs：提供自然語言的理解、推理與生成能力\n*   GenAI：支持內容生成與創意回應\n*   LAMs：使 Agent 能夠理解並執行複雜行動\n*   UiPath 自動化：提供行動執行與流程自動化工具\n\n---\n\n--- Slide 2 (CONTINUED) ---\nAgentic Automation 的原則包括：\n\n*   自動化決策：支援智慧計劃與流程同步化\n*   解決迷糊問題：幫 Agent 解決不可預測的情況\n\n---\n\n--- Slide 3 ---\nAI AGENT 的功能\n\nAI Agent 可以自動化程式生成，無需寫 code。它可以Only 需要自然描述需求，AI Agent 即可自動產生可參考的工作流程。\n\n---\n\n--- Slide 3 (CONTINUED) ---\nAI Agent 採用 Human-in-loop 的安全機制運作。當遇到例外或不確定的情況時，會自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行。\n\n---\n\n--- Slide 3 (CONTINUED) ---\nAI Agent 具備風險空管機制。它可以在遇到例外或不確定的情況時，自動升級至 Uipath Action Center，暫停流程並等待人工審核再繼續執行。\n\n---\n\n--- Slide 4 ---\nUIPATH CONTEXT GROUNDING\n\nContext Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。\n\n---\n\n--- Slide 5 ---\nCONTEXT GROUNDING (1/4)\n\n1. Context Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。\n\n---\n\n--- Slide 5 (CONTINUED) ---\nContext Grounding 可以提供情境，這是限制 LLM 回應範圍的關鍵機制。它需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯。\n\n---\n\n--- Slide 5 (CONTINUED) ---\nContext Grounding 的機制是使用向量資料庫（Vector Databases）來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。Agent 會在由上傳至 Storage Bucket 的文件所建立的索引上執行 語意搜尋（Semantic Search）。\n\n---\n\n--- Slide 5 (CONTINUED) ---\nContext Grounding 目前 Orchestrator 已支援，且呈現在各資料夾的 Index 項目中。\n\n---\n\n--- Slide 6 ---\nCONTEXT GROUNDING (2/4)\n\n1. Context Grounding 的設定方式是：\n\n---\n\n--- Slide 6 (CONTINUED) ---\n在 UiPath 中設定 Context Grounding 的方式包括：\n\n*   文件儲存：將來源文件（例如：包含資訊的 PDF 檔）上傳至 Orchestrator 的 Storage Bucket。\n*   在 Orchestrator 流程的莫個流程資料夾中，選擇 Storage Bucket  Add storage buckage  Create a new storage buckage。\n\n---\n\n--- Slide 6 (CONTINUED) ---\n在 Orchestrator 該資料夾的 Index 項目中 Add Index。\n\n*   為 Index 命名。\n*   選擇資料夾類型為 Storage Buckage。\n*   選擇包含剛建立之 Storage Bucket 的 Orchestrator 資料夾。\n*   選擇剛建立 Storage Buckage。\n*   選擇包含背景資訊之檔案資料類型（.docx、.xlsx、.json、.txt、.csv、.pdf），或可選擇 All。\n\n---\n\n--- Slide 6 (CONTINUED) ---\n為了提供情境，需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯。\n\n---\n\n--- Slide 7 ---\nCONTEXT GROUNDING (3/4)\n\n1. Context Grounding 的機制是使用向量資料庫（Vector Databases）來儲存非結構化資料，並轉換為數值化的向量表示（Vector）。\n\n---\n\n--- Slide 7 (CONTINUED) ---\nContext Grounding 的目的在於提供情境，這是限制 LLM 回應範圍的關鍵機制。它需要先將文件上傳至 Orchestrator 的 Storage Bucket，接著在 Orchestrator 中建立一個 Index（索引），並將該 Index 與對應的 Storage Bucket 進行關聯。\n\n---\n\n--- Slide 7 (CONTINUED) ---\nContext Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。\n\n---\n\n--- Slide 8 ---\nCONTEXT GROUNDING (4/4)\n\n1. Context Grounding 是 UiPath Agentic Automation 中的一個關鍵機制。它用來限制 LLM 的回應範圍，強制 Agent 必須依據使用者期望的、已驗證且正確的資訊進行回覆。\n\n---\n\n--- Slide 9 ---\nUIPATH AGENT BUILDER\n\nAgent Builder 是 UiPath Agentic Automation 架構中的一個重要組件。它可以在 Automation Cloud 上建立 Agent。\n\n---\n\n--- Slide 10 ---\nUIPATH AGENT BUILDER\nAgent Builder 可在 Automation Cloud 上建立 Agent。步驟三：設定 Prompt、Context、Tools、Escalation 等元件。\n\n---\n\n--- Slide 10 (CONTINUED) ---\n大型語言模型（LLM）與 Prompt：\n\n*   System prompt:定義 Agent 的目標、角色與限制條件\n*   User prompt: 提供具體執行步驟，說明輸入參數（input arguments）與預期輸出\n\n---\n\n--- Slide 10 (CONTINUED) ---\n情境（Context）：透過 Context Grounding 機制提供基礎資料。\n\n---\n\n--- Slide 10 (CONTINUED) ---\n工具（Tools）：使用內建 UiPath Activities、既有 RPA Processes，並可與其他 Agents 搭配使用Escalation：\n\n*   Escalation：設定規則，讓 Agent 判斷何時需將任務交由人工處理\n\n---\n\n--- Slide 10 (CONTINUED) ---\n步驟四：將 Agent 發佈至 Orchestrator。\n\n*   完成 Agent 建立後，可於 RPA Workflow 中使用，或用於建構 Agentic Automation（Agent Orchestrator／Meatro）\n\n---\n\n--- Slide 11 ---\nUIPATH AGENT BUILDER\n\nAgent Builder 的品質評估機制。UiPath 提供 Agent 的品質評估機制。Prompt 在 Agent 效能評估中扮演關鍵角色（約佔 30% 權重），並與 Evaluation 能力及 Input Schema 等因素共同影響 Agent 表現，突顯有效 Prompt 設計的重要性。\n\n---\n\n--- Slide 11 (CONTINUED) ---\nAgent 的品質評估機制包括：\n\n*   Prompt\n*   Tools\n*   Input Schema\n*   Evaluations\n\n---\n\n--- Slide 12 ---\nUIPATH AGENT BUILDER\n\nAgent Builder 是 UiPath Agentic Automation 架構中的一個重要組件。它可以在 Automation Cloud 上建立 Agent。\n\n---\n\n--- Slide 13 ---\nAUTOPILOT\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。\n\n---\n\n--- Slide 13 (CONTINUED) ---\n使用 LLM 模型，如 Claude 3.5 Sonet，可快速、精確地回應，並具備上下文理解能力。\n\n---\n\n--- Slide 13 (CONTINUED) ---\n目的是：\n\n*   支援從自然語言描述撰寫程 code/flow\n*   建立測試案例 case\n*   撰寫表達式\n*   将手动 case 转为 test automation\n*   供应流程设计建議，并缩短设计时间\n\n---\n\n--- Slide 13 (CONTINUED) ---\n核心能力：\n\n*   生成內容（generative）\n*   了解预警（contextual grounding）\n\n---\n\n--- Slide 14 ---\nAUTOPILOT (1/2)\nAutopilot 在多種角色中出現：Autopilot for Developers、for Testers、for Business Analysts，以及 “Autopilot for Everyone”（整合於 Studio、Test Manager、Apps 的 chat/generative assistan）。\n\n---\n\n--- Slide 15 ---\nAUTOPILOT (1/2)\nAutopilot 可以使用 LLM 模型，如 Claude 3.5 Sonet，可快速、精確地回應，並具備上下文理解能力。\n\n---\n\n--- Slide 16 ---\nSUDIO WEB 上的 Autopilot\n步驟一：訪問 UiPath Cloud → Studio → Template → 使用 Autopilot 生成專案 → Generate\n\n---\n\n--- Slide 17 ---\nSUDIO WEB 上的 Autopilot\n步驟二：輸入描述流程的 Prompt，Autopilot 將自動生成參考流程。\n\n---\n\n--- Slide 18 ---\nGENERATIVE AI ACTIVITIES (1/2)\nGenerative AI Activities 是 UiPath Agentic Automation 中的一個重要組件。它可以將生成式 AI 功能直接整合至自動化流程中。\n\n---\n\n--- Slide 19 ---\nGENERATIVE AI ACTIVITIES (2/2)\n使用屬於 package Uipath GenAI Activities 的各 activity 如：\n\n*   Connetor Activity\n*   Summarize Text\n\n---\n\n--- Slide 20 ---\nAGENTIC ORCHESTRATION (MAESTRO)\n\nAgentic Orchestration（亦稱 Maestro）是中央協調層，設計用於管理複雜且長期流程的整個生命周期。\n\n---\n\n--- Slide 21 ---\nAGENTIC ORCHESTRATION (MAESTRO)\nAgentic Orchestration 是 UiPath Agentic Automation 架構中的中間層。它的職責是將 Agent、RPA機器人和人工驗證連接起來，形成一個完整的流程自動化系統。\n\n---\n\n--- Slide 22 ---\nAGENTIC ORCHESTRATION (MAESTRO)\nAgentic Orchestration 是 UiPath Agentic Automation 架構中的中間層。它的職責是將 Agent、RPA機器人和人工驗證連接起來，形成一個完整的流程自動化系統。\n\n---\n\n--- Slide 23 ---\nAGENTIC ORCHESTRATION (MAESTRO)\nAgentic Orchestration 貫穿流程全生命週期（end-to-end）。它可以在流程建模、部署、監控和優化等各個階段提供支持。\n\n---\n\n--- Slide 24 ---\nBPMN 流程建模 (Business Process Model and Notation)\n\nUiPath 提供了線上繪圖畫布（canvas），或可整合 Autopilot，透過提供 Prompt 支援自動化設計。\n\n---\n\n--- Slide 25 ---\nAGENTIC ORCHESTRATION (MAESTRO)\nAgentic Orchestration 是 UiPath Agentic Automation 架構中的中間層。它的職責是將 Agent、RPA機器人和人工驗證連接起來，形成一個完整的流程自動化系統。\n\n---\n\n--- Slide 26 ---\n利益與戰略影響\n\nUiPath Agentic Automation 是一個全面的平台，不僅提供自主 AI Agent，還作為一個協調層將它們與現有勞動力（人員與 RPA 機器人）整合。\n\n---\n\n--- Slide 27 ---\nTHANK YOU",
+      "metadata": {
+        "total_slides": 31,
+        "has_opening": true,
+        "parser_version": "2.0"
+      }
+    },
+    "5621ed9d-1239-4574-b987-a48f99cfc315|ollama|qwen2.5:14b|高階主管|例如：產品介紹、進度報告|Formal meeting|Professional and natural|600|True|Traditional Chinese": {
+      "opening": "各位高階主管，午安，我是AI數位人Emma，擔任今天的介紹，我們將一起探討UiPath Agentic Automation的創新應用及其對企業自動化的轉型意義。期待與您分享更多細節和洞察。",
+      "slide_scripts": [
+        {
+          "slide_no": "1",
+          "title": "",
+          "script": "=== Opening ===\n各位高階主管，午安，我是AI數位人Emma，擔任今天的介紹，我們將一起探討UiPath Agentic Automation的創新應用及其對企業自動化的轉型意義。期待與您分享更多細節和洞察。",
+          "segments": [
+            {
+              "text": "=== Opening ===\n各位高階主管，午安，我是AI數位人Emma，擔任今天的介紹，我們將一起探討UiPath Agentic Automation的創新應用及其對企業自動化的轉型意義。",
+              "type": "content"
+            },
+            {
+              "text": "期待與您分享更多細節和洞察。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "2",
+          "title": "AGENTIC AUTOMATION",
+          "script": "今天我們聚焦的是UIPATH AGENTIC AUTOMATION，一個集成了先進技術的平台，旨在推動自動化流程邁向更高層次的智慧決策和支持。讓我們深入了解Agentic Automation的核心理念及其帶來的轉型潛力。",
+          "segments": [
+            {
+              "text": "今天我們聚焦的是UIPATH AGENTIC AUTOMATION，一個集成了先進技術的平台，旨在推動自動化流程邁向更高層次的智慧決策和支持。",
+              "type": "content"
+            },
+            {
+              "text": "讓我們深入了解Agentic Automation的核心理念及其帶來的轉型潛力。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "3",
+          "title": "AI AGENT 的功能",
+          "script": "Agentic Automation是一種革命性的自動化模型，其中Agent能夠感知環境、推理和執行複雜任務，幫助解決迷糊問題並適應不可預測的情況。此模型結合了大型語言模型（LLMs）、生成式AI（GenAI）以及UiPath的自動化工具，提供了前所未有的智能支持。",
+          "segments": [
+            {
+              "text": "Agentic Automation是一種革命性的自動化模型，其中Agent能夠感知環境、推理和執行複雜任務，幫助解決迷糊問題並適應不可預測的情況。",
+              "type": "content"
+            },
+            {
+              "text": "此模型結合了大型語言模型（LLMs）、生成式AI（GenAI）以及UiPath的自動化工具，提供了前所未有的智能支持。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "4",
+          "title": "",
+          "script": "UIPATH AGENT的功能不僅限於程式碼生成，它還能通過自然描述需求，自動產生工作流程，並且採用Human-in-loop的安全機制運作。這種設計確保了即使在面對例外或不確定的情況時，也能夠安全地進行自動化。",
+          "segments": [
+            {
+              "text": "UIPATH AGENT的功能不僅限於程式碼生成，它還能通過自然描述需求，自動產生工作流程，並且採用Human-in-loop的安全機制運作。",
+              "type": "content"
+            },
+            {
+              "text": "這種設計確保了即使在面對例外或不確定的情況時，也能夠安全地進行自動化。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "5",
+          "title": "CONTEXT GROUNDING (1/4)",
+          "script": "現在，讓我們來了解UIPATH CONTEXT GROUNDING的概念及其重要性。這是一種關鍵機制，它限制LLM的回應範圍，強迫Agent依賴於使用者期望和驗證的信息。",
+          "segments": [
+            {
+              "text": "現在，讓我們來了解UIPATH CONTEXT GROUNDING的概念及其重要性。",
+              "type": "content"
+            },
+            {
+              "text": "這是一種關鍵機制，它限制LLM的回應範圍，強迫Agent依賴於使用者期望和驗證的信息。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "6",
+          "title": "CONTEXT GROUNDING (2/4)",
+          "script": "在UiPath中設定Context Grounding的第一步是將文件上傳至Orchestrator的Storage Bucket，然後建立一個Index並將其與對應的Bucket關聯。這個過程利用向量資料庫來儲存非結構化數據並進行語意搜索，確保Agent能夠基於正確的情境信息進行回覆。",
+          "segments": [
+            {
+              "text": "在UiPath中設定Context Grounding的第一步是將文件上傳至Orchestrator的Storage Bucket，然後建立一個Index並將其與對應的Bucket關聯。",
+              "type": "content"
+            },
+            {
+              "text": "這個過程利用向量資料庫來儲存非結構化數據並進行語意搜索，確保Agent能夠基於正確的情境信息進行回覆。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "7",
+          "title": "CONTEXT GROUNDING (3/4)",
+          "script": "在設定Context Grounding時，我們需要將包含重要資訊如SOP和政策等文件上傳至Storage Bucket，然後通過Orchestrator流程中的步驟來建立Index，這一步驟是讓AI Agent能夠理解並應用背景知識的關鍵。",
+          "segments": [
+            {
+              "text": "在設定Context Grounding時，我們需要將包含重要資訊如SOP和政策等文件上傳至Storage Bucket，然後通過Orchestrator流程中的步驟來建立Index，這一步驟是讓AI Agent能夠理解並應用背景知識的關鍵。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "8",
+          "title": "CONTEXT GROUNDING (4/4)",
+          "script": "一旦建立了Storage Bucket和Index，就可以開始使用這些資源為AI Agent提供語意上的支持。這是確保Agent能夠正確理解和執行任務的重要環節。",
+          "segments": [
+            {
+              "text": "一旦建立了Storage Bucket和Index，就可以開始使用這些資源為AI Agent提供語意上的支持。",
+              "type": "content"
+            },
+            {
+              "text": "這是確保Agent能夠正確理解和執行任務的重要環節。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "9",
+          "title": "",
+          "script": "參考.UiPath提供的Context Grounding Tutorial可以更深入地了解這個過程，並快速上手進行實際操作。",
+          "segments": [
+            {
+              "text": "參考.",
+              "type": "content"
+            },
+            {
+              "text": "UiPath提供的Context Grounding Tutorial可以更深入地了解這個過程，並快速上手進行實際操作。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "10",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "接下來介紹UIPATH AGENT BUILDER，它是一個用於在Automation Cloud中建立和管理AI Agent的工具。Agent Builder幫助我們設定Prompt、Context、Tools以及Escalation規則，以確保Agent能夠高效運行。",
+          "segments": [
+            {
+              "text": "接下來介紹UIPATH AGENT BUILDER，它是一個用於在Automation Cloud中建立和管理AI Agent的工具。",
+              "type": "content"
+            },
+            {
+              "text": "Agent Builder幫助我們設定Prompt、Context、Tools以及Escalation規則，以確保Agent能夠高效運行。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "11",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "使用Agent Health Score來評估Agent的表現，其中包含對於Prompt設計的重要性分析。有效的Prompt可以大大提升Agent的效能和可靠性。",
+          "segments": [
+            {
+              "text": "使用Agent Health Score來評估Agent的表現，其中包含對於Prompt設計的重要性分析。",
+              "type": "content"
+            },
+            {
+              "text": "有效的Prompt可以大大提升Agent的效能和可靠性。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "12",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "今天我們也將探討UiPath Autopilot及其在自動化流程中的應用。Autopilot利用大型語言模型快速回應並生成內容，幫助開發者、測試員以及業務分析師更有效地完成任務。",
+          "segments": [
+            {
+              "text": "今天我們也將探討UiPath Autopilot及其在自動化流程中的應用。",
+              "type": "content"
+            },
+            {
+              "text": "Autopilot利用大型語言模型快速回應並生成內容，幫助開發者、測試員以及業務分析師更有效地完成任務。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "13",
+          "title": "",
+          "script": "Autopilot在不同角色中表現出多樣化的功能。例如，在UiPath Studio中，它可以通過自然語言來建置自動化流程；而在Studio Web上，則可以快速生成並自訂流程以滿足不同的需求。",
+          "segments": [
+            {
+              "text": "Autopilot在不同角色中表現出多樣化的功能。",
+              "type": "content"
+            },
+            {
+              "text": "例如，在UiPath Studio中，它可以通過自然語言來建置自動化流程；而在Studio Web上，則可以快速生成並自訂流程以滿足不同的需求。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "14",
+          "title": "AUTOPILOT",
+          "script": "除了Autopilot之外，我們還將介紹Generative AI Activities，這是UiPath平台的一組活動，旨在直接整合生成式AI功能到自動化流程中。這意味著不再需要手動配置複雜的設置，就能利用各種大型語言模型。",
+          "segments": [
+            {
+              "text": "除了Autopilot之外，我們還將介紹Generative AI Activities，這是UiPath平台的一組活動，旨在直接整合生成式AI功能到自動化流程中。",
+              "type": "content"
+            },
+            {
+              "text": "這意味著不再需要手動配置複雜的設置，就能利用各種大型語言模型。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "15",
+          "title": "AUTOPILOT (1/2)",
+          "script": "在使用這些Activities時，可以通過安裝特定的Package來接入Uipath GenAI Activities，並應用於不同的RPA工作流程之中，大大提高了自動化的靈活性和效率。",
+          "segments": [
+            {
+              "text": "在使用這些Activities時，可以通過安裝特定的Package來接入Uipath GenAI Activities，並應用於不同的RPA工作流程之中，大大提高了自動化的靈活性和效率。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "16",
+          "title": "AUTOPILOT (2/2)",
+          "script": "Agentic Orchestration (Maestro) 是UiPath Agentic Automation的核心部分。它作為中央協調層，用於管理複雜且長期的流程整個生命周期，實現人員、機器人與AI Agent之間的無縫連接與協作。",
+          "segments": [
+            {
+              "text": "Agentic Orchestration (Maestro) 是UiPath Agentic Automation的核心部分。",
+              "type": "content"
+            },
+            {
+              "text": "它作為中央協調層，用於管理複雜且長期的流程整個生命周期，實現人員、機器人與AI Agent之間的無縫連接與協作。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "17",
+          "title": "GENERATIVE AI ACTIVITIES (1/2)",
+          "script": "利用Agentic Orchestration可以實現跨部門任務整合和碎片化自動化的解決方案。這對於那些需要橫跨多個功能領域進行端到端業務流程自動化的企業來說非常關鍵。",
+          "segments": [
+            {
+              "text": "利用Agentic Orchestration可以實現跨部門任務整合和碎片化自動化的解決方案。",
+              "type": "content"
+            },
+            {
+              "text": "這對於那些需要橫跨多個功能領域進行端到端業務流程自動化的企業來說非常關鍵。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "18",
+          "title": "GENERATIVE AI ACTIVITIES (2/2)",
+          "script": "BPMN流程建模是Agentic Orchestration中的重要工具，它通過標準化的過程設計來增強整個組織的可視性和效率。UiPath提供的線上繪圖畫布和Autopilot功能使流程設計變得更加高效便捷。",
+          "segments": [
+            {
+              "text": "BPMN流程建模是Agentic Orchestration中的重要工具，它通過標準化的過程設計來增強整個組織的可視性和效率。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath提供的線上繪圖畫布和Autopilot功能使流程設計變得更加高效便捷。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "19",
+          "title": "",
+          "script": "在使用BPMN進行流程建模時，我們可以利用Uipath Studio上的主要組成元素來構建標準化的業務流程模型，從而提高工作效率並減少錯誤率。",
+          "segments": [
+            {
+              "text": "在使用BPMN進行流程建模時，我們可以利用Uipath Studio上的主要組成元素來構建標準化的業務流程模型，從而提高工作效率並減少錯誤率。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "20",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "Agentic Orchestration不僅提供了全面的流程可視性，還能夠處理交叉依賴的任務和碎片化自動化的問題，使企業可以更有效地管理整個端到端的業務流程。",
+          "segments": [
+            {
+              "text": "Agentic Orchestration不僅提供了全面的流程可視性，還能夠處理交叉依賴的任務和碎片化自動化的問題，使企業可以更有效地管理整個端到端的業務流程。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "21",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "AI Trust Layer是UiPath Agentic Automation架構中的重要組成部分。它確保所有與LLM模型、企業資料及業務系統的交互都是安全且符合政策的。",
+          "segments": [
+            {
+              "text": "AI Trust Layer是UiPath Agentic Automation架構中的重要組成部分。",
+              "type": "content"
+            },
+            {
+              "text": "它確保所有與LLM模型、企業資料及業務系統的交互都是安全且符合政策的。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "22",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "AI Trust Layer通過一系列機制來控制和監控與第三方LLM模型的互動，例如使用Secure Tokens進行驗證，並記錄相關的元數據而不儲存實際內容資訊。",
+          "segments": [
+            {
+              "text": "AI Trust Layer通過一系列機制來控制和監控與第三方LLM模型的互動，例如使用Secure Tokens進行驗證，並記錄相關的元數據而不儲存實際內容資訊。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "23",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "此外，AI Trust Layer還提供資料空管功能，確保客戶資料不會被儲存在Uipath雲端範圍之外，進一步保護了企業和用戶的信息安全。",
+          "segments": [
+            {
+              "text": "此外，AI Trust Layer還提供資料空管功能，確保客戶資料不會被儲存在Uipath雲端範圍之外，進一步保護了企業和用戶的信息安全。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "24",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "總結來說，UiPath Agentic Automation為企業帶來了一個全面平台，不僅提供了自主的AI Agent，還通過Agentic Orchestration將它們與現有的勞動力（人員和RPA機器人）整合在一起，實現真正的端到端流程自動化。",
+          "segments": [
+            {
+              "text": "總結來說，UiPath Agentic Automation為企業帶來了一個全面平台，不僅提供了自主的AI Agent，還通過Agentic Orchestration將它們與現有的勞動力（人員和RPA機器人）整合在一起，實現真正的端到端流程自動化。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "25",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "這項技術轉型使企業能夠從任務自動化向自主的端到端流程自動化躍進，開啟了效率與創新的新篇章。感謝各位的聆聽！",
+          "segments": [
+            {
+              "text": "這項技術轉型使企業能夠從任務自動化向自主的端到端流程自動化躍進，開啟了效率與創新的新篇章。",
+              "type": "content"
+            },
+            {
+              "text": "感謝各位的聆聽！",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "26",
+          "title": "",
+          "script": "(Slide 26 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 26 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "27",
+          "title": "AI TRUST LAYER (1/3)",
+          "script": "(Slide 27 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 27 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "28",
+          "title": "AI TRUST LAYER (2/3)",
+          "script": "(Slide 28 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 28 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "29",
+          "title": "AI TRUST LAYER (3/3)",
+          "script": "(Slide 29 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 29 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "30",
+          "title": "利益與戰略影響",
+          "script": "(Slide 30 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 30 - No script generated)",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "31",
+          "title": "",
+          "script": "(Slide 31 - No script generated)",
+          "segments": [
+            {
+              "text": "(Slide 31 - No script generated)",
+              "type": "content"
+            }
+          ]
+        }
+      ],
+      "full_script": "=== Opening ===\n各位高階主管，午安，我是AI數位人Emma，擔任今天的介紹，我們將一起探討UiPath Agentic Automation的創新應用及其對企業自動化的轉型意義。期待與您分享更多細節和洞察。\n\n--- Slide 1 ---\n今天我們聚焦的是UIPATH AGENTIC AUTOMATION，一個集成了先進技術的平台，旨在推動自動化流程邁向更高層次的智慧決策和支持。讓我們深入了解Agentic Automation的核心理念及其帶來的轉型潛力。\n\n--- Slide 2 ---\nAgentic Automation是一種革命性的自動化模型，其中Agent能夠感知環境、推理和執行複雜任務，幫助解決迷糊問題並適應不可預測的情況。此模型結合了大型語言模型（LLMs）、生成式AI（GenAI）以及UiPath的自動化工具，提供了前所未有的智能支持。\n\n--- Slide 3 ---\nUIPATH AGENT的功能不僅限於程式碼生成，它還能通過自然描述需求，自動產生工作流程，並且採用Human-in-loop的安全機制運作。這種設計確保了即使在面對例外或不確定的情況時，也能夠安全地進行自動化。\n\n--- Slide 4 ---\n現在，讓我們來了解UIPATH CONTEXT GROUNDING的概念及其重要性。這是一種關鍵機制，它限制LLM的回應範圍，強迫Agent依賴於使用者期望和驗證的信息。\n\n--- Slide 5 ---\n在UiPath中設定Context Grounding的第一步是將文件上傳至Orchestrator的Storage Bucket，然後建立一個Index並將其與對應的Bucket關聯。這個過程利用向量資料庫來儲存非結構化數據並進行語意搜索，確保Agent能夠基於正確的情境信息進行回覆。\n\n--- Slide 6 ---\n在設定Context Grounding時，我們需要將包含重要資訊如SOP和政策等文件上傳至Storage Bucket，然後通過Orchestrator流程中的步驟來建立Index，這一步驟是讓AI Agent能夠理解並應用背景知識的關鍵。\n\n--- Slide 7 ---\n一旦建立了Storage Bucket和Index，就可以開始使用這些資源為AI Agent提供語意上的支持。這是確保Agent能夠正確理解和執行任務的重要環節。\n\n--- Slide 8 ---\n參考.UiPath提供的Context Grounding Tutorial可以更深入地了解這個過程，並快速上手進行實際操作。\n\n--- Slide 9 ---\n接下來介紹UIPATH AGENT BUILDER，它是一個用於在Automation Cloud中建立和管理AI Agent的工具。Agent Builder幫助我們設定Prompt、Context、Tools以及Escalation規則，以確保Agent能夠高效運行。\n\n--- Slide 10 ---\n使用Agent Health Score來評估Agent的表現，其中包含對於Prompt設計的重要性分析。有效的Prompt可以大大提升Agent的效能和可靠性。\n\n--- Slide 11 ---\n今天我們也將探討UiPath Autopilot及其在自動化流程中的應用。Autopilot利用大型語言模型快速回應並生成內容，幫助開發者、測試員以及業務分析師更有效地完成任務。\n\n--- Slide 12 ---\nAutopilot在不同角色中表現出多樣化的功能。例如，在UiPath Studio中，它可以通過自然語言來建置自動化流程；而在Studio Web上，則可以快速生成並自訂流程以滿足不同的需求。\n\n--- Slide 13 ---\n除了Autopilot之外，我們還將介紹Generative AI Activities，這是UiPath平台的一組活動，旨在直接整合生成式AI功能到自動化流程中。這意味著不再需要手動配置複雜的設置，就能利用各種大型語言模型。\n\n--- Slide 14 ---\n在使用這些Activities時，可以通過安裝特定的Package來接入Uipath GenAI Activities，並應用於不同的RPA工作流程之中，大大提高了自動化的靈活性和效率。\n\n--- Slide 15 ---\nAgentic Orchestration (Maestro) 是UiPath Agentic Automation的核心部分。它作為中央協調層，用於管理複雜且長期的流程整個生命周期，實現人員、機器人與AI Agent之間的無縫連接與協作。\n\n--- Slide 16 ---\n利用Agentic Orchestration可以實現跨部門任務整合和碎片化自動化的解決方案。這對於那些需要橫跨多個功能領域進行端到端業務流程自動化的企業來說非常關鍵。\n\n--- Slide 17 ---\nBPMN流程建模是Agentic Orchestration中的重要工具，它通過標準化的過程設計來增強整個組織的可視性和效率。UiPath提供的線上繪圖畫布和Autopilot功能使流程設計變得更加高效便捷。\n\n--- Slide 18 ---\n在使用BPMN進行流程建模時，我們可以利用Uipath Studio上的主要組成元素來構建標準化的業務流程模型，從而提高工作效率並減少錯誤率。\n\n--- Slide 19 ---\nAgentic Orchestration不僅提供了全面的流程可視性，還能夠處理交叉依賴的任務和碎片化自動化的問題，使企業可以更有效地管理整個端到端的業務流程。\n\n--- Slide 20 ---\nAI Trust Layer是UiPath Agentic Automation架構中的重要組成部分。它確保所有與LLM模型、企業資料及業務系統的交互都是安全且符合政策的。\n\n--- Slide 21 ---\nAI Trust Layer通過一系列機制來控制和監控與第三方LLM模型的互動，例如使用Secure Tokens進行驗證，並記錄相關的元數據而不儲存實際內容資訊。\n\n--- Slide 22 ---\n此外，AI Trust Layer還提供資料空管功能，確保客戶資料不會被儲存在Uipath雲端範圍之外，進一步保護了企業和用戶的信息安全。\n\n--- Slide 23 ---\n總結來說，UiPath Agentic Automation為企業帶來了一個全面平台，不僅提供了自主的AI Agent，還通過Agentic Orchestration將它們與現有的勞動力（人員和RPA機器人）整合在一起，實現真正的端到端流程自動化。\n\n--- Slide 24 ---\n這項技術轉型使企業能夠從任務自動化向自主的端到端流程自動化躍進，開啟了效率與創新的新篇章。感謝各位的聆聽！\n\n--- Slide 31 ---\nTHANK YOU",
+      "metadata": {
+        "total_slides": 31,
+        "has_opening": true,
+        "parser_version": "2.0"
+      }
+    },
+    "5621ed9d-1239-4574-b987-a48f99cfc315|ollama|qwen2.5:14b|一般|例如：產品介紹、進度報告|Formal meeting|Professional and natural|600|True|Traditional Chinese": {
+      "opening": "各位高階主管，午安。我是Ai數位人Emma，擔任今天的介紹工作。我們將探索UiPath Agentic Automation的最新進展及其對業務流程自動化的革命性影響。請讓我們開始。",
+      "slide_scripts": [
+        {
+          "slide_no": "1",
+          "title": "",
+          "script": "今天的主題是UIPATH AGENTIC AUTOMATION，這是目前行業中最先進且最有前景的自動化技術之一。它整合了最新的AI技術和傳統RPA功能，旨在實現更高層次的自動化和智慧決策能力。接下來，我將詳細介紹Agentic Automation的核心概念及其應用。",
+          "segments": [
+            {
+              "text": "今天的主題是UIPATH AGENTIC AUTOMATION，這是目前行業中最先進且最有前景的自動化技術之一。",
+              "type": "content"
+            },
+            {
+              "text": "它整合了最新的AI技術和傳統RPA功能，旨在實現更高層次的自動化和智慧決策能力。",
+              "type": "content"
+            },
+            {
+              "text": "接下來，我將詳細介紹Agentic Automation的核心概念及其應用。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "2",
+          "title": "AGENTIC AUTOMATION",
+          "script": "Agentic Automation（代理式自動化）是一種新型自動化模型，在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標。這個模型依靠LLMs提供自然語言的理解和生成能力；GenAI則支援內容生成與創意回應；LAMs使 Agent 能夠理解並執行複雜行動。UiPath 自動化工具提供了實際行動的執行能力。",
+          "segments": [
+            {
+              "text": "Agentic Automation（代理式自動化）是一種新型自動化模型，在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標。",
+              "type": "content"
+            },
+            {
+              "text": "這個模型依靠LLMs提供自然語言的理解和生成能力；GenAI則支援內容生成與創意回應；LAMs使 Agent 能夠理解並執行複雜行動。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath 自動化工具提供了實際行動的執行能力。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "3",
+          "title": "AI AGENT 的功能",
+          "script": "利用AI AGENT，我們可以實現自動化程式生成，無需手動編寫代碼。只需描述需求，Agent 即可產生工作流程。此外，Uipath AI Agent採用Human-in-loop安全機制，在遇到例外情況時會自動升級至Action Center進行人工審核。更重要的是，AI AGENT還能讀取和理解公司政策、標準作業程序等文件。",
+          "segments": [
+            {
+              "text": "利用AI AGENT，我們可以實現自動化程式生成，無需手動編寫代碼。",
+              "type": "content"
+            },
+            {
+              "text": "只需描述需求，Agent 即可產生工作流程。",
+              "type": "content"
+            },
+            {
+              "text": "此外，Uipath AI Agent採用Human-in-loop安全機制，在遇到例外情況時會自動升級至Action Center進行人工審核。",
+              "type": "content"
+            },
+            {
+              "text": "更重要的是，AI AGENT還能讀取和理解公司政策、標準作業程序等文件。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "4",
+          "title": "",
+          "script": "接下來介紹UiPath的另一個重要功能：UIPATH CONTEXT GROUNDING，這是確保LLM回應範圍受限於用戶提供的正確資訊的一種方法。",
+          "segments": [
+            {
+              "text": "接下來介紹UiPath的另一個重要功能：UIPATH CONTEXT GROUNDING，這是確保LLM回應範圍受限於用戶提供的正確資訊的一種方法。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "5",
+          "title": "CONTEXT GROUNDING (1/4)",
+          "script": "CONTEXT GROUNDING的第一步是將包含關鍵情報的文件上傳至Storage Bucket，並在Orchestrator中建立一個索引。通過向量資料庫來儲存這些文件並將其轉換為數值化的向量表示，使Autopilot能進行語意層級的搜尋與理解。",
+          "segments": [
+            {
+              "text": "CONTEXT GROUNDING的第一步是將包含關鍵情報的文件上傳至Storage Bucket，並在Orchestrator中建立一個索引。",
+              "type": "content"
+            },
+            {
+              "text": "通過向量資料庫來儲存這些文件並將其轉換為數值化的向量表示，使Autopilot能進行語意層級的搜尋與理解。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "6",
+          "title": "CONTEXT GROUNDING (2/4)",
+          "script": "要設置Context Grounding，首先需要上傳包含背景資訊的PDF或其他格式文件至Storage Bucket。然後在Orchestrator中建立索引並將其關聯到對應的Storage Bucket。",
+          "segments": [
+            {
+              "text": "要設置Context Grounding，首先需要上傳包含背景資訊的PDF或其他格式文件至Storage Bucket。",
+              "type": "content"
+            },
+            {
+              "text": "然後在Orchestrator中建立索引並將其關聯到對應的Storage Bucket。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "7",
+          "title": "CONTEXT GROUNDING (3/4)",
+          "script": "接下來，我們將在Orchestrator資料夾的Index項目中添加一個新的Index，選擇適當的檔案類型和Ingestion方式，完成建立後即可開始使用Context Grounding機制來提高LLM的回應品質。",
+          "segments": [
+            {
+              "text": "接下來，我們將在Orchestrator資料夾的Index項目中添加一個新的Index，選擇適當的檔案類型和Ingestion方式，完成建立後即可開始使用Context Grounding機制來提高LLM的回應品質。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "8",
+          "title": "CONTEXT GROUNDING (4/4)",
+          "script": "完成以上步驟後，請參考UiPath官方提供的教程以進一步了解如何設置和使用此功能。現在讓我們轉向UIPATH AGENT BUILDER，這是設計和管理AI Agent的重要工具。",
+          "segments": [
+            {
+              "text": "完成以上步驟後，請參考UiPath官方提供的教程以進一步了解如何設置和使用此功能。",
+              "type": "content"
+            },
+            {
+              "text": "現在讓我們轉向UIPATH AGENT BUILDER，這是設計和管理AI Agent的重要工具。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "9",
+          "title": "",
+          "script": "在Agent Builder中，可以通過設定Prompt、Context、Tools等元素來建立一個自定義的AI Agent。大型語言模型（LLM）和系統提示（System prompt）為定義Agent的角色與限制條件提供了基礎；而具體執行步驟則由用戶提示（User prompt）提供。",
+          "segments": [
+            {
+              "text": "在Agent Builder中，可以通過設定Prompt、Context、Tools等元素來建立一個自定義的AI Agent。",
+              "type": "content"
+            },
+            {
+              "text": "大型語言模型（LLM）和系統提示（System prompt）為定義Agent的角色與限制條件提供了基礎；而具體執行步驟則由用戶提示（User prompt）提供。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "10",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "完成Agent設定後，我們可以將其發佈至Orchestrator進行管理。此過程會評估Agent的品質，包括Prompt、Tools、Input Schema和Evaluations等四個方面，確保高質量運行。",
+          "segments": [
+            {
+              "text": "完成Agent設定後，我們可以將其發佈至Orchestrator進行管理。",
+              "type": "content"
+            },
+            {
+              "text": "此過程會評估Agent的品質，包括Prompt、Tools、Input Schema和Evaluations等四個方面，確保高質量運行。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "11",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "UiPath還提供了詳細的參考資料來幫助大家更好地理解和使用這些新技術。現在，讓我們來看看AUTOPILOT及其相關功能如何提高開發效率並自動生成測試案例和表達式。",
+          "segments": [
+            {
+              "text": "UiPath還提供了詳細的參考資料來幫助大家更好地理解和使用這些新技術。",
+              "type": "content"
+            },
+            {
+              "text": "現在，讓我們來看看AUTOPILOT及其相關功能如何提高開發效率並自動生成測試案例和表達式。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "12",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "Autopilot利用LLM模型快速、精確地回應用戶需求，支援從自然語言描述撰寫程 code/flow ，建立測試案例，提供流程設計建議等。這使得即使沒有程式背景的用戶也能輕鬆使用。",
+          "segments": [
+            {
+              "text": "Autopilot利用LLM模型快速、精確地回應用戶需求，支援從自然語言描述撰寫程 code/flow ，建立測試案例，提供流程設計建議等。",
+              "type": "content"
+            },
+            {
+              "text": "這使得即使沒有程式背景的用戶也能輕鬆使用。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "13",
+          "title": "",
+          "script": "在UiPath Studio中使用的Autopilot可以通過自然語言快速生成自動化流程。而在Studio Web上，用戶只需輸入描述流程的Prompt，Autopilot就會自動產生參考流程並進行測試和自訂。",
+          "segments": [
+            {
+              "text": "在UiPath Studio中使用的Autopilot可以通過自然語言快速生成自動化流程。",
+              "type": "content"
+            },
+            {
+              "text": "而在Studio Web上，用戶只需輸入描述流程的Prompt，Autopilot就會自動產生參考流程並進行測試和自訂。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "14",
+          "title": "AUTOPILOT",
+          "script": "除了使用Autopilot外，還有一組名為Generative AI Activities的功能，這些活動直接將大型語言模型（LLMs）整合至自動化流程中，無需用戶自行處理複雜設置。這對於提高開發效率和創建高效工作流非常有幫助。",
+          "segments": [
+            {
+              "text": "除了使用Autopilot外，還有一組名為Generative AI Activities的功能，這些活動直接將大型語言模型（LLMs）整合至自動化流程中，無需用戶自行處理複雜設置。",
+              "type": "content"
+            },
+            {
+              "text": "這對於提高開發效率和創建高效工作流非常有幫助。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "15",
+          "title": "AUTOPILOT (1/2)",
+          "script": "在Uipath Studio上，通過安裝Package Uipath.IntergrationService.Activities並使用該包中的各個Activity，可以輕鬆建立包含生成式AI功能的RPA workflow。",
+          "segments": [
+            {
+              "text": "在Uipath Studio上，通過安裝Package Uipath.",
+              "type": "content"
+            },
+            {
+              "text": "IntergrationService.",
+              "type": "content"
+            },
+            {
+              "text": "Activities並使用該包中的各個Activity，可以輕鬆建立包含生成式AI功能的RPA workflow。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "16",
+          "title": "AUTOPILOT (2/2)",
+          "script": "Agentic Orchestration（Maestro）是UiPath的一個中央協調層，它不僅管理複雜且長期流程的整個生命周期，還確保人員、RPA機器人和AI Agent之間的無縫連接與協同工作。讓我們詳細了解一下這個功能。",
+          "segments": [
+            {
+              "text": "Agentic Orchestration（Maestro）是UiPath的一個中央協調層，它不僅管理複雜且長期流程的整個生命周期，還確保人員、RPA機器人和AI Agent之間的無縫連接與協同工作。",
+              "type": "content"
+            },
+            {
+              "text": "讓我們詳細了解一下這個功能。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "17",
+          "title": "GENERATIVE AI ACTIVITIES (1/2)",
+          "script": "Agentic Orchestration通過整合多種任務來實現端到端業務流程自動化，包括傳統自動化流程（RPA Workflow）、以服務形式發佈的Agent、人類參與和業務規則等。這使得整個系統更加靈活且可管理。",
+          "segments": [
+            {
+              "text": "Agentic Orchestration通過整合多種任務來實現端到端業務流程自動化，包括傳統自動化流程（RPA Workflow）、以服務形式發佈的Agent、人類參與和業務規則等。",
+              "type": "content"
+            },
+            {
+              "text": "這使得整個系統更加靈活且可管理。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "18",
+          "title": "GENERATIVE AI ACTIVITIES (2/2)",
+          "script": "Maestro支持使用BPMN進行流程建模，這有助於提高流程的標準化程度並增加流程的可視性。UiPath提供了線上繪圖畫布來幫助用戶快速構建和設計這些流程模型。",
+          "segments": [
+            {
+              "text": "Maestro支持使用BPMN進行流程建模，這有助於提高流程的標準化程度並增加流程的可視性。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath提供了線上繪圖畫布來幫助用戶快速構建和設計這些流程模型。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "19",
+          "title": "",
+          "script": "在流程建模過程中，UiPath的BPMN工具可以提供非常詳細的支持，包括從基礎元件到完整工作流的所有方面，進一步增強了流程的可視化能力和效率。",
+          "segments": [
+            {
+              "text": "在流程建模過程中，UiPath的BPMN工具可以提供非常詳細的支持，包括從基礎元件到完整工作流的所有方面，進一步增強了流程的可視化能力和效率。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "20",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "使用Agentic Orchestration，我們能夠獲得整個流程全生命週期的操作能力。無論是在設計、部署還是優化階段，都能得到全面的支持和幫助。",
+          "segments": [
+            {
+              "text": "使用Agentic Orchestration，我們能夠獲得整個流程全生命週期的操作能力。",
+              "type": "content"
+            },
+            {
+              "text": "無論是在設計、部署還是優化階段，都能得到全面的支持和幫助。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "21",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "除了基礎的流程建模外，Maestro還可以提供更高的可視性，使得用戶不僅能看到單一自動化的步驟，也能從整體層面來管理和優化複雜業務流程。",
+          "segments": [
+            {
+              "text": "除了基礎的流程建模外，Maestro還可以提供更高的可視性，使得用戶不僅能看到單一自動化的步驟，也能從整體層面來管理和優化複雜業務流程。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "22",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "為了確保AI Agent的安全性和可靠性，UiPath設置了AI Trust Layer作為中介層。這個層次負責管理所有與外部和內部資料的交互，並確保符合企業政策要求。",
+          "segments": [
+            {
+              "text": "為了確保AI Agent的安全性和可靠性，UiPath設置了AI Trust Layer作為中介層。",
+              "type": "content"
+            },
+            {
+              "text": "這個層次負責管理所有與外部和內部資料的交互，並確保符合企業政策要求。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "23",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "AI Trust Layer通過一系列安全措施來保護企業數據不受未經授權的訪問，包括驗證請求、檢查合規性以及轉送至第三方模型等步驟。",
+          "segments": [
+            {
+              "text": "AI Trust Layer通過一系列安全措施來保護企業數據不受未經授權的訪問，包括驗證請求、檢查合規性以及轉送至第三方模型等步驟。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "24",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "在處理敏感資料時，AI Trust Layer會自動對個人識別資訊（PII）和受保護健康資訊（PHI）進行遮蔽，以確保數據隱私。這項技術對於維護企業信息安全具有重要意義。",
+          "segments": [
+            {
+              "text": "在處理敏感資料時，AI Trust Layer會自動對個人識別資訊（PII）和受保護健康資訊（PHI）進行遮蔽，以確保數據隱私。",
+              "type": "content"
+            },
+            {
+              "text": "這項技術對於維護企業信息安全具有重要意義。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "25",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "UiPath Agentic Automation是一個全面平台，不僅提供自主的AI Agent，還作為一個協調層將它們與現有勞動力整合。這使企業能夠從任務自動化轉向更為高級的端到端流程自動化，開啟效率與創新的新時代。",
+          "segments": [
+            {
+              "text": "UiPath Agentic Automation是一個全面平台，不僅提供自主的AI Agent，還作為一個協調層將它們與現有勞動力整合。",
+              "type": "content"
+            },
+            {
+              "text": "這使企業能夠從任務自動化轉向更為高級的端到端流程自動化，開啟效率與創新的新時代。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "26",
+          "title": "",
+          "script": "最後，讓我們總結一下今天的介紹。UiPath Agentic Automation通過集成最新的AI技術和傳統RPA功能，實現了更高層次的自動化和智慧決策能力，為企業帶來了前所未有的機會。",
+          "segments": [
+            {
+              "text": "最後，讓我們總結一下今天的介紹。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath Agentic Automation通過集成最新的AI技術和傳統RPA功能，實現了更高層次的自動化和智慧決策能力，為企業帶來了前所未有的機會。",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "27",
+          "title": "AI TRUST LAYER (1/3)",
+          "script": "感謝各位的聆聽！如果您有任何問題或需要進一步的信息，請隨時聯繫我們。再次感謝大家！",
+          "segments": [
+            {
+              "text": "感謝各位的聆聽！",
+              "type": "content"
+            },
+            {
+              "text": "如果您有任何問題或需要進一步的信息，請隨時聯繫我們。",
+              "type": "content"
+            },
+            {
+              "text": "再次感謝大家！",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "28",
+          "title": "AI TRUST LAYER (2/3)",
+          "script": "（無需生成）",
+          "segments": [
+            {
+              "text": "（無需生成）",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "29",
+          "title": "AI TRUST LAYER (3/3)",
+          "script": "（無需生成）",
+          "segments": [
+            {
+              "text": "（無需生成）",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "30",
+          "title": "利益與戰略影響",
+          "script": "（無需生成）",
+          "segments": [
+            {
+              "text": "（無需生成）",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "31",
+          "title": "",
+          "script": "（無需生成）",
+          "segments": [
+            {
+              "text": "（無需生成）",
+              "type": "content"
+            }
+          ]
+        }
+      ],
+      "full_script": "=== Opening ===\n\n各位高階主管，午安。我是Ai數位人Emma，擔任今天的介紹工作。我們將探索UiPath Agentic Automation的最新進展及其對業務流程自動化的革命性影響。請讓我們開始。\n\n--- Slide 1 ---\n今天的主題是UIPATH AGENTIC AUTOMATION，這是目前行業中最先進且最有前景的自動化技術之一。它整合了最新的AI技術和傳統RPA功能，旨在實現更高層次的自動化和智慧決策能力。接下來，我將詳細介紹Agentic Automation的核心概念及其應用。\n\n--- Slide 2 ---\nAgentic Automation（代理式自動化）是一種新型自動化模型，在此模型中，Agent 被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類所定義的目標。這個模型依靠LLMs提供自然語言的理解和生成能力；GenAI則支援內容生成與創意回應；LAMs使 Agent 能夠理解並執行複雜行動。UiPath 自動化工具提供了實際行動的執行能力。\n\n--- Slide 3 ---\n利用AI AGENT，我們可以實現自動化程式生成，無需手動編寫代碼。只需描述需求，Agent 即可產生工作流程。此外，Uipath AI Agent採用Human-in-loop安全機制，在遇到例外情況時會自動升級至Action Center進行人工審核。更重要的是，AI AGENT還能讀取和理解公司政策、標準作業程序等文件。\n\n--- Slide 4 ---\n接下來介紹UiPath的另一個重要功能：UIPATH CONTEXT GROUNDING，這是確保LLM回應範圍受限於用戶提供的正確資訊的一種方法。\n\n--- Slide 5 ---\nCONTEXT GROUNDING的第一步是將包含關鍵情報的文件上傳至Storage Bucket，並在Orchestrator中建立一個索引。通過向量資料庫來儲存這些文件並將其轉換為數值化的向量表示，使Autopilot能進行語意層級的搜尋與理解。\n\n--- Slide 6 ---\n要設置Context Grounding，首先需要上傳包含背景資訊的PDF或其他格式文件至Storage Bucket。然後在Orchestrator中建立索引並將其關聯到對應的Storage Bucket。\n\n--- Slide 7 ---\n接下來，我們將在Orchestrator資料夾的Index項目中添加一個新的Index，選擇適當的檔案類型和Ingestion方式，完成建立後即可開始使用Context Grounding機制來提高LLM的回應品質。\n\n--- Slide 8 ---\n完成以上步驟後，請參考UiPath官方提供的教程以進一步了解如何設置和使用此功能。現在讓我們轉向UIPATH AGENT BUILDER，這是設計和管理AI Agent的重要工具。\n\n--- Slide 9 ---\n在Agent Builder中，可以通過設定Prompt、Context、Tools等元素來建立一個自定義的AI Agent。大型語言模型（LLM）和系統提示（System prompt）為定義Agent的角色與限制條件提供了基礎；而具體執行步驟則由用戶提示（User prompt）提供。\n\n--- Slide 10 ---\n完成Agent設定後，我們可以將其發佈至Orchestrator進行管理。此過程會評估Agent的品質，包括Prompt、Tools、Input Schema和Evaluations等四個方面，確保高質量運行。\n\n--- Slide 11 ---\nUiPath還提供了詳細的參考資料來幫助大家更好地理解和使用這些新技術。現在，讓我們來看看AUTOPILOT及其相關功能如何提高開發效率並自動生成測試案例和表達式。\n\n--- Slide 12 ---\nAutopilot利用LLM模型快速、精確地回應用戶需求，支援從自然語言描述撰寫程 code/flow ，建立測試案例，提供流程設計建議等。這使得即使沒有程式背景的用戶也能輕鬆使用。\n\n--- Slide 13 ---\n在UiPath Studio中使用的Autopilot可以通過自然語言快速生成自動化流程。而在Studio Web上，用戶只需輸入描述流程的Prompt，Autopilot就會自動產生參考流程並進行測試和自訂。\n\n--- Slide 14 ---\n除了使用Autopilot外，還有一組名為Generative AI Activities的功能，這些活動直接將大型語言模型（LLMs）整合至自動化流程中，無需用戶自行處理複雜設置。這對於提高開發效率和創建高效工作流非常有幫助。\n\n--- Slide 15 ---\n在Uipath Studio上，通過安裝Package Uipath.IntergrationService.Activities並使用該包中的各個Activity，可以輕鬆建立包含生成式AI功能的RPA workflow。\n\n--- Slide 16 ---\nAgentic Orchestration（Maestro）是UiPath的一個中央協調層，它不僅管理複雜且長期流程的整個生命周期，還確保人員、RPA機器人和AI Agent之間的無縫連接與協同工作。讓我們詳細了解一下這個功能。\n\n--- Slide 17 ---\nAgentic Orchestration通過整合多種任務來實現端到端業務流程自動化，包括傳統自動化流程（RPA Workflow）、以服務形式發佈的Agent、人類參與和業務規則等。這使得整個系統更加靈活且可管理。\n\n--- Slide 18 ---\nMaestro支持使用BPMN進行流程建模，這有助於提高流程的標準化程度並增加流程的可視性。UiPath提供了線上繪圖畫布來幫助用戶快速構建和設計這些流程模型。\n\n--- Slide 19 ---\n在流程建模過程中，UiPath的BPMN工具可以提供非常詳細的支持，包括從基礎元件到完整工作流的所有方面，進一步增強了流程的可視化能力和效率。\n\n--- Slide 20 ---\n使用Agentic Orchestration，我們能夠獲得整個流程全生命週期的操作能力。無論是在設計、部署還是優化階段，都能得到全面的支持和幫助。\n\n--- Slide 21 ---\n除了基礎的流程建模外，Maestro還可以提供更高的可視性，使得用戶不僅能看到單一自動化的步驟，也能從整體層面來管理和優化複雜業務流程。\n\n--- Slide 22 ---\n為了確保AI Agent的安全性和可靠性，UiPath設置了AI Trust Layer作為中介層。這個層次負責管理所有與外部和內部資料的交互，並確保符合企業政策要求。\n\n--- Slide 23 ---\nAI Trust Layer通過一系列安全措施來保護企業數據不受未經授權的訪問，包括驗證請求、檢查合規性以及轉送至第三方模型等步驟。\n\n--- Slide 24 ---\n在處理敏感資料時，AI Trust Layer會自動對個人識別資訊（PII）和受保護健康資訊（PHI）進行遮蔽，以確保數據隱私。這項技術對於維護企業信息安全具有重要意義。\n\n--- Slide 25 ---\nUiPath Agentic Automation是一個全面平台，不僅提供自主的AI Agent，還作為一個協調層將它們與現有勞動力整合。這使企業能夠從任務自動化轉向更為高級的端到端流程自動化，開啟效率與創新的新時代。\n\n--- Slide 26 ---\n最後，讓我們總結一下今天的介紹。UiPath Agentic Automation通過集成最新的AI技術和傳統RPA功能，實現了更高層次的自動化和智慧決策能力，為企業帶來了前所未有的機會。\n\n--- Slide 27 ---\n感謝各位的聆聽！如果您有任何問題或需要進一步的信息，請隨時聯繫我們。再次感謝大家！\n\n--- Slide 28 ---\n（無需生成）\n\n--- Slide 29 ---\n（無需生成）\n\n--- Slide 30 ---\n（無需生成）\n\n--- Slide 31 ---\n（無需生成）",
+      "metadata": {
+        "total_slides": 31,
+        "has_opening": true,
+        "parser_version": "2.0"
+      }
+    },
+    "5621ed9d-1239-4574-b987-a48f99cfc315|ollama|qwen2.5:14b|高階主管|工具介紹|Formal meeting|Professional and natural|600|True|Traditional Chinese": {
+      "opening": "---\n\n各位高階主管您好，我是Ai數位人Emma，非常榮幸在此為大家介紹UiPath Agentic Automation，這是一個革命性的自動化平台，將帶領我們邁入一個全新的高效能時代。在今天的演講中，我會詳細地向您闡述Agentic Automation的獨特功能和優勢，並分享如何通過這個系統來提高業務流程的效率與靈活性。\n\n---",
+      "slide_scripts": [
+        {
+          "slide_no": "1",
+          "title": "",
+          "script": "UiPath Agentic Automation 是一種革命性的自動化技術，它結合了先進的人工智能代理程式、自然語言處理以及大型語言模型等多項尖端科技，旨在為企業提供一個全方位的自動化解決方案。這個平台不僅可以大幅減少人力成本，還能有效提升工作效率和準確度。\n\n---",
+          "segments": [
+            {
+              "text": "UiPath Agentic Automation 是一種革命性的自動化技術，它結合了先進的人工智能代理程式、自然語言處理以及大型語言模型等多項尖端科技，旨在為企業提供一個全方位的自動化解決方案。",
+              "type": "content"
+            },
+            {
+              "text": "這個平台不僅可以大幅減少人力成本，還能有效提升工作效率和準確度。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "2",
+          "title": "AGENTIC AUTOMATION",
+          "script": "Agentic Automation 是一種新型自動化模型，它使Agent能夠理解並處理複雜任務，從而實現自動化的智慧決策與流程同步化。在此模型中，Agent被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類定義的目標，無需逐步的人工指令介入。\n\n各項基礎技術包括大型語言模型（LLMs）、生成式人工智慧（GenAI）和語意理解機制（LAMs），這些技術共同賦予了Agent處理複雜任務的能力。UiPath 自動化工具則提供了執行行動與流程自動化的強大支援，讓整個系統更加靈活且功能豐富。\n\n此外，Agentic Automation還遵循著一套明確的原則，包括自動化決策、智慧計劃以及流程同步化，這些原則確保了Agent能夠解決迷糊問題並適應不可預測的情況。透過這些技術和原則，UiPath Agentic Automation 能夠為企業帶來前所未有的業務效率提升。\n\n---",
+          "segments": [
+            {
+              "text": "Agentic Automation 是一種新型自動化模型，它使Agent能夠理解並處理複雜任務，從而實現自動化的智慧決策與流程同步化。",
+              "type": "content"
+            },
+            {
+              "text": "在此模型中，Agent被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類定義的目標，無需逐步的人工指令介入。",
+              "type": "content"
+            },
+            {
+              "text": "各項基礎技術包括大型語言模型（LLMs）、生成式人工智慧（GenAI）和語意理解機制（LAMs），這些技術共同賦予了Agent處理複雜任務的能力。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath 自動化工具則提供了執行行動與流程自動化的強大支援，讓整個系統更加靈活且功能豐富。",
+              "type": "content"
+            },
+            {
+              "text": "此外，Agentic Automation還遵循著一套明確的原則，包括自動化決策、智慧計劃以及流程同步化，這些原則確保了Agent能夠解決迷糊問題並適應不可預測的情況。",
+              "type": "content"
+            },
+            {
+              "text": "透過這些技術和原則，UiPath Agentic Automation 能夠為企業帶來前所未有的業務效率提升。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "3",
+          "title": "AI AGENT 的功能",
+          "script": "UiPath AI Agent 提供了一系列強大的功能，其中一個重要方面就是自動化程式生成能力。通過自然描述需求，AI Agent 可以自动生成可參考的工作流程，這大大降低了開發成本並加快了部署速度。例如，在設計複雜的業務流程時，僅需簡單地向Agent描述期望結果，它就能自动生成相應的RPA流程。\n\n此外，UiPath AI Agent 還具備風險空管機制，當遇到例外或不確定的情況時，會自動升級至 UiPath Action Center，暫停流程並等待人工審核再繼續執行。這種安全機制確保了系統在處理敏感任務時的安全性和可靠性。\n\nAgent 的知識同步能力是另一個關鍵特徵，它能夠讀取並理解如政策、標準作業程序（SOP）、內部流程文件等資料，自動進行語意分析並將這些知識應用於其決策與行動中。這種能力讓AI Agent 能夠更好地適應多變的業務環境。\n\nUiPath AI Agent 具備五個主要功能：Autopilot、Context Grounding、Agent 的空管與評估、Uipath Agent Builder 和 Agentic Orchestrator - Meatro，每一項都能獨立提供強大的自動化能力。這些功能共同作用於一個完整的自動化解決方案中，幫助企業實現全面的業務流程自動化。\n\n---",
+          "segments": [
+            {
+              "text": "UiPath AI Agent 提供了一系列強大的功能，其中一個重要方面就是自動化程式生成能力。",
+              "type": "content"
+            },
+            {
+              "text": "通過自然描述需求，AI Agent 可以自动生成可參考的工作流程，這大大降低了開發成本並加快了部署速度。",
+              "type": "content"
+            },
+            {
+              "text": "例如，在設計複雜的業務流程時，僅需簡單地向Agent描述期望結果，它就能自动生成相應的RPA流程。",
+              "type": "content"
+            },
+            {
+              "text": "此外，UiPath AI Agent 還具備風險空管機制，當遇到例外或不確定的情況時，會自動升級至 UiPath Action Center，暫停流程並等待人工審核再繼續執行。",
+              "type": "content"
+            },
+            {
+              "text": "這種安全機制確保了系統在處理敏感任務時的安全性和可靠性。",
+              "type": "content"
+            },
+            {
+              "text": "Agent 的知識同步能力是另一個關鍵特徵，它能夠讀取並理解如政策、標準作業程序（SOP）、內部流程文件等資料，自動進行語意分析並將這些知識應用於其決策與行動中。",
+              "type": "content"
+            },
+            {
+              "text": "這種能力讓AI Agent 能夠更好地適應多變的業務環境。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath AI Agent 具備五個主要功能：Autopilot、Context Grounding、Agent 的空管與評估、Uipath Agent Builder 和 Agentic Orchestrator - Meatro，每一項都能獨立提供強大的自動化能力。",
+              "type": "content"
+            },
+            {
+              "text": "這些功能共同作用於一個完整的自動化解決方案中，幫助企業實現全面的業務流程自動化。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "4",
+          "title": "",
+          "script": "UiPath Context Grounding 是一種關鍵機制，用來限制大型語言模型（LLM）的回應範圍，確保Agent必須根據使用者期望的、已驗證且正確的資訊進行回覆。該功能支援將文件上傳至Orchestrator 的Storage Bucket並建立索引，以供後續語義搜尋使用。\n\n通過向量資料庫儲存和轉換非結構化資料為數值化的向量表示，Autopilot 能夠進行高層次的搜尋與理解。這種方法不僅提高了回應的準確性，還能大大減少無效信息的干擾。UiPath 的Orchestrator 已經支援Context Grounding功能，使得這一過程變得更加簡單和高效。\n\n---",
+          "segments": [
+            {
+              "text": "UiPath Context Grounding 是一種關鍵機制，用來限制大型語言模型（LLM）的回應範圍，確保Agent必須根據使用者期望的、已驗證且正確的資訊進行回覆。",
+              "type": "content"
+            },
+            {
+              "text": "該功能支援將文件上傳至Orchestrator 的Storage Bucket並建立索引，以供後續語義搜尋使用。",
+              "type": "content"
+            },
+            {
+              "text": "通過向量資料庫儲存和轉換非結構化資料為數值化的向量表示，Autopilot 能夠進行高層次的搜尋與理解。",
+              "type": "content"
+            },
+            {
+              "text": "這種方法不僅提高了回應的準確性，還能大大減少無效信息的干擾。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath 的Orchestrator 已經支援Context Grounding功能，使得這一過程變得更加簡單和高效。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "5",
+          "title": "CONTEXT GROUNDING (1/4)",
+          "script": "設定 Context Grounding 的方式包括上傳包含關鍵資訊的文件至 Orchestrator 的Storage Bucket，並在 Orchestrator 資料夾中建立一個 Index。這些步驟確保了 Agent 可以根據預先驗證的資料進行推理和決策。\n\n具體操作流程如下：首先，在 Orchestrator 中選擇 Storage Buckage 並將其與包含背景資訊的文件關聯起來，然後在該資料夾的 Index 項目中創建一個新的索引，並設定相關參數以確保文件內容可以被正確地分析和應用。此操作步驟詳見 UiPath 的官方指南。\n\n---",
+          "segments": [
+            {
+              "text": "設定 Context Grounding 的方式包括上傳包含關鍵資訊的文件至 Orchestrator 的Storage Bucket，並在 Orchestrator 資料夾中建立一個 Index。",
+              "type": "content"
+            },
+            {
+              "text": "這些步驟確保了 Agent 可以根據預先驗證的資料進行推理和決策。",
+              "type": "content"
+            },
+            {
+              "text": "具體操作流程如下：首先，在 Orchestrator 中選擇 Storage Buckage 並將其與包含背景資訊的文件關聯起來，然後在該資料夾的 Index 項目中創建一個新的索引，並設定相關參數以確保文件內容可以被正確地分析和應用。",
+              "type": "content"
+            },
+            {
+              "text": "此操作步驟詳見 UiPath 的官方指南。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "6",
+          "title": "CONTEXT GROUNDING (2/4)",
+          "script": "在實際操作中，Context Grounding 能夠大大提升自動化流程的準確性和可靠性。透過將包含重要資訊的文件上傳至 Storage Bucket，並設置相應的 Index 和關聯關係，Agent 就能根據這些背景資料進行推理和決策。\n\n此方法確保了 Agent 在處理任務時能夠遵循企業規範，有效避免了誤操作或信息不完整的情況。通過使用這種機制，企業可以更好地控制其自動化流程，並確保在面對複雜或多變的業務環境時仍能保持穩定高效的運作。\n\n---",
+          "segments": [
+            {
+              "text": "在實際操作中，Context Grounding 能夠大大提升自動化流程的準確性和可靠性。",
+              "type": "content"
+            },
+            {
+              "text": "透過將包含重要資訊的文件上傳至 Storage Bucket，並設置相應的 Index 和關聯關係，Agent 就能根據這些背景資料進行推理和決策。",
+              "type": "content"
+            },
+            {
+              "text": "此方法確保了 Agent 在處理任務時能夠遵循企業規範，有效避免了誤操作或信息不完整的情況。",
+              "type": "content"
+            },
+            {
+              "text": "通過使用這種機制，企業可以更好地控制其自動化流程，並確保在面對複雜或多變的業務環境時仍能保持穩定高效的運作。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "7",
+          "title": "CONTEXT GROUNDING (3/4)",
+          "script": "建立 Index 是實現 Context Grounding 的關鍵步驟之一，它涉及將文件內容轉換為數值化的向量表示，並儲存於向量資料庫中。這些索引使得 Agent 能夠快速查找和理解相關的業務規則和政策。\n\n具體來說，在 Orchestrator 中創建一個新的 Index 項目，選擇與先前上傳的 Storage Bucket 相關聯，然後指定包含背景資訊的文件類型（如 PDF、Word 文檔等），設定好後即可保存建立完成。這個過程確保了 Agent 在處理任務時能夠有效利用已有的資料庫資源。\n\n---",
+          "segments": [
+            {
+              "text": "建立 Index 是實現 Context Grounding 的關鍵步驟之一，它涉及將文件內容轉換為數值化的向量表示，並儲存於向量資料庫中。",
+              "type": "content"
+            },
+            {
+              "text": "這些索引使得 Agent 能夠快速查找和理解相關的業務規則和政策。",
+              "type": "content"
+            },
+            {
+              "text": "具體來說，在 Orchestrator 中創建一個新的 Index 項目，選擇與先前上傳的 Storage Bucket 相關聯，然後指定包含背景資訊的文件類型（如 PDF、Word 文檔等），設定好後即可保存建立完成。",
+              "type": "content"
+            },
+            {
+              "text": "這個過程確保了 Agent 在處理任務時能夠有效利用已有的資料庫資源。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "8",
+          "title": "CONTEXT GROUNDING (4/4)",
+          "script": "通過詳細地設置和使用 Context Grounding 功能，企業可以提高其自動化流程的效率和質量。例如，在 UiPath 的官方教程中就有許多具體案例展示如何應用此功能來解決實際問題。\n\n這種方法不僅限於單一任務或項目，還可以在整個組織範圍內進行推廣，以實現更大規模的效益提升。透過參考相關指南和實踐示例，可以更好地理解和利用 Context Grounding 功能帶來的巨大潛力。\n\n---",
+          "segments": [
+            {
+              "text": "通過詳細地設置和使用 Context Grounding 功能，企業可以提高其自動化流程的效率和質量。",
+              "type": "content"
+            },
+            {
+              "text": "例如，在 UiPath 的官方教程中就有許多具體案例展示如何應用此功能來解決實際問題。",
+              "type": "content"
+            },
+            {
+              "text": "這種方法不僅限於單一任務或項目，還可以在整個組織範圍內進行推廣，以實現更大規模的效益提升。",
+              "type": "content"
+            },
+            {
+              "text": "透過參考相關指南和實踐示例，可以更好地理解和利用 Context Grounding 功能帶來的巨大潛力。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "9",
+          "title": "",
+          "script": "UiPath Agent Builder 是一個強大的工具，用於在 Automation Cloud 上建立 AI Agents。它提供了詳細的設置步驟，包括為 Agent 定義系統提示、用戶提示、上下文和工具等重要元件。\n\n通過使用大型語言模型（LLM）和具體的指令提示，Agent 可以根據預定義的角色和限制條件執行特定任務。這種靈活且強大的設置方式確保了 Agent 在自動化流程中能夠發揮最大的效能。\n\n---",
+          "segments": [
+            {
+              "text": "UiPath Agent Builder 是一個強大的工具，用於在 Automation Cloud 上建立 AI Agents。",
+              "type": "content"
+            },
+            {
+              "text": "它提供了詳細的設置步驟，包括為 Agent 定義系統提示、用戶提示、上下文和工具等重要元件。",
+              "type": "content"
+            },
+            {
+              "text": "通過使用大型語言模型（LLM）和具體的指令提示，Agent 可以根據預定義的角色和限制條件執行特定任務。",
+              "type": "content"
+            },
+            {
+              "text": "這種靈活且強大的設置方式確保了 Agent 在自動化流程中能夠發揮最大的效能。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "10",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "在 Agent Builder 中，可以通過設定系統提示（System prompt）來明確界定AI代理的目標、角色與行動範圍。同時，用戶提示（User prompt）則用於具體指導每一步操作，確保輸入參數和預期輸出符合需求。\n\n此外，Agent的品質評估機制對於提高整體系統表現至關重要。UiPath 提供了一套全面的評分標準來衡量 Agent 的效能，包括 Prompt 設計、工具選擇、輸入結構以及評估能力等多個方面。這有助於企業更好地理解和優化其自動化解決方案。\n\n---",
+          "segments": [
+            {
+              "text": "在 Agent Builder 中，可以通過設定系統提示（System prompt）來明確界定AI代理的目標、角色與行動範圍。",
+              "type": "content"
+            },
+            {
+              "text": "同時，用戶提示（User prompt）則用於具體指導每一步操作，確保輸入參數和預期輸出符合需求。",
+              "type": "content"
+            },
+            {
+              "text": "此外，Agent的品質評估機制對於提高整體系統表現至關重要。",
+              "type": "content"
+            },
+            {
+              "text": "UiPath 提供了一套全面的評分標準來衡量 Agent 的效能，包括 Prompt 設計、工具選擇、輸入結構以及評估能力等多個方面。",
+              "type": "content"
+            },
+            {
+              "text": "這有助於企業更好地理解和優化其自動化解決方案。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "11",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "當我們談到Agent的品質時，UiPath提供了一種獨特的評分方式——Agent Health Score。這種評分機制將Prompt設計、工具選擇、輸入結構和評估能力等多個方面進行權重計算，從而得到一個整體表現指數。\n\n在實際應用中，這個評分系統能幫助企業更好地理解其AI代理的效能水平，並根據具體需求調整設置參數。例如，通過優化Prompt設計，可以顯著提高Agent處理複雜任務的能力和效率。\n\n---",
+          "segments": [
+            {
+              "text": "當我們談到Agent的品質時，UiPath提供了一種獨特的評分方式——Agent Health Score。",
+              "type": "content"
+            },
+            {
+              "text": "這種評分機制將Prompt設計、工具選擇、輸入結構和評估能力等多個方面進行權重計算，從而得到一個整體表現指數。",
+              "type": "content"
+            },
+            {
+              "text": "在實際應用中，這個評分系統能幫助企業更好地理解其AI代理的效能水平，並根據具體需求調整設置參數。",
+              "type": "content"
+            },
+            {
+              "text": "例如，通過優化Prompt設計，可以顯著提高Agent處理複雜任務的能力和效率。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "12",
+          "title": "UIPATH AGENT BUILDER",
+          "script": "UiPath Agent Builder 提供了豐富的功能來支持高效且可靠的AI代理構建過程。這些功能包括靈活的提示設置、詳細的操作指導以及全面的評估工具，確保每一個新建立的Agent都能夠在最短時間內達成預期目標。\n\n---",
+          "segments": [
+            {
+              "text": "UiPath Agent Builder 提供了豐富的功能來支持高效且可靠的AI代理構建過程。",
+              "type": "content"
+            },
+            {
+              "text": "這些功能包括靈活的提示設置、詳細的操作指導以及全面的評估工具，確保每一個新建立的Agent都能夠在最短時間內達成預期目標。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "13",
+          "title": "",
+          "script": "UiPath Autopilot 和 Generative AI Activities 是兩個強大且實用的功能模塊。Autopilot 可以利用大型語言模型（LLM）快速生成自動化流程，從而大大縮短開發週期並提高工作效率。Generative AI Activities 則將生成式AI功能直接整合到自動化流程中，提供多種適用於不同業務場景的活動工具。\n\n---",
+          "segments": [
+            {
+              "text": "UiPath Autopilot 和 Generative AI Activities 是兩個強大且實用的功能模塊。",
+              "type": "content"
+            },
+            {
+              "text": "Autopilot 可以利用大型語言模型（LLM）快速生成自動化流程，從而大大縮短開發週期並提高工作效率。",
+              "type": "content"
+            },
+            {
+              "text": "Generative AI Activities 則將生成式AI功能直接整合到自動化流程中，提供多種適用於不同業務場景的活動工具。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "14",
+          "title": "AUTOPILOT",
+          "script": "UiPath Autopilot 是一種基於大型語言模型（LLM）的功能，能夠快速、精確地響應用戶需求並生成相應的自動化流程。通過Autopilot，開發者可以利用自然語言描述來撰寫代碼和建立測試案例。\n\n例如，在Uipath Studio中使用Autopilot可以自動生成參考流程，大大簡化了業務流程設計工作，同時提高了工作效率和準確度。此外，這種功能也適用於其他多種角色，如測試人員、業務分析師等，能夠全面提升企業的自動化能力。\n\n---",
+          "segments": [
+            {
+              "text": "UiPath Autopilot 是一種基於大型語言模型（LLM）的功能，能夠快速、精確地響應用戶需求並生成相應的自動化流程。",
+              "type": "content"
+            },
+            {
+              "text": "通過Autopilot，開發者可以利用自然語言描述來撰寫代碼和建立測試案例。",
+              "type": "content"
+            },
+            {
+              "text": "例如，在Uipath Studio中使用Autopilot可以自動生成參考流程，大大簡化了業務流程設計工作，同時提高了工作效率和準確度。",
+              "type": "content"
+            },
+            {
+              "text": "此外，這種功能也適用於其他多種角色，如測試人員、業務分析師等，能夠全面提升企業的自動化能力。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "15",
+          "title": "AUTOPILOT (1/2)",
+          "script": "在UiPath Studio中使用Autopilot進行自然語言自動生成流程是非常便捷且高效的。用戶只需輸入描述性的語句或問題，Autopilot 就能快速生成相應的RPA工作流，大大減少了傳統編程的工作量和時間成本。\n\n---",
+          "segments": [
+            {
+              "text": "在UiPath Studio中使用Autopilot進行自然語言自動生成流程是非常便捷且高效的。",
+              "type": "content"
+            },
+            {
+              "text": "用戶只需輸入描述性的語句或問題，Autopilot 就能快速生成相應的RPA工作流，大大減少了傳統編程的工作量和時間成本。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "16",
+          "title": "AUTOPILOT (2/2)",
+          "script": "除了在Uipath Studio中的使用，Sudio Web平臺也提供了一套完整的流程生成工具。通過訪問UiPath Cloud並使用Autopilot功能，用戶可以迅速生成新的專案流程。這不僅提高了開發效率，還使得非技術背景的人員也能輕鬆上手自動化工具。\n\n---",
+          "segments": [
+            {
+              "text": "除了在Uipath Studio中的使用，Sudio Web平臺也提供了一套完整的流程生成工具。",
+              "type": "content"
+            },
+            {
+              "text": "通過訪問UiPath Cloud並使用Autopilot功能，用戶可以迅速生成新的專案流程。",
+              "type": "content"
+            },
+            {
+              "text": "這不僅提高了開發效率，還使得非技術背景的人員也能輕鬆上手自動化工具。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "17",
+          "title": "GENERATIVE AI ACTIVITIES (1/2)",
+          "script": "Generative AI Activities 是另一個重要的自動化解決方案模塊，它將生成式AI功能直接整合至RPA工作流中，提供了一套豐富且靈活的活動工具。這些工具利用UiPath管理的大型語言模型（LLM），無需用戶進行複雜設置。\n\n---",
+          "segments": [
+            {
+              "text": "Generative AI Activities 是另一個重要的自動化解決方案模塊，它將生成式AI功能直接整合至RPA工作流中，提供了一套豐富且靈活的活動工具。",
+              "type": "content"
+            },
+            {
+              "text": "這些工具利用UiPath管理的大型語言模型（LLM），無需用戶進行複雜設置。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "18",
+          "title": "GENERATIVE AI ACTIVITIES (2/2)",
+          "script": "在使用Generative AI Activities時，用戶首先需要通過Uipath Studio安裝相關包，然後可以選擇多種活動來生成和整合自動化流程。例如，Summarize Text等活動能夠快速處理文本內容並生成摘要，大大提升了工作效率和品質。\n\n---",
+          "segments": [
+            {
+              "text": "在使用Generative AI Activities時，用戶首先需要通過Uipath Studio安裝相關包，然後可以選擇多種活動來生成和整合自動化流程。",
+              "type": "content"
+            },
+            {
+              "text": "例如，Summarize Text等活動能夠快速處理文本內容並生成摘要，大大提升了工作效率和品質。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "19",
+          "title": "",
+          "script": "Agentic Orchestration（Maestro）是UiPath Agentic Automation的核心部分之一，它是一個中央協調層，專門設計用於管理複雜且長期流程的整個生命周期。通過人員、RPA機器人、AI Agent及第三方AI Bot之間的無縫連接與協調，Agentic Orchestration實現了多樣化任務整合和監控優化的目標。\n\n---",
+          "segments": [
+            {
+              "text": "Agentic Orchestration（Maestro）是UiPath Agentic Automation的核心部分之一，它是一個中央協調層，專門設計用於管理複雜且長期流程的整個生命周期。",
+              "type": "content"
+            },
+            {
+              "text": "通過人員、RPA機器人、AI Agent及第三方AI Bot之間的無縫連接與協調，Agentic Orchestration實現了多樣化任務整合和監控優化的目標。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "20",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "Agentic Orchestration的主要功能包括流程設計、部署、監控以及運行優化。這些功能共同作用於一個完整的自動化解決方案中，幫助企業實現端到端業務流程的自動化。通過這種方式，Agentic Orchestration能夠大大提高業務效率並縮短市場反應時間。\n\n---",
+          "segments": [
+            {
+              "text": "Agentic Orchestration的主要功能包括流程設計、部署、監控以及運行優化。",
+              "type": "content"
+            },
+            {
+              "text": "這些功能共同作用於一個完整的自動化解決方案中，幫助企業實現端到端業務流程的自動化。",
+              "type": "content"
+            },
+            {
+              "text": "通過這種方式，Agentic Orchestration能夠大大提高業務效率並縮短市場反應時間。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "21",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "在Agentic Orchestration中使用BPMN（Business Process Model and Notation）進行流程建模是十分重要的一步。透過這些標準化的過程模型，企業可以更好地理解並管理其自動化流程，從而進一步提升工作效率和靈活性。\n\n---",
+          "segments": [
+            {
+              "text": "在Agentic Orchestration中使用BPMN（Business Process Model and Notation）進行流程建模是十分重要的一步。",
+              "type": "content"
+            },
+            {
+              "text": "透過這些標準化的過程模型，企業可以更好地理解並管理其自動化流程，從而進一步提升工作效率和靈活性。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "22",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "利用UiPath提供的線上繪圖畫布（canvas），用戶可以在Uipath Studio中快速建立BPMN流程模型，並將其應用於實際的業務場景中。這種方法不僅簡化了流程設計過程，還提高了自動化的效率和效果。\n\n---",
+          "segments": [
+            {
+              "text": "利用UiPath提供的線上繪圖畫布（canvas），用戶可以在Uipath Studio中快速建立BPMN流程模型，並將其應用於實際的業務場景中。",
+              "type": "content"
+            },
+            {
+              "text": "這種方法不僅簡化了流程設計過程，還提高了自動化的效率和效果。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "23",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "在使用UiPath進行BPMN流程建模時，理解各主要組成元素是非常關鍵的一步。這些元素包括事件、活動、門檻等，通過正確地定義和配置它們，用戶可以確保流程模型的準確性和完整性。\n\n---",
+          "segments": [
+            {
+              "text": "在使用UiPath進行BPMN流程建模時，理解各主要組成元素是非常關鍵的一步。",
+              "type": "content"
+            },
+            {
+              "text": "這些元素包括事件、活動、門檻等，通過正確地定義和配置它們，用戶可以確保流程模型的準確性和完整性。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "24",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "BPMN的主要組成元素如活動（Task）、事件（Event）以及門檻（Gateway）是構建業務過程模型的核心要素。透過這些工具，企業能夠更好地管理和優化其自動化流程，從而實現更高的工作效率和更佳的商業結果。\n\n---",
+          "segments": [
+            {
+              "text": "BPMN的主要組成元素如活動（Task）、事件（Event）以及門檻（Gateway）是構建業務過程模型的核心要素。",
+              "type": "content"
+            },
+            {
+              "text": "透過這些工具，企業能夠更好地管理和優化其自動化流程，從而實現更高的工作效率和更佳的商業結果。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "25",
+          "title": "AGENTIC ORCHESTRATION (MAESTRO)",
+          "script": "Agentic Orchestration通過多種方式提升業務流程管理能力。首先是提供全面的流程可視性，這使得管理者可以從整體角度觀察流程運作情況，而非僅限於單一自動化步驟。此外，交叉依賴涵蓋機器人任務的能力確保了流程中的各個環節能夠高效協同工作。\n\n---",
+          "segments": [
+            {
+              "text": "Agentic Orchestration通過多種方式提升業務流程管理能力。",
+              "type": "content"
+            },
+            {
+              "text": "首先是提供全面的流程可視性，這使得管理者可以從整體角度觀察流程運作情況，而非僅限於單一自動化步驟。",
+              "type": "content"
+            },
+            {
+              "text": "此外，交叉依賴涵蓋機器人任務的能力確保了流程中的各個環節能夠高效協同工作。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "26",
+          "title": "",
+          "script": "在Agentic Orchestration的支持下，企業可以更好地整合碎片化的自動化任務，形成完整的端到端業務流程自動化。這有助於消除多部門之間的隔閡，提高整體運作效率和靈活性。\n\n---",
+          "segments": [
+            {
+              "text": "在Agentic Orchestration的支持下，企業可以更好地整合碎片化的自動化任務，形成完整的端到端業務流程自動化。",
+              "type": "content"
+            },
+            {
+              "text": "這有助於消除多部門之間的隔閡，提高整體運作效率和靈活性。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "27",
+          "title": "AI TRUST LAYER (1/3)",
+          "script": "AI Trust Layer 是UiPath Agentic Automation中的一個關鍵組件，它負責確保所有AI Agent在與各種系統進行交互時的安全性和可控性。這個層級通過監控、審核和管理機制來保護企業內部的數據安全以及遵守各項政策。\n\n---",
+          "segments": [
+            {
+              "text": "AI Trust Layer 是UiPath Agentic Automation中的一個關鍵組件，它負責確保所有AI Agent在與各種系統進行交互時的安全性和可控性。",
+              "type": "content"
+            },
+            {
+              "text": "這個層級通過監控、審核和管理機制來保護企業內部的數據安全以及遵守各項政策。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "28",
+          "title": "AI TRUST LAYER (2/3)",
+          "script": "當使用UiPath產品或服務發送請求時，所有操作都會經過AI Trust Layer 的驗證過程，確保其符合資安標準。這些請求包括與大型語言模型（LLM）的交互，AI Trust Layer會通過安全令牌進行身份驗證，並檢查合規性。\n\n---",
+          "segments": [
+            {
+              "text": "當使用UiPath產品或服務發送請求時，所有操作都會經過AI Trust Layer 的驗證過程，確保其符合資安標準。",
+              "type": "content"
+            },
+            {
+              "text": "這些請求包括與大型語言模型（LLM）的交互，AI Trust Layer會通過安全令牌進行身份驗證，並檢查合規性。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "29",
+          "title": "AI TRUST LAYER (3/3)",
+          "script": "AI Trust Layer的核心功能之一是資料控制和遮蔽敏感信息的能力。這可以防止客戶數據被存儲在UiPath雲端範圍之外，同時還能有效保護個人識別資訊（PII）和受保護健康資訊（PHI），確保企業的數據安全性和隱私保護。\n\n---",
+          "segments": [
+            {
+              "text": "AI Trust Layer的核心功能之一是資料控制和遮蔽敏感信息的能力。",
+              "type": "content"
+            },
+            {
+              "text": "這可以防止客戶數據被存儲在UiPath雲端範圍之外，同時還能有效保護個人識別資訊（PII）和受保護健康資訊（PHI），確保企業的數據安全性和隱私保護。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "30",
+          "title": "利益與戰略影響",
+          "script": "UiPath Agentic Automation 平台通過其全面的功能集合，不僅提供了自主AI Agent，還作為一個協調層將這些Agent與現有勞動力整合。這使企業能夠從任務自動化轉向端到端流程的自動化，為效率和創新帶來全新的時代。\n\n---",
+          "segments": [
+            {
+              "text": "UiPath Agentic Automation 平台通過其全面的功能集合，不僅提供了自主AI Agent，還作為一個協調層將這些Agent與現有勞動力整合。",
+              "type": "content"
+            },
+            {
+              "text": "這使企業能夠從任務自動化轉向端到端流程的自動化，為效率和創新帶來全新的時代。",
+              "type": "content"
+            },
+            {
+              "text": "---",
+              "type": "content"
+            }
+          ]
+        },
+        {
+          "slide_no": "31",
+          "title": "",
+          "script": "感謝各位高階主管的耐心傾聽，希望今天的介紹能夠幫助您對UiPath Agentic Automation 有更多的了解。如果有任何問題或需要進一步的信息，請隨時聯繫我們的專業團隊。再次感謝大家！",
+          "segments": [
+            {
+              "text": "感謝各位高階主管的耐心傾聽，希望今天的介紹能夠幫助您對UiPath Agentic Automation 有更多的了解。",
+              "type": "content"
+            },
+            {
+              "text": "如果有任何問題或需要進一步的信息，請隨時聯繫我們的專業團隊。",
+              "type": "content"
+            },
+            {
+              "text": "再次感謝大家！",
+              "type": "content"
+            }
+          ]
+        }
+      ],
+      "full_script": "### Opening\n---\n\n各位高階主管您好，我是Ai數位人Emma，非常榮幸在此為大家介紹UiPath Agentic Automation，這是一個革命性的自動化平台，將帶領我們邁入一個全新的高效能時代。在今天的演講中，我會詳細地向您闡述Agentic Automation的獨特功能和優勢，並分享如何通過這個系統來提高業務流程的效率與靈活性。\n\n---\n\n--- Slide 1 ---\n\nUiPath Agentic Automation 是一種革命性的自動化技術，它結合了先進的人工智能代理程式、自然語言處理以及大型語言模型等多項尖端科技，旨在為企業提供一個全方位的自動化解決方案。這個平台不僅可以大幅減少人力成本，還能有效提升工作效率和準確度。\n\n---\n\n--- Slide 2 ---\n\nAgentic Automation 是一種新型自動化模型，它使Agent能夠理解並處理複雜任務，從而實現自動化的智慧決策與流程同步化。在此模型中，Agent被賦予感知環境、推理、規劃與執行一連串行動的能力，以達成由人類定義的目標，無需逐步的人工指令介入。\n\n各項基礎技術包括大型語言模型（LLMs）、生成式人工智慧（GenAI）和語意理解機制（LAMs），這些技術共同賦予了Agent處理複雜任務的能力。UiPath 自動化工具則提供了執行行動與流程自動化的強大支援，讓整個系統更加靈活且功能豐富。\n\n此外，Agentic Automation還遵循著一套明確的原則，包括自動化決策、智慧計劃以及流程同步化，這些原則確保了Agent能夠解決迷糊問題並適應不可預測的情況。透過這些技術和原則，UiPath Agentic Automation 能夠為企業帶來前所未有的業務效率提升。\n\n---\n\n--- Slide 3 ---\n\nUiPath AI Agent 提供了一系列強大的功能，其中一個重要方面就是自動化程式生成能力。通過自然描述需求，AI Agent 可以自动生成可參考的工作流程，這大大降低了開發成本並加快了部署速度。例如，在設計複雜的業務流程時，僅需簡單地向Agent描述期望結果，它就能自动生成相應的RPA流程。\n\n此外，UiPath AI Agent 還具備風險空管機制，當遇到例外或不確定的情況時，會自動升級至 UiPath Action Center，暫停流程並等待人工審核再繼續執行。這種安全機制確保了系統在處理敏感任務時的安全性和可靠性。\n\nAgent 的知識同步能力是另一個關鍵特徵，它能夠讀取並理解如政策、標準作業程序（SOP）、內部流程文件等資料，自動進行語意分析並將這些知識應用於其決策與行動中。這種能力讓AI Agent 能夠更好地適應多變的業務環境。\n\nUiPath AI Agent 具備五個主要功能：Autopilot、Context Grounding、Agent 的空管與評估、Uipath Agent Builder 和 Agentic Orchestrator - Meatro，每一項都能獨立提供強大的自動化能力。這些功能共同作用於一個完整的自動化解決方案中，幫助企業實現全面的業務流程自動化。\n\n---\n\n--- Slide 4 ---\n\nUiPath Context Grounding 是一種關鍵機制，用來限制大型語言模型（LLM）的回應範圍，確保Agent必須根據使用者期望的、已驗證且正確的資訊進行回覆。該功能支援將文件上傳至Orchestrator 的Storage Bucket並建立索引，以供後續語義搜尋使用。\n\n通過向量資料庫儲存和轉換非結構化資料為數值化的向量表示，Autopilot 能夠進行高層次的搜尋與理解。這種方法不僅提高了回應的準確性，還能大大減少無效信息的干擾。UiPath 的Orchestrator 已經支援Context Grounding功能，使得這一過程變得更加簡單和高效。\n\n---\n\n--- Slide 5 ---\n\n設定 Context Grounding 的方式包括上傳包含關鍵資訊的文件至 Orchestrator 的Storage Bucket，並在 Orchestrator 資料夾中建立一個 Index。這些步驟確保了 Agent 可以根據預先驗證的資料進行推理和決策。\n\n具體操作流程如下：首先，在 Orchestrator 中選擇 Storage Buckage 並將其與包含背景資訊的文件關聯起來，然後在該資料夾的 Index 項目中創建一個新的索引，並設定相關參數以確保文件內容可以被正確地分析和應用。此操作步驟詳見 UiPath 的官方指南。\n\n---\n\n--- Slide 6 ---\n\n在實際操作中，Context Grounding 能夠大大提升自動化流程的準確性和可靠性。透過將包含重要資訊的文件上傳至 Storage Bucket，並設置相應的 Index 和關聯關係，Agent 就能根據這些背景資料進行推理和決策。\n\n此方法確保了 Agent 在處理任務時能夠遵循企業規範，有效避免了誤操作或信息不完整的情況。通過使用這種機制，企業可以更好地控制其自動化流程，並確保在面對複雜或多變的業務環境時仍能保持穩定高效的運作。\n\n---\n\n--- Slide 7 ---\n\n建立 Index 是實現 Context Grounding 的關鍵步驟之一，它涉及將文件內容轉換為數值化的向量表示，並儲存於向量資料庫中。這些索引使得 Agent 能夠快速查找和理解相關的業務規則和政策。\n\n具體來說，在 Orchestrator 中創建一個新的 Index 項目，選擇與先前上傳的 Storage Bucket 相關聯，然後指定包含背景資訊的文件類型（如 PDF、Word 文檔等），設定好後即可保存建立完成。這個過程確保了 Agent 在處理任務時能夠有效利用已有的資料庫資源。\n\n---\n\n--- Slide 8 ---\n\n通過詳細地設置和使用 Context Grounding 功能，企業可以提高其自動化流程的效率和質量。例如，在 UiPath 的官方教程中就有許多具體案例展示如何應用此功能來解決實際問題。\n\n這種方法不僅限於單一任務或項目，還可以在整個組織範圍內進行推廣，以實現更大規模的效益提升。透過參考相關指南和實踐示例，可以更好地理解和利用 Context Grounding 功能帶來的巨大潛力。\n\n---\n\n--- Slide 9 ---\n\nUiPath Agent Builder 是一個強大的工具，用於在 Automation Cloud 上建立 AI Agents。它提供了詳細的設置步驟，包括為 Agent 定義系統提示、用戶提示、上下文和工具等重要元件。\n\n通過使用大型語言模型（LLM）和具體的指令提示，Agent 可以根據預定義的角色和限制條件執行特定任務。這種靈活且強大的設置方式確保了 Agent 在自動化流程中能夠發揮最大的效能。\n\n---\n\n--- Slide 10 ---\n\n在 Agent Builder 中，可以通過設定系統提示（System prompt）來明確界定AI代理的目標、角色與行動範圍。同時，用戶提示（User prompt）則用於具體指導每一步操作，確保輸入參數和預期輸出符合需求。\n\n此外，Agent的品質評估機制對於提高整體系統表現至關重要。UiPath 提供了一套全面的評分標準來衡量 Agent 的效能，包括 Prompt 設計、工具選擇、輸入結構以及評估能力等多個方面。這有助於企業更好地理解和優化其自動化解決方案。\n\n---\n\n--- Slide 11 ---\n\n當我們談到Agent的品質時，UiPath提供了一種獨特的評分方式——Agent Health Score。這種評分機制將Prompt設計、工具選擇、輸入結構和評估能力等多個方面進行權重計算，從而得到一個整體表現指數。\n\n在實際應用中，這個評分系統能幫助企業更好地理解其AI代理的效能水平，並根據具體需求調整設置參數。例如，通過優化Prompt設計，可以顯著提高Agent處理複雜任務的能力和效率。\n\n---\n\n--- Slide 12 ---\n\nUiPath Agent Builder 提供了豐富的功能來支持高效且可靠的AI代理構建過程。這些功能包括靈活的提示設置、詳細的操作指導以及全面的評估工具，確保每一個新建立的Agent都能夠在最短時間內達成預期目標。\n\n---\n\n--- Slide 13 ---\n\nUiPath Autopilot 和 Generative AI Activities 是兩個強大且實用的功能模塊。Autopilot 可以利用大型語言模型（LLM）快速生成自動化流程，從而大大縮短開發週期並提高工作效率。Generative AI Activities 則將生成式AI功能直接整合到自動化流程中，提供多種適用於不同業務場景的活動工具。\n\n---\n\n--- Slide 14 ---\n\nUiPath Autopilot 是一種基於大型語言模型（LLM）的功能，能夠快速、精確地響應用戶需求並生成相應的自動化流程。通過Autopilot，開發者可以利用自然語言描述來撰寫代碼和建立測試案例。\n\n例如，在Uipath Studio中使用Autopilot可以自動生成參考流程，大大簡化了業務流程設計工作，同時提高了工作效率和準確度。此外，這種功能也適用於其他多種角色，如測試人員、業務分析師等，能夠全面提升企業的自動化能力。\n\n---\n\n--- Slide 15 ---\n\n在UiPath Studio中使用Autopilot進行自然語言自動生成流程是非常便捷且高效的。用戶只需輸入描述性的語句或問題，Autopilot 就能快速生成相應的RPA工作流，大大減少了傳統編程的工作量和時間成本。\n\n---\n\n--- Slide 16 ---\n\n除了在Uipath Studio中的使用，Sudio Web平臺也提供了一套完整的流程生成工具。通過訪問UiPath Cloud並使用Autopilot功能，用戶可以迅速生成新的專案流程。這不僅提高了開發效率，還使得非技術背景的人員也能輕鬆上手自動化工具。\n\n---\n\n--- Slide 17 ---\n\nGenerative AI Activities 是另一個重要的自動化解決方案模塊，它將生成式AI功能直接整合至RPA工作流中，提供了一套豐富且靈活的活動工具。這些工具利用UiPath管理的大型語言模型（LLM），無需用戶進行複雜設置。\n\n---\n\n--- Slide 18 ---\n\n在使用Generative AI Activities時，用戶首先需要通過Uipath Studio安裝相關包，然後可以選擇多種活動來生成和整合自動化流程。例如，Summarize Text等活動能夠快速處理文本內容並生成摘要，大大提升了工作效率和品質。\n\n---\n\n--- Slide 19 ---\n\nAgentic Orchestration（Maestro）是UiPath Agentic Automation的核心部分之一，它是一個中央協調層，專門設計用於管理複雜且長期流程的整個生命周期。通過人員、RPA機器人、AI Agent及第三方AI Bot之間的無縫連接與協調，Agentic Orchestration實現了多樣化任務整合和監控優化的目標。\n\n---\n\n--- Slide 20 ---\n\nAgentic Orchestration的主要功能包括流程設計、部署、監控以及運行優化。這些功能共同作用於一個完整的自動化解決方案中，幫助企業實現端到端業務流程的自動化。通過這種方式，Agentic Orchestration能夠大大提高業務效率並縮短市場反應時間。\n\n---\n\n--- Slide 21 ---\n\n在Agentic Orchestration中使用BPMN（Business Process Model and Notation）進行流程建模是十分重要的一步。透過這些標準化的過程模型，企業可以更好地理解並管理其自動化流程，從而進一步提升工作效率和靈活性。\n\n---\n\n--- Slide 22 ---\n\n利用UiPath提供的線上繪圖畫布（canvas），用戶可以在Uipath Studio中快速建立BPMN流程模型，並將其應用於實際的業務場景中。這種方法不僅簡化了流程設計過程，還提高了自動化的效率和效果。\n\n---\n\n--- Slide 23 ---\n\n在使用UiPath進行BPMN流程建模時，理解各主要組成元素是非常關鍵的一步。這些元素包括事件、活動、門檻等，通過正確地定義和配置它們，用戶可以確保流程模型的準確性和完整性。\n\n---\n\n--- Slide 24 ---\n\nBPMN的主要組成元素如活動（Task）、事件（Event）以及門檻（Gateway）是構建業務過程模型的核心要素。透過這些工具，企業能夠更好地管理和優化其自動化流程，從而實現更高的工作效率和更佳的商業結果。\n\n---\n\n--- Slide 25 ---\n\nAgentic Orchestration通過多種方式提升業務流程管理能力。首先是提供全面的流程可視性，這使得管理者可以從整體角度觀察流程運作情況，而非僅限於單一自動化步驟。此外，交叉依賴涵蓋機器人任務的能力確保了流程中的各個環節能夠高效協同工作。\n\n---\n\n--- Slide 26 ---\n\n在Agentic Orchestration的支持下，企業可以更好地整合碎片化的自動化任務，形成完整的端到端業務流程自動化。這有助於消除多部門之間的隔閡，提高整體運作效率和靈活性。\n\n---\n\n--- Slide 27 ---\n\nAI Trust Layer 是UiPath Agentic Automation中的一個關鍵組件，它負責確保所有AI Agent在與各種系統進行交互時的安全性和可控性。這個層級通過監控、審核和管理機制來保護企業內部的數據安全以及遵守各項政策。\n\n---\n\n--- Slide 28 ---\n\n當使用UiPath產品或服務發送請求時，所有操作都會經過AI Trust Layer 的驗證過程，確保其符合資安標準。這些請求包括與大型語言模型（LLM）的交互，AI Trust Layer會通過安全令牌進行身份驗證，並檢查合規性。\n\n---\n\n--- Slide 29 ---\n\nAI Trust Layer的核心功能之一是資料控制和遮蔽敏感信息的能力。這可以防止客戶數據被存儲在UiPath雲端範圍之外，同時還能有效保護個人識別資訊（PII）和受保護健康資訊（PHI），確保企業的數據安全性和隱私保護。\n\n---\n\n--- Slide 30 ---\n\nUiPath Agentic Automation 平台通過其全面的功能集合，不僅提供了自主AI Agent，還作為一個協調層將這些Agent與現有勞動力整合。這使企業能夠從任務自動化轉向端到端流程的自動化，為效率和創新帶來全新的時代。\n\n---\n\n--- Slide 31 ---\n\n感謝各位高階主管的耐心傾聽，希望今天的介紹能夠幫助您對UiPath Agentic Automation 有更多的了解。如果有任何問題或需要進一步的信息，請隨時聯繫我們的專業團隊。再次感謝大家！",
+      "metadata": {
+        "total_slides": 31,
+        "has_opening": true,
+        "parser_version": "2.0"
+      }
+    }
+  },
+  "ppt_jobs": {
+    "tts_batch_a4330d41-1654-4c46-b041-ef06fb13676a": {
+      "job_id": "a4330d41-1654-4c46-b041-ef06fb13676a",
+      "type": "tts_batch",
+      "status": "completed",
+      "progress": 100,
+      "message": "Batch audio generated.",
+      "result": {
+        "audio_files": [
+          "/outputs/slide_1.mp3",
+          "/outputs/slide_2.mp3",
+          "/outputs/slide_3.mp3",
+          "/outputs/slide_4.mp3",
+          "/outputs/slide_5.mp3",
+          "/outputs/slide_6.mp3",
+          "/outputs/slide_7.mp3",
+          "/outputs/slide_8.mp3",
+          "/outputs/slide_9.mp3",
+          "/outputs/slide_10.mp3",
+          "/outputs/slide_11.mp3",
+          "/outputs/slide_12.mp3",
+          "/outputs/slide_13.mp3",
+          "/outputs/slide_14.mp3",
+          "/outputs/slide_15.mp3",
+          "/outputs/slide_16.mp3",
+          "/outputs/slide_17.mp3",
+          "/outputs/slide_18.mp3",
+          "/outputs/slide_19.mp3",
+          "/outputs/slide_20.mp3",
+          "/outputs/slide_21.mp3",
+          "/outputs/slide_22.mp3",
+          "/outputs/slide_23.mp3",
+          "/outputs/slide_24.mp3",
+          "/outputs/slide_25.mp3",
+          "/outputs/slide_26.mp3",
+          "/outputs/slide_27.mp3",
+          "/outputs/slide_28.mp3",
+          "/outputs/slide_29.mp3",
+          "/outputs/slide_30.mp3",
+          "/outputs/slide_31.mp3",
+          "/outputs/slide_32.mp3",
+          "/outputs/slide_33.mp3",
+          "/outputs/slide_34.mp3",
+          "/outputs/slide_35.mp3",
+          "/outputs/slide_36.mp3",
+          "/outputs/slide_37.mp3",
+          "/outputs/slide_38.mp3",
+          "/outputs/slide_39.mp3",
+          "/outputs/slide_40.mp3",
+          "/outputs/slide_41.mp3",
+          "/outputs/slide_42.mp3",
+          "/outputs/slide_43.mp3",
+          "/outputs/slide_44.mp3",
+          "/outputs/slide_45.mp3",
+          "/outputs/slide_46.mp3",
+          "/outputs/slide_47.mp3",
+          "/outputs/slide_48.mp3"
+        ]
+      }
+    },
+    "assemble_db589b39-485a-4d9e-b167-5b845e59735b": {
+      "job_id": "assemble_db589b39-485a-4d9e-b167-5b845e59735b",
+      "type": "assemble",
+      "status": "completed",
+      "progress": 100,
+      "message": "Final PPT assembled.",
+      "result": {
+        "filename": "VPIC1Profile_20220616_EN_20251230_001.pptx",
+        "path": "D:\\Works\\PPT_Dev\\backend\\outputs\\VPIC1Profile_20220616_EN_20251230_001.pptx",
+        "url_path": "/outputs/VPIC1Profile_20220616_EN_20251230_001.pptx"
+      }
+    },
+    "avatar_batch_fbe77f70-3018-48ff-bd02-6d6091bf4e0c": {
+      "job_id": "fbe77f70-3018-48ff-bd02-6d6091bf4e0c",
+      "type": "avatar_batch",
+      "status": "completed",
+      "progress": 100,
+      "message": "All avatar videos generated successfully",
+      "results": [
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_1.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_2.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_3.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_4.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_5.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_6.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_7.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_8.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_9.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_10.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_11.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_12.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_13.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_14.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_15.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_16.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_17.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_18.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_19.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_20.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_21.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_22.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_23.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_24.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_25.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_26.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_27.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_28.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_29.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_30.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_31.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_32.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_33.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_34.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_35.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_36.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_37.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_38.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_39.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_40.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_41.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_42.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_43.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_44.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_45.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_46.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_47.mp4",
+        "/outputs/avatar_batch_slide_1_20251230_133532/slide_48.mp4"
+      ],
+      "current_frame": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAGmAeADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD16iiimIKKKKACiiigApKWigAopKWgAoopKAFooooAKKKKBhRRRQAUUUUCCiiigApKWigAooooAKKSigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKSgBaQ0tJQMKKKKACiiigAooooAKSlooEJRRRQAUUUUAFFFFAx1LRRQIKKKKACiiigAooooGJS0UUCCiiigAopKWgYUUUUAFFJmjNAC0UmaM0ALRSUUALRSUUALRSUZoELSUZooAKKSloAKKKKACikooAWikzRmgYtFJRQIKKM0UALSUZpM0ALRmkzRQMWikooAXNJRRQAUtJRQAtFFFABRRRQAlFLSUCCiiigAooooAfRRRQAUlLRQAUUUUDCiiigAooooAKKKKACiiigBKKKKACikopAFGaKKADNFFFABRmiigAzRSUUwFopKKAFzSZoooELRTSyjqQKikuoYsb5FGfU0AT0VSOrWPe5jB/3qniuYphlJVYexoAlooyDRSAKKKKYwooooAKKKSkAUtFFMAooooASilpKQBS0lLTAWiiigQUUUUDEopaKAEooooEFFFFAx9FFFAgooooAKKKKACiiigYUUUUAFFFFABRRRQAlIaU0UAJRRRSAKKKKACiiigAooooADSUtJTAKKCcc9qztR17TtLXN1cKpxwO5pCNGo5X2LnOK4jUPibaREra27MfVuBXNal8QtRvoHiQpErHgqOcUhnS+JvG0Ont5Fsdzg/MRyfwrgtS8ValqU5ZXMceOgPP51ivOC5Z2Lc9SetIJd2OgFIdh0s8zAlndj9TzSQanfWzboZ7iP6MRR9oiThnyfakZ0c/LuoGbVh8QtessBbzzlB5WTmu40P4p2V1sj1GMwSHgsOVryeS23A927Gq/75G65xQFj6ct7u3u4hLBKsit0KnNS188aD4t1PQp91tMdhPzRN91q9h8L+NdP8QQrGXEN13iY9fp61SZLR01FFFABSUtJQAUtJS0AFFFFABRRRQAUCiigBaKKKYBRRRQIKKKKBiUUUUCCiiigB9FFFABRRRQAUUUUAFFFFAwooooAKKKKACiiigBDSUppKACiiikAtJRRQAUUUUAFFFFABTJJFjQs5AA5JNK7qilmIAUZJPavLfGXjOW/kksdPcpbqdrSD+P6e1AGj4p+IEULta6YweQZBk7D6etec3mp3V3KZJ5nZj6nNRvnHyjLetUZnIJAPTvSGOmeQnJP61WM7j5RmjcT3NMyQ27PSgBSz8ZpWlK8DqavWoivZVVsIcdfWkutNkilZMA8cEcg1NxmV5hBz2FOF2yng06W2ctgCofL8s4xz60wL0FwzgfPz6EVYYo3BA57is6OZUPOTir0Tw3CYDEN2oAbNEcA4BHrSW1zNaSrNC7IyHIIPINPEhhYxy/dPQ1HKhTOzp6UAeu+CPiEmpqljqkircdEk6B/r716ADkZHNfLqSPBIJUJBBzxXsXw98arqcK6ZeyZuFGI3J/1g/xppiaPQKSl4pKYgoopaACiiigAoopKYC0UlLSAWigUUwCiiigQUUUUDEooooEFFFFAD6KKKAC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"
+    },
+    "assemble_a1cb8719-ca66-4850-93c9-8239533c252f": {
+      "job_id": "assemble_a1cb8719-ca66-4850-93c9-8239533c252f",
+      "type": "assemble",
+      "status": "completed",
+      "progress": 100,
+      "message": "Final PPT assembled.",
+      "result": {
+        "filename": "VPIC1Profile_20220616_EN_20251230_002.pptx",
+        "path": "D:\\Works\\PPT_Dev\\backend\\outputs\\VPIC1Profile_20220616_EN_20251230_002.pptx",
+        "url_path": "/outputs/VPIC1Profile_20220616_EN_20251230_002.pptx"
+      }
+    },
+    "assemble_01c0e355-5551-4646-afa7-53a219c4d179": {
+      "job_id": "assemble_01c0e355-5551-4646-afa7-53a219c4d179",
+      "type": "assemble",
+      "status": "completed",
+      "progress": 100,
+      "message": "Final PPT assembled.",
+      "result": {
+        "filename": "VPIC1Profile_20220616_EN_20251230_003.pptx",
+        "path": "D:\\Works\\PPT_Dev\\backend\\outputs\\VPIC1Profile_20220616_EN_20251230_003.pptx",
+        "url_path": "/outputs/VPIC1Profile_20220616_EN_20251230_003.pptx"
+      }
+    },
+    "assemble_883fc5c4-70fa-4467-9029-84d113c18d6a": {
+      "job_id": "assemble_883fc5c4-70fa-4467-9029-84d113c18d6a",
+      "type": "assemble",
+      "status": "completed",
+      "progress": 100,
+      "message": "Final PPT assembled.",
+      "result": {
+        "filename": "VPIC1Profile_20220616_EN_20251230_004.pptx",
+        "path": "D:\\Works\\PPT_Dev\\backend\\outputs\\VPIC1Profile_20220616_EN_20251230_004.pptx",
+        "url_path": "/outputs/VPIC1Profile_20220616_EN_20251230_004.pptx"
+      }
+    },
+    "assemble_4961eaff-ae7b-4344-9bf4-41bbc0bad5d6": {
+      "job_id": "assemble_4961eaff-ae7b-4344-9bf4-41bbc0bad5d6",
+      "type": "assemble",
+      "status": "completed",
+      "progress": 100,
+      "message": "Final PPT assembled.",
+      "result": {
+        "filename": "VPIC1Profile_20220616_EN_20251230_005.pptx",
+        "path": "D:\\Works\\PPT_Dev\\backend\\outputs\\VPIC1Profile_20220616_EN_20251230_005.pptx",
+        "url_path": "/outputs/VPIC1Profile_20220616_EN_20251230_005.pptx"
+      }
+    }
+  }
+}

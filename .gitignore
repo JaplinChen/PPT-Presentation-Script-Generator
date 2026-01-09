@@ -1,0 +1,60 @@
+# 環境變數
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+
+# Node
+node_modules/
+dist/
+.vite/
+
+# 上傳與輸出
+uploads/*.pptx
+uploads/*.ppt
+outputs/*.txt
+backend/outputs/
+backend/uploads/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# 測試和驗證檔案
+test_*.py
+verify_*.py
+
+# 備份檔案
+*.old
+*.bak
+
+# 開發文件
+.gemini/
+
+# 大型模型檔案和 checkpoints (超過 GitHub 限制)
+backend/checkpoints/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.pkl
+*.bin
+gfpgan/

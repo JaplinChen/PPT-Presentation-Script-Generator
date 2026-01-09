@@ -1,0 +1,133 @@
+{
+    "app": {
+        "title": "PPT Presentation Script Generator",
+        "subtitle": "AI-powered scripts to make your presentations more persuasive",
+        "footer": "© 2024 PPT Script Generator. All rights reserved."
+    },
+    "action": {
+        "edit": "Edit",
+        "save": "Save",
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "back": "Back",
+        "prevSettings": "← Back: Settings",
+        "regenerateScript": "↺ Regenerate Script",
+        "nextStepAudio": "Next: Audio Generation →"
+    },
+    "resume": {
+        "title": "Unfinished Project Found",
+        "interrupted": "Generation Interrupted",
+        "discard": "Discard",
+        "restore": "Resume"
+    },
+    "steps": {
+        "upload": "Upload PPT",
+        "config": "Settings",
+        "generateScript": "Generate Script",
+        "audioGenerate": "Audio Generation",
+        "pptAssemble": "PPT Assembly",
+        "videoEnhance": "Video Enhancement",
+        "generateNarrated": "Generate Narrated PPT",
+        "audioGenTitle": "Step 1: AI Audio Synthesis",
+        "audioGenDescription": "Generating natural voice tracks for each slide based on the script...",
+        "audioGenReady": "Ready to generate voiceovers for {{count}} slides.",
+        "startAudioGen": "🚀 Start Audio Generation",
+        "audioGenComplete": "Audio Generation Complete",
+        "converting": "Converting...",
+        "forceRetry": "(Stuck? Click to force retry)",
+        "regenerateAudio": "↺ Regenerate Audio",
+        "retryAudio": "Retry Audio Generation",
+        "continuePPT": "Continue to PPT Assembly →"
+    },
+    "upload": {
+        "dragDrop": "Click or drag PPT file here",
+        "selectFile": "Select File",
+        "supportFormat": "Supports .pptx format",
+        "analyzing": "Analyzing PPT...",
+        "reupload": "Change File",
+        "success": "PPT Uploaded Successfully",
+        "slideCount": "{{count}} slides total",
+        "titleCount": "• {{count}} titled",
+        "startAnalyze": "Start Analysis"
+    },
+    "preview": {
+        "title": "PPT Content Preview",
+        "slidesNav": "Slide Navigation",
+        "noTitle": "(No Title)",
+        "page": "Page {{page}}"
+    },
+    "config": {
+        "title": "Script Settings",
+        "audience": "Target Audience",
+        "audiencePlaceholder": "Select or type audience",
+        "purpose": "Presentation Purpose",
+        "purposePlaceholder": "e.g., Product Intro, Progress Report",
+        "context": "Context",
+        "tone": "Tone",
+        "duration": "Duration (min)",
+        "transitions": "Include Transitions",
+        "outputLanguage": "Output Language",
+        "generateBtn": "Generate Script",
+        "generating": "Generating..."
+    },
+    "options": {
+        "audience": {
+            "general": "General",
+            "executives": "Executives",
+            "clients": "Clients",
+            "techTeam": "Tech Team",
+            "investors": "Investors",
+            "partners": "Partners",
+            "newEmployees": "New Hires",
+            "boardMembers": "Board Members",
+            "salesTeam": "Sales/Marketing",
+            "crossDept": "Cross-functional"
+        },
+        "context": {
+            "formalMeeting": "Formal Meeting",
+            "internalSharing": "Internal Sharing",
+            "clientProposal": "Client Proposal",
+            "training": "Training",
+            "seminar": "Seminar"
+        },
+        "tone": {
+            "professional": "Professional",
+            "friendly": "Friendly",
+            "serious": "Formal",
+            "enthusiastic": "Enthusiastic"
+        }
+    },
+    "result": {
+        "title": "Generated Presentation Script",
+        "opening": "Opening",
+        "slides": "Slide Scripts",
+        "full": "Full Script",
+        "copy": "Copy",
+        "copied": "Copied",
+        "copyFull": "Copy All",
+        "download": "Download",
+        "downloadNarrated": "Download Narrated PPT (Auto-Play)",
+        "generatingNarrated": "Creating Narrated PPT...",
+        "generatingWait": "Generating audio for each slide. This will take 1-2 minutes.",
+        "generatingDoNotClose": "Please do not close this window.",
+        "regenerate": "Regenerate",
+        "reset": "Start Over"
+    },
+    "tts": {
+        "title": "Voice Settings",
+        "voice": "Voice Model",
+        "rate": "Rate",
+        "pitch": "Pitch",
+        "play": "Play Audio",
+        "download": "Download MP3",
+        "generating": "Generating audio...",
+        "noVoice": "No voices available",
+        "preview": "Preview",
+        "language": "Voice Language"
+    },
+    "settings": {
+        "title": "LLM Settings",
+        "avatarTitle": "Avatar Settings",
+        "ttsTitle": "TTS Settings"
+    }
+}

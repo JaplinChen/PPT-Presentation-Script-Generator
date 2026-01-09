@@ -1,0 +1,261 @@
+/* ScriptConfig Corporate Clean S79 */
+.script-config {
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: var(--spacing-xl);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    /* 輕微陰影 */
+    border: 1px solid #E0E0E0;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.script-config h2 {
+    color: #161616;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.config-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.config-row-group {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.config-row-group .config-field {
+    flex: 1;
+    min-width: 0;
+    /* Prevents overflow */
+}
+
+.config-field label {
+    display: block;
+    color: #525252;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    font-size: 0.875rem;
+}
+
+.config-field input[type="text"],
+.config-field input[type="number"],
+.config-field select {
+    width: 100%;
+    padding: 10px 16px;
+    background: #FFFFFF;
+    border: 1px solid #8D8D8D;
+    /* IBM Input border */
+    border-radius: 4px;
+    /* Slight radius */
+    color: #161616;
+    font-size: 0.95rem;
+    transition: all 0.15s ease;
+}
+
+.config-field input:focus,
+.config-field select:focus {
+    outline: none;
+    border-color: #0F62FE;
+    /* Focus Blue */
+    box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.2);
+}
+
+.config-field input::placeholder {
+    color: #A8A8A8;
+}
+
+.config-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.config-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    cursor: pointer;
+    margin: 0;
+}
+
+.config-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #0F62FE;
+}
+
+.config-checkbox span {
+    color: #161616;
+    font-weight: 500;
+}
+
+.generate-btn {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    background: #0F62FE;
+    color: white;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    box-shadow: none;
+}
+
+.generate-btn:hover {
+    background: #0043CE;
+    box-shadow: 0 4px 12px rgba(15, 98, 254, 0.2);
+    transform: translateY(-1px);
+}
+
+.generate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@media (max-width: 768px) {
+    .config-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .config-row-group {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .script-config {
+        padding: var(--spacing-lg);
+    }
+}
+
+.audience-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+    /* 增加下方間距，與 Input 分開 */
+}
+
+.chip {
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    font-weight: 500;
+}
+
+/* 懸停效果統一 */
+.chip:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 各種顏色的 Chip 樣式 */
+/* 各種顏色的 Chip 樣式 (S79 Unified) */
+.chip {
+    padding: 6px 14px;
+    border-radius: 16px;
+    /* Pill shape */
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #E0E0E0;
+    background: #F4F4F4;
+    color: #525252;
+    font-weight: 500;
+}
+
+.chip:hover {
+    background: #E0E0E0;
+    color: #161616;
+}
+
+.chip.active {
+    background: #0F62FE;
+    color: white;
+    border-color: #0F62FE;
+}
+
+/* Remove specificity of specific colors to unify theme, unless semantically needed. 
+   For S79, we prefer one primary color for selection. 
+   Overriding legacy classes to map to the single active state. */
+
+.chip-default.active,
+.chip-purple.active,
+.chip-blue.active,
+.chip-green.active,
+.chip-orange.active {
+    background: #0F62FE;
+    color: white;
+    border-color: #0F62FE;
+}
+
+.chip-purple {
+    color: #525252;
+}
+
+.chip-blue {
+    color: #525252;
+}
+
+.chip-green {
+    color: #525252;
+}
+
+.chip-orange {
+    color: #525252;
+}
+
+/* Advanced Settings */
+.advanced-settings-toggle {
+    margin-bottom: var(--spacing-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-md);
+}
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toggle-btn:hover {
+    color: var(--color-primary);
+}
+
+.advanced-section {
+    background: rgba(0, 0, 0, 0.2);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.advanced-section.hidden {
+    display: none;
+}

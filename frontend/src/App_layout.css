@@ -1,0 +1,58 @@
+/* App.css 補充樣式 */
+
+/* 步驟 2 的雙欄佈局 */
+.config-step-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.config-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    height: 100%;
+}
+
+/* 讓 SlidePreview 在大螢幕上有固定高度並可滾動，配合設定表單的高度 */
+.config-column .slide-preview-container {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    /* Space for scrollbar */
+}
+
+/* 響應式：小螢幕變回單欄 */
+@media (max-width: 900px) {
+    .config-step-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .config-column .slide-preview-container {
+        max-height: 400px;
+    }
+}
+
+/* 步驟 1 的雙欄佈局 */
+.upload-step-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: center;
+    /* 垂直置中 */
+}
+
+/* 確保 info-card 佔滿高度與寬度 */
+.upload-column .info-card {
+    height: 100%;
+    margin-top: 0;
+    /* 移除原本的 margin */
+}
+
+/* 響應式：小螢幕變回單欄 */
+@media (max-width: 900px) {
+    .upload-step-layout {
+        grid-template-columns: 1fr;
+    }
+}

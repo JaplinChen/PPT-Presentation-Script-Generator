@@ -1,0 +1,1009 @@
+.script-display {
+    background: var(--gradient-surface);
+    /* Clean white background */
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    /* Remove outer shadow for cleaner look on page */
+    margin-top: var(--spacing-lg);
+    /* reduced from xl */
+    animation: fadeIn 0.5s ease-out;
+}
+
+.display-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.display-header h2 {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.header-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.script-tabs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-surface);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.script-tabs {
+    display: flex;
+    gap: var(--spacing-xs);
+    /* border-bottom moved to container */
+}
+
+.tab-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    margin-bottom: -2px;
+    /* Pull down to overlap container border */
+    position: relative;
+    top: 2px;
+}
+
+.tab-btn:hover {
+    color: var(--color-text);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.tab-btn.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+    /* Primary color low opacity */
+}
+
+.script-actions-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-btn-text {
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.action-btn-text:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-text);
+}
+
+.action-btn-text .icon {
+    font-size: 1.1em;
+}
+
+.divider-vertical {
+    width: 1px;
+    height: 16px;
+    background-color: var(--color-surface);
+}
+
+.script-content {
+    min-height: 300px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+}
+
+.script-section {
+    position: relative;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-surface);
+}
+
+.section-header h3 {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.script-text {
+    color: var(--color-text);
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.slides-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    /* reduced from lg */
+}
+
+.slide-item {
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    /* reduced from lg */
+    border-left: 4px solid var(--color-primary);
+    transition: all var(--transition-base);
+}
+
+.slide-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.slide-info {
+    flex: 1;
+}
+
+.slide-number {
+    display: inline-block;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 2px var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.slide-header h4 {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: var(--spacing-xs);
+}
+
+.copy-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-size: 1rem;
+}
+
+.copy-btn:hover {
+    background: var(--color-surface-hover);
+    transform: scale(1.1);
+}
+
+.metadata {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-surface);
+}
+
+.metadata-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.metadata-item .label {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.metadata-item .value {
+    color: var(--color-text);
+    font-weight: 500;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-out;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: var(--color-surface);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    /* Consistent md radius */
+    box-shadow: var(--shadow-xl);
+    /* High elevation for modal */
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid #E0E0E0;
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-content.modal-wide {
+    max-width: 960px;
+    padding: 0;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    /* 標準邊框 */
+    color: var(--color-text-secondary);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 6px;
+    /* 標準圓角 */
+    transition: all 0.2s;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-close-btn:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-text);
+    border-color: var(--color-primary);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .display-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .header-actions button {
+        flex: 1;
+    }
+
+    .tabs {
+        overflow-x: auto;
+    }
+
+    .script-display {
+        padding: var(--spacing-lg);
+    }
+
+    .metadata {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: var(--spacing-lg);
+    }
+}
+
+/* Progress Bar Styles */
+.loading-modal-content {
+    text-align: center;
+    max-width: 400px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 4px;
+    width: 30%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: progress-indeterminate 2s infinite ease-in-out;
+}
+
+@keyframes progress-indeterminate {
+    0% {
+        left: -35%;
+        width: 30%;
+    }
+
+    50% {
+        left: 35%;
+        width: 60%;
+    }
+
+    100% {
+        left: 100%;
+        width: 30%;
+    }
+}
+
+.loading-text.status-message {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+}
+
+.loading-subtext {
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Settings modal helpers */
+.settings-shell {
+    display: flex;
+    min-height: 520px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #E0E0E0;
+}
+
+.settings-sidebar {
+    width: 240px;
+    background: #F4F4F4;
+    /* Grey sidebar */
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-title {
+    padding: 16px;
+    color: #525252;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sidebar-tabs {
+    padding: 0 12px 12px 12px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #E0E0E0;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.sidebar-tab {
+    flex: 1;
+    padding: 8px;
+    border-radius: 4px;
+    background: transparent;
+    border: none;
+    color: #525252;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.sidebar-tab:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #161616;
+}
+
+.sidebar-tab.active {
+    background: #0F62FE;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.sidebar-item {
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    color: #525252;
+    display: flex;
+    gap: 12px;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    align-items: center;
+    position: relative;
+}
+
+.sidebar-item.active {
+    background: rgba(15, 98, 254, 0.1);
+    /* S13 Primary tint */
+    border-left: 3px solid #0F62FE;
+    color: #161616;
+    /* Active text color */
+}
+
+.sidebar-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-icon {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.sidebar-name {
+    font-weight: 600;
+    color: #161616;
+}
+
+.sidebar-sub {
+    font-size: 12px;
+    color: #8D8D8D;
+}
+
+.default-badge {
+    margin-left: auto;
+    background: #0F62FE;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sidebar-footer {
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #8D8D8D;
+    border-top: 1px solid #E0E0E0;
+}
+
+.settings-main {
+    flex: 1;
+    padding: 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.tab-row {
+    display: flex;
+    gap: 8px;
+    margin: 8px 0 16px;
+    flex-wrap: wrap;
+}
+
+.tab-chip {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--color-surface);
+    background: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tab-chip.active {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(99, 102, 241, 0.12);
+}
+
+.hint {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+}
+
+/* Fancy modal header */
+.modal-header.fancy {
+    border-bottom: 1px solid #E0E0E0;
+    padding: 8px 12px;
+    /* 大幅減少 padding */
+    margin-bottom: 8px;
+    /* 減少下邊距 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    /* 減少間距 */
+}
+
+.config-field.compact select,
+.config-field.compact input {
+    background: #FFFFFF;
+    border: 1px solid #C6C6C6;
+    color: #161616;
+    min-height: 44px;
+    border-radius: 4px;
+    padding: 10px 12px;
+    transition: all 0.15s ease;
+}
+
+.config-field.compact select:focus,
+.config-field.compact input:focus {
+    outline: none;
+    border-color: #0F62FE;
+    box-shadow: 0 0 0 2px rgba(15, 98, 254, 0.2);
+}
+
+/* Ensure native dropdown options可讀 */
+.config-field.compact select option {
+    background: #ffffff;
+    color: #161616;
+}
+
+.config-field.compact label {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #525252;
+    text-transform: uppercase;
+    font-size: clamp(10px, 1.8vw, 12px);
+    /* 流體字體 */
+    margin-bottom: clamp(4px, 1vw, 8px);
+    /* 流體邊距 */
+}
+
+/* 手機版樣式 */
+@media (max-width: 900px) {
+    .sidebar-footer {
+        display: none !important;
+        /* 手機版隱藏版本號，節省空間 */
+    }
+
+    .modal-content.modal-wide {
+        max-width: 100%;
+        width: 95%;
+        /* 留一點邊距 */
+    }
+
+    .settings-shell {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .settings-sidebar {
+        width: 100%;
+        flex-direction: column;
+        border-right: none;
+        border-bottom: 1px solid #E0E0E0;
+        border-bottom: 1px solid #E0E0E0;
+        height: auto;
+        /* 自動高度 */
+        max-height: none;
+        /* 解除高度限制，避免內容被截斷 */
+    }
+
+    .sidebar-list {
+        max-height: none;
+        display: flex;
+        /* 改為 Flex Row */
+        flex-direction: row;
+        overflow-x: auto;
+        /* 水平捲動 */
+        overflow-y: hidden;
+        padding: 8px 2px !important;
+        /* 強制應用 */
+        gap: 4px !important;
+        /* 最小間距 */
+
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        min-height: 90px;
+        /* 確保有足夠高度顯示卡片 */
+    }
+
+    .sidebar-item {
+        width: auto !important;
+        /* 取消全寬，改為自適應 */
+        flex: 0 0 auto;
+        /* 防止縮小 */
+        min-width: 72px !important;
+        /* 再縮小一點，確保 4 個完全顯示 */
+        max-width: 90px !important;
+        border: 1px solid #E0E0E0;
+        border-radius: 6px;
+        flex-direction: column;
+        /* 圖標和文字垂直排列 */
+        align-items: center;
+        text-align: center;
+        padding: 8px;
+        gap: 4px;
+        height: auto;
+    }
+
+    .sidebar-item.active {
+        background: rgba(15, 98, 254, 0.08);
+        border: 1px solid #0F62FE;
+        /* 改為全邊框高亮，而非左邊框 */
+        border-left: 1px solid #0F62FE;
+    }
+
+    .sidebar-sub {
+        display: none;
+        /* 手機版隱藏副標題，節省空間 */
+    }
+
+    .default-badge {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+
+    /* Modal Header 手機版 - 重構 */
+    .modal-header.fancy {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 12px;
+        position: relative;
+    }
+
+    /* 頂部行：標題區域 */
+    .modal-header.fancy>div:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+        /* 還原：移除強制 padding */
+    }
+
+    .modal-header.fancy h3 {
+        font-size: 1.1rem;
+        margin: 0;
+        display: flex;
+        /* 還原為 flex */
+        align-items: center;
+        flex-wrap: wrap;
+        /* 保持原本的換行邏輯 */
+        gap: 8px;
+    }
+
+    .modal-header.fancy .text-sm {
+        font-size: 0.75rem;
+        margin: 0;
+        color: #666;
+    }
+
+    /* 確保 badge 不會重疊 */
+    .default-pill {
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+    }
+
+    /* Header Actions: 將星星/重置按鈕放在右上角或標題旁 */
+    .header-actions {
+        width: auto;
+        position: absolute;
+        top: 12px !important;
+        /* 與 X (top: 12px) 保持一致 */
+        right: 56px !important;
+        /* 12px(X右距) + 32px(X寬度) + 12px(間距) = 56px */
+        display: flex;
+        align-items: center;
+        height: 32px;
+        /* 確保容器高度一致 */
+        margin: 0;
+        z-index: 10;
+        /* 確保浮在內容上方 */
+    }
+
+    /* .ghost-btn removed to use global fixed size style */
+
+    /* 設定主區 */
+    .settings-main {
+        padding: clamp(12px, 3vw, 20px);
+    }
+
+    /* 輸入框確保全寬 */
+    .config-field.compact {
+        margin-bottom: clamp(10px, 2.5vw, 16px);
+    }
+
+    .config-field.compact input,
+    .config-field.compact select {
+        width: 100%;
+        min-height: clamp(42px, 8vw, 50px);
+        /* 流體高度 */
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        /* 流體字體 */
+        padding: clamp(8px, 2vw, 12px);
+        margin: 0;
+    }
+
+    .config-field.compact label {
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    /* Default pill 改為 block 避免溢出 */
+    .default-pill {
+        display: inline-block;
+        margin-left: 0;
+        margin-top: 4px;
+    }
+}
+
+/* Input row tweaks */
+.config-field.compact .flex {
+    align-items: center;
+}
+
+.modal-header.fancy h3 {
+    font-size: 20px;
+    color: #161616;
+}
+
+.modal-header.fancy .text-sm {
+    color: #525252;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* 靠右對齊 */
+    gap: clamp(8px, 2vw, 12px);
+    /* 統一間距 */
+    margin-right: 28px;
+    /* 這裡控制星星按鈕與關閉按鈕的距離 */
+}
+
+.ghost-btn {
+    border-radius: 6px;
+    padding: 8px;
+    /* 固定 padding */
+    border: 1px solid #C6C6C6;
+    background: #FFFFFF;
+    color: #161616;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    font-size: 1.2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    line-height: 1;
+    min-width: 44px;
+    /* 固定最小寬度 */
+    min-height: 44px;
+    /* 固定最小高度 */
+    width: 44px;
+    /* 固定寬度，確保正方形 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ghost-btn:hover {
+    border-color: #0F62FE;
+    color: #0F62FE;
+    background: rgba(15, 98, 254, 0.05);
+    box-shadow: 0 2px 6px rgba(15, 98, 254, 0.2);
+    transform: translateY(-1px);
+}
+
+.icon-btn-ghost {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    /* 恢復邊框 */
+    color: #FFD700;
+    /* 金星星 */
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 6px;
+    /* 修改為標準圓角，非圓形 */
+    transition: all 0.2s;
+    padding: 0;
+    line-height: 1;
+    min-width: 32px;
+    /* 修正 width */
+    min-height: 32px;
+}
+
+.icon-btn-ghost:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-primary);
+}
+
+/* Modal Actions Footer 修復 - 終極版 */
+@media (max-width: 900px) {
+    .modal-header.fancy {
+        padding: 12px 12px !important;
+        min-height: 56px !important;
+        /* 確保標題有足夠高度 */
+    }
+
+    .modal-actions {
+        position: fixed !important;
+        /* 強制固定在底部 */
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background: #FFFFFF !important;
+        border-top: 1px solid #E0E0E0 !important;
+        padding: 12px 16px !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        gap: 12px !important;
+        z-index: 10000 !important;
+        /* 最高層級 */
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15) !important;
+        margin: 0 !important;
+    }
+
+    /* 確保內容不被 footer 遮擋 */
+    .settings-main {
+        padding-bottom: 80px !important;
+        /* 預留 footer 空間 */
+        height: auto !important;
+        overflow-y: visible !important;
+    }
+
+    .modal-content {
+        max-height: 100vh !important;
+        height: 100vh !important;
+        border-radius: 0 !important;
+    }
+
+    .settings-shell {
+        height: 100% !important;
+        border-radius: 0 !important;
+        border: none !important;
+    }
+
+    /* 強制按鈕樣式 */
+    .ghost-btn {
+        flex: 0 0 auto !important;
+        /* 禁止伸縮 */
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        max-width: 44px !important;
+        padding: 0 !important;
+        /* 使用 flex 居中，無需 padding */
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+    }
+
+    /* Header 修正 */
+    .modal-header.fancy {
+        flex-direction: row !important;
+        /* 強制橫向 */
+        align-items: flex-start !important;
+        flex-wrap: nowrap !important;
+        padding: 16px !important;
+        gap: 0 !important;
+    }
+
+    .header-actions {
+        position: static !important;
+        /* 取消絕對定位，回歸流佈局 */
+        margin-left: 16px !important;
+        margin-top: 0 !important;
+        margin-right: 0 !important;
+        width: auto !important;
+    }
+}
+
+.default-pill {
+    display: block;
+    /* 改為 block 換行 */
+    width: fit-content;
+    margin-left: 0;
+    /* 移除左邊距 */
+    margin-top: 4px;
+    /* 上邊距 */
+    background: rgba(99, 102, 241, 0.14);
+    color: var(--color-primary);
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+/* Actions Footer - Compact */
+.actions-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-surface-hover);
+}
+
+.actions-footer .btn {
+    font-size: 1rem;
+    padding: 8px 16px;
+    min-height: 40px;
+}

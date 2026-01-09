@@ -1,0 +1,95 @@
+.avatar-upload-dropzone {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.upload-inner-box {
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.upload-inner-box:hover {
+    border-color: #0F62FE;
+    background: rgba(15, 98, 254, 0.05);
+}
+
+.upload-inner-box.is-uploading {
+    border-style: solid;
+    cursor: wait;
+}
+
+.upload-inner-box.is-dragging {
+    border-color: #0F62FE;
+    background: rgba(15, 98, 254, 0.15);
+    transform: scale(1.02);
+}
+
+.upload-trigger-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 2.5rem;
+}
+
+.upload-text strong {
+    display: block;
+    font-size: 1rem;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.upload-text span {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.upload-spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #0F62FE;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.mini-progress-bar {
+    width: 200px;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    margin: 1rem auto 0;
+    overflow: hidden;
+}
+
+.mini-progress-bar .fill {
+    height: 100%;
+    background: #0F62FE;
+    transition: width 0.3s ease;
+}
+
+.upload-error {
+    margin-top: 0.75rem;
+    color: #ef4444;
+    font-size: 0.85rem;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-align: center;
+}

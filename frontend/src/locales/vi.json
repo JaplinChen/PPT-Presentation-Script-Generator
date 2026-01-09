@@ -1,0 +1,124 @@
+{
+    "app": {
+        "title": "Trình tạo kịch bản thuyết trình PPT",
+        "subtitle": "Được hỗ trợ bởi AI để bài thuyết trình của bạn thuyết phục hơn",
+        "footer": "© 2024 PPT Script Generator. Mọi quyền được bảo lưu."
+    },
+    "action": {
+        "edit": "Chỉnh sửa",
+        "save": "Lưu",
+        "cancel": "Hủy",
+        "confirm": "Xác nhận",
+        "back": "Quay lại",
+        "prevSettings": "← Quay lại: Cài đặt",
+        "regenerateScript": "↺ Tạo lại kịch bản",
+        "nextStepAudio": "Tiếp theo: Tạo âm thanh →"
+    },
+    "resume": {
+        "title": "Tìm thấy dự án chưa hoàn thành",
+        "interrupted": "Bị gián đoạn",
+        "discard": "Hủy bỏ",
+        "restore": "Khôi phục"
+    },
+    "steps": {
+        "upload": "Tải lên PPT",
+        "config": "Cài đặt",
+        "generateScript": "Tạo kịch bản",
+        "audioGenerate": "Tạo âm thanh",
+        "pptAssemble": "Tạo PPT",
+        "videoEnhance": "Nâng cấp video",
+        "generateNarrated": "Tạo PPT có tiếng",
+        "audioGenTitle": "Bước 1: Tổng hợp giọng nói AI",
+        "audioGenDescription": "Đang tạo bản ghi âm giọng nói tự nhiên cho từng slide dựa trên kịch bản...",
+        "audioGenReady": "Đã sẵn sàng tạo lồng tiếng cho {{count}} slide.",
+        "startAudioGen": "🚀 Bắt đầu tạo âm thanh",
+        "audioGenComplete": "Tạo âm thanh hoàn tất",
+        "converting": "Đang chuyển đổi...",
+        "forceRetry": "(Bị kẹt? Nhấn để buộc thử lại)",
+        "regenerateAudio": "↺ Tạo lại âm thanh",
+        "retryAudio": "Thử lại tạo âm thanh",
+        "continuePPT": "Tiếp tục tạo PPT →"
+    },
+    "upload": {
+        "dragDrop": "Nhấp hoặc kéo tệp PPT vào đây",
+        "selectFile": "Chọn tệp",
+        "supportFormat": "Hỗ trợ định dạng .pptx",
+        "analyzing": "Đang phân tích PPT...",
+        "reupload": "Đổi tệp",
+        "success": "Tải lên PPT thành công",
+        "slideCount": "Tổng {{count}} slide",
+        "titleCount": "• {{count}} có tiêu đề",
+        "startAnalyze": "Bắt đầu phân tích"
+    },
+    "preview": {
+        "title": "Xem trước nội dung",
+        "slidesNav": "Điều hướng Slide",
+        "noTitle": "(Không tiêu đề)",
+        "page": "Trang {{page}}"
+    },
+    "config": {
+        "title": "Cài đặt kịch bản",
+        "audience": "Khán giả mục tiêu",
+        "audiencePlaceholder": "Chọn hoặc nhập khán giả",
+        "purpose": "Mục đích",
+        "purposePlaceholder": "ví dụ: Giới thiệu sản phẩm, Báo cáo tiến độ",
+        "context": "Bối cảnh",
+        "tone": "Giọng điệu",
+        "duration": "Thời lượng (phút)",
+        "transitions": "Bao gồm câu chuyển tiếp",
+        "outputLanguage": "Ngôn ngữ đầu ra",
+        "generateBtn": "Tạo kịch bản",
+        "generating": "Đang tạo..."
+    },
+    "options": {
+        "audience": {
+            "general": "Chung",
+            "executives": "Lãnh đạo cấp cao",
+            "clients": "Khách hàng",
+            "techTeam": "Đội ngũ kỹ thuật",
+            "investors": "Nhà đầu tư",
+            "partners": "Đối tác",
+            "newEmployees": "Nhân viên mới",
+            "boardMembers": "Thành viên HĐQT",
+            "salesTeam": "Đội ngũ Kinh doanh",
+            "crossDept": "Đồng nghiệp khác bộ phận"
+        },
+        "context": {
+            "formalMeeting": "Cuộc họp chính thức",
+            "internalSharing": "Chia sẻ nội bộ",
+            "clientProposal": "Đề xuất khách hàng",
+            "training": "Đào tạo",
+            "seminar": "Hội thảo"
+        },
+        "tone": {
+            "professional": "Chuyên nghiệp",
+            "friendly": "Thân thiện",
+            "serious": "Nghiêm túc",
+            "enthusiastic": "Nhiệt tình"
+        }
+    },
+    "result": {
+        "title": "Kịch bản thuyết trình đã tạo",
+        "opening": "Lời mở đầu",
+        "slides": "Kịch bản từng trang",
+        "full": "Kịch bản đầy đủ",
+        "copy": "Sao chép",
+        "copied": "Đã sao chép",
+        "copyFull": "Sao chép tất cả",
+        "download": "Tải xuống",
+        "regenerate": "Tạo lại",
+        "reset": "Làm mới"
+    },
+    "tts": {
+        "title": "Cài đặt Giọng nói",
+        "voice": "Mô hình Giọng nói",
+        "rate": "Tốc độ",
+        "pitch": "Cao độ",
+        "play": "Phát âm thanh",
+        "download": "Tải xuống MP3",
+        "generating": "Đang tạo âm thanh...",
+        "noVoice": "Không có giọng nói",
+        "preview": "Nghe thử",
+        "language": "Ngôn ngữ Giọng nói"
+    }
+}

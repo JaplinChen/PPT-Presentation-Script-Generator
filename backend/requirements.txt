@@ -1,0 +1,49 @@
+# Core API
+fastapi
+uvicorn
+python-multipart
+python-dotenv
+pydantic
+sqlalchemy
+
+# PPT & Files
+python-pptx==0.6.21
+lxml==4.9.4
+mutagen
+pillow==9.5.0
+openpyxl
+pandas
+numpy<2.3
+
+# AI & Network
+google-genai
+google-api-python-client
+google-auth
+google-auth-httplib2
+httpx
+aiohttp
+requests
+
+# Audio & Media
+edge-tts
+pydub
+torch
+opencv-python
+librosa
+imageio
+imageio-ffmpeg
+filetype
+mediapipe
+protobuf
+scikit-image
+einops
+
+# Utils
+onnxruntime-gpu
+tabulate
+tqdm
+typing-extensions
+pytest
+gfpgan>=1.3.8
+facexlib>=0.2.5
+basicsr>=1.4.2

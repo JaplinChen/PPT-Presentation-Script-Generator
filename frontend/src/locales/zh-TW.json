@@ -1,0 +1,133 @@
+{
+    "app": {
+        "title": "AI 簡報影音化工具",
+        "subtitle": "一站式 PPT 文稿生成、語音合成、數位播報員影片製作",
+        "footer": "© 2024 AI 簡報影音化工具. All rights reserved."
+    },
+    "action": {
+        "edit": "編輯",
+        "save": "儲存",
+        "cancel": "取消",
+        "confirm": "確認",
+        "back": "上一步",
+        "prevSettings": "← 上一級: 設定參數",
+        "regenerateScript": "↺ 重新產生文稿",
+        "nextStepAudio": "下一步: 開始生成有聲 PPT →"
+    },
+    "resume": {
+        "title": "發現未完成的專案",
+        "interrupted": "生成中斷",
+        "discard": "捨棄",
+        "restore": "恢復進度"
+    },
+    "steps": {
+        "upload": "上傳 PPT",
+        "config": "設定參數",
+        "generateScript": "生成文稿",
+        "audioGenerate": "語音生成",
+        "pptAssemble": "PPT 製作",
+        "videoEnhance": "影片強化",
+        "generateNarrated": "生成有聲 PPT",
+        "audioGenTitle": "第一步：AI 語音合成",
+        "audioGenDescription": "正在根據文案內容逐頁生成自然的人語音軌...",
+        "audioGenReady": "已準備好為 {{count}} 頁投影片生成配音。",
+        "startAudioGen": "🚀 開始生成語音檔",
+        "audioGenComplete": "語音生成完成",
+        "converting": "轉換中...",
+        "forceRetry": "(卡住了？點此強制重試)",
+        "regenerateAudio": "↺ 重新生成語音",
+        "retryAudio": "重試語音生成",
+        "continuePPT": "繼續 PPT 製作 →"
+    },
+    "upload": {
+        "dragDrop": "點擊或拖曳 PPT 檔案至此",
+        "selectFile": "選擇檔案",
+        "supportFormat": "支援 .pptx 格式",
+        "analyzing": "正在分析 PPT...",
+        "reupload": "更換檔案",
+        "success": "PPT 上傳成功",
+        "slideCount": "共 {{count}} 頁投影片",
+        "titleCount": "• {{count}} 頁有標題",
+        "startAnalyze": "開始解析"
+    },
+    "preview": {
+        "title": "PPT 內容預覽",
+        "slidesNav": "投影片導航",
+        "noTitle": "（無標題）",
+        "page": "第 {{page}} 頁"
+    },
+    "config": {
+        "title": "文稿設定",
+        "audience": "聽眾對象",
+        "audiencePlaceholder": "選擇或輸入聽眾對象",
+        "purpose": "簡報目的",
+        "purposePlaceholder": "例如：產品介紹、進度報告",
+        "context": "簡報情境",
+        "tone": "語氣風格",
+        "duration": "預計時長（分鐘）",
+        "transitions": "包含轉場語",
+        "outputLanguage": "輸出語言",
+        "generateBtn": "生成文稿",
+        "generating": "生成中..."
+    },
+    "options": {
+        "audience": {
+            "general": "一般",
+            "executives": "高階主管",
+            "clients": "客戶代表",
+            "techTeam": "技術團隊",
+            "investors": "投資人",
+            "partners": "合作夥伴",
+            "newEmployees": "新進員工",
+            "boardMembers": "董事會成員",
+            "salesTeam": "行銷業務團隊",
+            "crossDept": "跨部門同事"
+        },
+        "context": {
+            "formalMeeting": "正式會議",
+            "internalSharing": "內部分享",
+            "clientProposal": "客戶提案",
+            "training": "教育訓練",
+            "seminar": "研討會"
+        },
+        "tone": {
+            "professional": "專業自然",
+            "friendly": "輕鬆友善",
+            "serious": "正式嚴謹",
+            "enthusiastic": "熱情活潑"
+        }
+    },
+    "result": {
+        "title": "生成的演講文稿",
+        "opening": "開場白",
+        "slides": "逐頁講稿",
+        "full": "完整文稿",
+        "copy": "複製",
+        "copied": "已複製",
+        "copyFull": "複製全文",
+        "download": "下載文稿",
+        "downloadNarrated": "下載有聲 PPT (自動播放)",
+        "generatingNarrated": "正在製作有聲 PPT...",
+        "generatingWait": "這需要為每一張投影片生成語音，約需 1-2 分鐘。",
+        "generatingDoNotClose": "請勿關閉此視窗。",
+        "regenerate": "重新生成",
+        "reset": "重新開始"
+    },
+    "tts": {
+        "title": "語音設定",
+        "voice": "語音模型",
+        "rate": "語速",
+        "pitch": "音調",
+        "play": "播放音訊",
+        "download": "下載 MP3",
+        "generating": "正在生成音訊...",
+        "noVoice": "無可用語音",
+        "preview": "試聽",
+        "language": "語音語言"
+    },
+    "settings": {
+        "title": "LLM 設定",
+        "avatarTitle": "數位播報員管理",
+        "ttsTitle": "語音設定"
+    }
+}

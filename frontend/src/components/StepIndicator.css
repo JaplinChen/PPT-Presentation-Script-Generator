@@ -1,0 +1,165 @@
+/* ==========================================
+   步驟指示器 - 彩色頁籤版 (Colored Tabs)
+   利用底色與文字顏色明確區分：未完成、執行中、已完成
+   ========================================== */
+
+/* 容器樣式 */
+.progress-steps {
+    display: flex;
+    align-items: stretch;
+    /* 等高 */
+    width: 100%;
+    margin: 0 0 2rem 0;
+    padding: 0;
+
+    /* 移除通用底線，改用各個 Tab 的邊框表現，或者保留作為軌道 */
+    /* 這裡為了讓底色看起來像真正的 Tabs，我們保留一條淺灰軌道 */
+    border-bottom: 2px solid #e2e8f0;
+
+    gap: 4px;
+    /* Tab 之間的微小間距 */
+
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* 隱藏舊元素 */
+/* Unhide step-number but keep others hidden */
+.step-divider,
+.step::after,
+.step-number::before {
+    display: none !important;
+}
+
+/* Style step-number as inline text */
+.step-number {
+    display: inline-block;
+    margin-right: 6px;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: inherit;
+    /* Fallback */
+}
+
+/* Ensure number matches label color in states */
+.step.active:not(.completed) .step-number {
+    color: #2563eb;
+}
+
+.step.completed .step-number {
+    color: #16a34a;
+}
+
+/* ------------------------------------------
+   Tab 基礎樣式 (預設為 "未完成 / Pending" 狀態)
+   ------------------------------------------ */
+.step {
+    position: relative;
+    z-index: 10;
+
+    flex: 1;
+    /* 均分寬度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem 0.5rem;
+    margin-bottom: -2px;
+    /* 覆蓋底線 */
+
+    border-bottom: 2px solid transparent;
+    cursor: default;
+
+    /* Pending 狀態顏色 (灰色) */
+    background: #f8fafc;
+    /* Slate-50 */
+    transition: all 0.2s ease;
+    border-radius: 6px 6px 0 0;
+    /* 上方圓角，像資料夾標籤 */
+}
+
+.step-label {
+    position: static;
+    transform: none;
+    width: auto;
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #94a3b8;
+    /* Slate-400 (未完成的文字較淡) */
+    line-height: 1.5;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ------------------------------------------
+   狀態樣式
+   ------------------------------------------ */
+
+/* 1. 執行中 (Active / Current) - 藍色系 */
+.step.active:not(.completed) {
+    background: #eff6ff;
+    /* Blue-50 */
+    border-bottom: 2px solid #2563eb;
+    /* Blue-600 */
+}
+
+.step.active:not(.completed) .step-label {
+    color: #2563eb;
+    /* Blue-600 */
+    font-weight: 700;
+}
+
+/* 2. 已完成 (Completed) - 綠色系 */
+.step.completed {
+    background: #f0fdf4;
+    /* Green-50 */
+    border-bottom: 2px solid #22c55e;
+    /* Green-500 (可選：是否要綠色底線？) */
+    /* 若希望 "已完成" 只是背景色區別，可設為 transparent。但使用者要求 "表達狀態"，有底線更明確 */
+    /* 根據常見 Tab 設計，非當前頁籤通常沒有底線。但這是進度條。 */
+    /* 讓我們折衷：給予綠色文字與背景，底線設為透明或淺綠，以免搶了 Active 的風采 */
+    border-bottom-color: transparent;
+}
+
+.step.completed .step-label {
+    color: #16a34a;
+    /* Green-600 */
+    font-weight: 600;
+}
+
+/* Hover 效果 (針對非 Active 項目) */
+.step:not(.active):hover {
+    background: #f1f5f9;
+    /* Slate-100 */
+}
+
+.step:not(.active):hover .step-label {
+    color: #64748b;
+}
+
+/* ------------------------------------------
+   Mobile 適配
+   ------------------------------------------ */
+@media (max-width: 640px) {
+    .progress-steps {
+        overflow-x: auto;
+        padding-bottom: 0;
+        gap: 2px;
+    }
+
+    .step {
+        flex: 0 0 auto;
+        padding: 0.75rem 1rem;
+        min-width: 90px;
+    }
+
+    .step-label {
+        font-size: 0.85rem;
+        white-space: nowrap;
+        /* Prevent wrapping */
+    }
+}
