@@ -103,16 +103,10 @@ npm run dev -- --host
 - 前端：http://localhost:5173
 - 後端：http://localhost:8080
 
-### 🐳 Docker 啟動 (推薦)
-
-```bash
-docker-compose up -d --build
-```
-
-- 前端：http://localhost:80
-- 後端：http://localhost:8080
+> ⚠️ **注意**：由於 SadTalker 需要 GPU 支援，本專案不建議使用 Docker 部署。請直接在本機運行以獲得最佳效能。
 
 ---
+
 
 ## ⚙️ 相關設定
 
@@ -161,7 +155,7 @@ docker-compose up -d --build
 | **AI 語音** | Microsoft Edge TTS |
 | **AI 影片** | SadTalker (Talking Head Generation) |
 | **LLM** | Google Gemini, Ollama, OpenRouter |
-| **部署** | Docker, Docker Compose |
+
 
 ---
 
