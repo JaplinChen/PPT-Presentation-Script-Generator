@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { API_BASE_URL, api } from '../services/api';
 
 const PROVIDERS = [
@@ -65,6 +66,7 @@ const DEFAULT_SETTINGS = {
 };
 
 function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPromptChange }) {
+  const { t } = useTranslation();
   const initial = currentSettings || DEFAULT_SETTINGS;
   const [activeTab, setActiveTab] = useState('providers'); // 'providers' | 'prompt'
   const [activeProvider, setActiveProvider] = useState(initial.defaultProvider || 'gemini');
@@ -297,13 +299,13 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                 className={`sidebar-tab ${activeTab === 'providers' ? 'active' : ''}`}
                 onClick={() => setActiveTab('providers')}
               >
-                📡 LLM 提供者
+                📡 {t('settings.llmProviders')}
               </button>
               <button
                 className={`sidebar-tab ${activeTab === 'prompt' ? 'active' : ''}`}
                 onClick={() => setActiveTab('prompt')}
               >
-                📝 Prompt 設定
+                📝 {t('settings.promptSettings')}
               </button>
             </div>
 
@@ -320,9 +322,9 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                     </span>
                     <div className="sidebar-text">
                       <div className="sidebar-name">{p.name}</div>
-                      <div className="sidebar-sub">{p.sub}</div>
+                      <div className="sidebar-sub">{t(`settings.providerSub.${p.id}`)}</div>
                     </div>
-                    {defaultProvider === p.id && <span className="default-badge" title="預設提供者">✓</span>}
+                    {defaultProvider === p.id && <span className="default-badge" title={t('settings.default')}>✓</span>}
                   </button>
                 ))}
               </div>
@@ -331,7 +333,7 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
             {activeTab === 'prompt' && (
               <div className="sidebar-list">
                 <div className="p-3 text-sm text-gray-500">
-                  編輯後端 Prompt 模板
+                  {t('settings.editPromptDesc')}
                 </div>
               </div>
             )}
@@ -345,18 +347,18 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                 {activeTab === 'providers' ? (
                   <div className="flex flex-col gap-1">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="text-xl font-bold text-gray-900 m-0">{currentProvider.name} 設定</h3>
+                      <h3 className="text-xl font-bold text-gray-900 m-0">{currentProvider.name} {t('settings.providerConfig')}</h3>
                       {defaultProvider === currentProvider.id ? (
                         <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">
-                          預設
+                          {t('settings.defaultProvider')}
                         </span>
                       ) : null}
                     </div>
                   </div>
                 ) : (
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 m-0">系統提示詞</h3>
-                    <p className="text-sm text-gray-500">自訂文稿生成的指令與要求</p>
+                    <h3 className="text-xl font-bold text-gray-900 m-0">{t('settings.systemPrompt')}</h3>
+                    <p className="text-sm text-gray-500">{t('settings.systemPromptDesc')}</p>
                   </div>
                 )}
               </div>
@@ -367,15 +369,15 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                     <button
                       className="icon-btn-ghost"
                       onClick={() => setDefaultProvider(activeProvider)}
-                      title={defaultProvider === activeProvider ? "目前是預設提供者" : "設為預設提供者"}
+                      title={defaultProvider === activeProvider ? t('settings.currentDefault') : t('settings.setDefaultProvider')}
                     >
                       {defaultProvider === activeProvider ? '⭐' : '☆'}
                     </button>
                     <div className="w-px h-4 bg-gray-300 mx-1"></div>
-                    <button className="btn-icon-action" onClick={onClose} type="button" title="取消並關閉">
+                    <button className="btn-icon-action" onClick={onClose} type="button" title={t('settings.cancelClose')}>
                       ✕
                     </button>
-                    <button className="btn-icon-action text-primary border-primary" onClick={handleSave} type="button" title="儲存設定">
+                    <button className="btn-icon-action text-primary border-primary" onClick={handleSave} type="button" title={t('settings.saveSettings')}>
                       ✓
                     </button>
                   </>
@@ -385,14 +387,14 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                     <button
                       className="ghost-btn w-11 h-11 p-2.5"
                       onClick={handleResetPrompt}
-                      title="重設/重新讀取"
+                      title={t('settings.resetPrompt')}
                     >
                       ↺
                     </button>
-                    <button className="btn-icon-action" onClick={onClose} type="button" title="關閉">
+                    <button className="btn-icon-action" onClick={onClose} type="button" title={t('action.close')}>
                       ✕
                     </button>
-                    <button className="btn-icon-action text-primary border-primary" onClick={handleSave} type="button" title="儲存 Prompt">
+                    <button className="btn-icon-action text-primary border-primary" onClick={handleSave} type="button" title={t('settings.savePrompt')}>
                       💾
                     </button>
                   </>
@@ -406,28 +408,28 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                   <>
                     {activeProvider !== 'ollama' && (
                       <div className="config-field compact">
-                        <label>API Key</label>
+                        <label>{t('settings.apiKey')}</label>
                         <div className="flex gap-2 max-w-lg">
                           <input
                             type={showKey ? 'text' : 'password'}
                             value={providerState.apiKey}
                             onChange={(e) => updateProviderState({ apiKey: e.target.value })}
-                            placeholder="填入對應提供者的 Key"
+                            placeholder={t('settings.apiKeyPlaceholder')}
                             autoComplete="username current-password"
                             name="apiKey"
                             className="flex-1"
                           />
-                          <button className="btn-icon-action" onClick={() => setShowKey(!showKey)} type="button" title={showKey ? "隱藏 API Key" : "顯示 API Key"}>
+                          <button className="btn-icon-action" onClick={() => setShowKey(!showKey)} type="button" title={showKey ? t('settings.hideApiKey') : t('settings.showApiKey')}>
                             {showKey ? '🙈' : '👁️'}
                           </button>
                         </div>
-                        <p className="hint">僅覆蓋此提供者，留空使用後端環境變數。本地儲存。</p>
+                        <p className="hint">{t('settings.apiKeyHint')}</p>
                       </div>
                     )}
 
                     {activeProvider === 'ollama' && (
                       <div className="config-field compact">
-                        <label>Base URL</label>
+                        <label>{t('settings.baseUrl')}</label>
                         <input
                           type="text"
                           value={providerState.baseUrl || ''}
@@ -435,17 +437,17 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                           placeholder="http://localhost:11434"
                           className="max-w-lg"
                         />
-                        <p className="hint">這通常是後端伺服器 (Backend) 連接 Ollama 的網址。若後端與 Ollama 在同一台機器，請保留 http://localhost:11434。</p>
+                        <p className="hint">{t('settings.ollamaHint')}</p>
                       </div>
                     )}
 
                     <div className="config-field compact">
                       <div className="flex justify-between items-center mb-1">
-                        <label className="mb-0">模型</label>
+                        <label className="mb-0">{t('settings.model')}</label>
                         {(activeProvider === 'gemini' || activeProvider === 'ollama') && (
                           <div className="flex items-center gap-2">
-                            {isLoadingModels && <span className="text-xs text-gray-500 loading-pulse">更新列表中...</span>}
-                            {fetchError && <span className="text-xs text-red-400" title={fetchError}>更新失敗</span>}
+                            {isLoadingModels && <span className="text-xs text-gray-500 loading-pulse">{t('settings.updatingModels')}</span>}
+                            {fetchError && <span className="text-xs text-red-400" title={fetchError}>{t('settings.fetchError') || '更新失敗'}</span>}
                             <button
                               className="text-xs text-primary hover:underline"
                               onClick={(e) => {
@@ -456,8 +458,9 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                               disabled={isLoadingModels}
                               type="button"
                             >
-                              刷新列表
+                              {t('settings.refreshModels')}
                             </button>
+
                           </div>
                         )}
                       </div>
@@ -473,8 +476,8 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                           onChange={(e) => updateProviderState({ model: e.target.value })}
                           disabled={isLoadingModels && (!displayedModels || displayedModels.length === 0)}
                         >
-                          {isLoadingModels && <option value="">正在獲取模型...</option>}
-                          {!isLoadingModels && displayedModels.length === 0 && <option value="">無可用模型 (請檢查連線)</option>}
+                          {isLoadingModels && <option value="">{t('settings.fetchingModels')}</option>}
+                          {!isLoadingModels && displayedModels.length === 0 && <option value="">{t('settings.noModels')}</option>}
                           {displayedModels.map((m) => {
                             const value = typeof m === 'string' ? m : m.value;
                             const label = typeof m === 'string' ? m : m.label;
@@ -488,46 +491,34 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                         <input
                           type="text"
                           className="flex-1"
-                          placeholder="自訂模型（留空即使用左側選擇）"
+                          placeholder={t('settings.customModel')}
                           value={providerState.model}
                           onChange={(e) => updateProviderState({ model: e.target.value })}
                         />
                       </div>
-                      <p className="hint">{currentProvider.note}</p>
+                      <p className="hint">{t(`settings.providerNote.${activeProvider}`)}</p>
                     </div>
                   </>
                 ) : (
                   <div className="prompt-editor-container">
                     <div className="config-field w-full">
                       <div className="prompt-selector-row flex items-center gap-4 mb-4">
-                        <label className="prompt-selector-label whitespace-nowrap shrink-0">選擇 Prompt 模板</label>
+                        <label className="prompt-selector-label whitespace-nowrap shrink-0">{t('settings.selectPrompt')}</label>
                         <select
                           value={selectedPromptFile}
                           onChange={(e) => setSelectedPromptFile(e.target.value)}
                           className="prompt-template-select"
                         >
                           {(() => {
-                            const displayMap = {
-                              'system': 'Step 1: 系統核心 (System)',
-                              'opening': 'Step 2: 開場白 (Opening)',
-                              'slide': 'Step 3: 單頁內容 (Slide)',
-                              'transition': 'Step 4: 過場 (Transition)',
-                              'qa': 'Step 5: 問答 (Q&A)',
-                              'rewrite': 'Step 6: 改寫 (Rewrite)',
-                              'multiversion_opening': 'Step 7: 多版本開場 (Multi-Opening)',
-                              'audio': 'Step 8: 語音指導 (Audio)',
-                              'video': 'Step 9: 影片指導 (Video)'
-                            };
                             const getOrder = (p) => {
-                              const s = displayMap[p] || '';
-                              const m = s.match(/Step (\d+)/);
-                              return m ? parseInt(m[1]) : 99;
+                              const order = ['system', 'opening', 'slide', 'transition', 'qa', 'rewrite', 'multiversion_opening', 'audio', 'video'];
+                              return order.indexOf(p) >= 0 ? order.indexOf(p) : 99;
                             };
 
                             return [...promptList]
                               .sort((a, b) => getOrder(a) - getOrder(b))
                               .map(p => (
-                                <option key={p} value={p}>{displayMap[p] || p}</option>
+                                <option key={p} value={p}>{t(`settings.promptTemplates.${p}`) || p}</option>
                               ));
                           })()}
                         </select>
@@ -537,7 +528,7 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                         className="prompt-textarea"
                         value={localPrompt}
                         onChange={(e) => setLocalPrompt(e.target.value)}
-                        placeholder={isLoadingPrompt ? "載入中..." : "輸入系統指令範本..."}
+                        placeholder={isLoadingPrompt ? t('settings.loading') : t('settings.promptPlaceholder')}
                         rows={16}
                         spellCheck="false"
                         disabled={isLoadingPrompt}
@@ -545,19 +536,20 @@ function LLMSettingsModal({ onClose, onSave, currentSettings, scriptPrompt, onPr
                     </div>
 
                     <div className="placeholder-helper">
-                      <h5>可用變數說明：</h5>
+                      <h5>{t('settings.placeholders')}:</h5>
                       <div className="placeholder-grid">
-                        <code>{'{language}'}</code> <span>輸出的語言</span>
-                        <code>{'{tone}'}</code> <span>文稿語氣要求</span>
-                        <code>{'{min_length}'}</code> <span>建議文字長度</span>
-                        <code>{'{total_slides}'}</code> <span>總投影片頁數</span>
-                        <code>{'{int_avg_time_per_slide}'}</code> <span>平均每頁時間</span>
-                        <code>{'{avatar_name_display}'}</code> <span>自我介紹姓名</span>
+                        <code>{'{language}'}</code> <span>{t('settings.promptVars.language')}</span>
+                        <code>{'{tone}'}</code> <span>{t('settings.promptVars.tone')}</span>
+                        <code>{'{min_length}'}</code> <span>{t('settings.promptVars.minLength')}</span>
+                        <code>{'{total_slides}'}</code> <span>{t('settings.promptVars.totalSlides')}</span>
+                        <code>{'{int_avg_time_per_slide}'}</code> <span>{t('settings.promptVars.avgTime')}</span>
+                        <code>{'{avatar_name_display}'}</code> <span>{t('settings.promptVars.avatarName')}</span>
                       </div>
-                      <p className="text-xs mt-2 text-gray-500">※ 使用程式括號 {'{ }'} 包裹變數，系統會自動在生成時替換為實際數值。</p>
+                      <p className="text-xs mt-2 text-gray-500">※ {t('settings.placeholderNote')}</p>
                     </div>
                   </div>
                 )}
+
               </div>
 
             </form>

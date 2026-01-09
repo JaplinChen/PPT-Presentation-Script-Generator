@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { avatarStorage } from '../services/avatarStorage';
 import AvatarSettings from './AvatarSettings';
 import { API_BASE_URL } from '../services/api';
 import './AvatarSettingsModal.css';
 
 export default function AvatarSettingsModal({ onClose }) {
+    const { t } = useTranslation();
     const [settings, setSettings] = useState(avatarStorage.load());
     const [showUpload, setShowUpload] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState(null);
@@ -111,8 +113,8 @@ export default function AvatarSettingsModal({ onClose }) {
                     <header className="modal-header">
                         <div className="flex justify-between items-start">
                             <div>
-                                <h2>🎭 數位播報員管理</h2>
-                                <p className="modal-subtitle">點擊照片進行編輯或設定生成偏好</p>
+                                <h2>🎭 {t('settings.avatarTitle')}</h2>
+                                <p className="modal-subtitle">{t('settings.avatarSubtitle')}</p>
                             </div>
                         </div>
                     </header>
@@ -149,7 +151,7 @@ export default function AvatarSettingsModal({ onClose }) {
                                                 }}
                                             />}
                                             {photo.isDefault && <div className="default-glow"></div>}
-                                            {photo.isDefault && <span className="default-pill">預設</span>}
+                                            {photo.isDefault && <span className="default-pill">{t('settings.default')}</span>}
                                             <div className="photo-card-overlay">
                                                 <span className="photo-name-display">{photo.name}</span>
                                             </div>
@@ -159,14 +161,14 @@ export default function AvatarSettingsModal({ onClose }) {
                                             <button
                                                 className={`action-btn set-default ${photo.isDefault ? 'active' : ''}`}
                                                 onClick={() => handleSetDefault(photo.id)}
-                                                title="設為預設"
+                                                title={t('settings.setDefault')}
                                             >
                                                 ⭐
                                             </button>
                                             <button
                                                 className="action-btn delete"
                                                 onClick={() => handleDelete(photo.id)}
-                                                title="刪除"
+                                                title={t('settings.delete')}
                                             >
                                                 ✕
                                             </button>
@@ -178,7 +180,7 @@ export default function AvatarSettingsModal({ onClose }) {
                             <div className="photo-card add-new-card" onClick={() => setShowUpload(true)}>
                                 <div className="add-inner">
                                     <span className="plus-icon">+</span>
-                                    <span>新增照片</span>
+                                    <span>{t('settings.addPhoto')}</span>
                                 </div>
                             </div>
                         </div>
@@ -323,14 +325,14 @@ export default function AvatarSettingsModal({ onClose }) {
 
                     <section className="global-preferences-section">
                         <header className="section-header">
-                            <h3>⚙️ 偏好設定</h3>
+                            <h3>⚙️ {t('settings.preferences')}</h3>
                         </header>
 
                         <div className="params-grid">
                             <div className="params-row-2col">
                                 <div className="control-card compact">
                                     <div className="control-header">
-                                        <label>情緒強度 (Emotion)</label>
+                                        <label>{t('settings.emotion')}</label>
                                         <span className="value-label">{settings.preferences.emotion}</span>
                                     </div>
                                     <input
@@ -341,13 +343,13 @@ export default function AvatarSettingsModal({ onClose }) {
                                         onChange={e => handleParamChange('emotion', parseFloat(e.target.value))}
                                     />
                                     <div className="slider-ticks">
-                                        <span>自然</span>
-                                        <span>熱烈</span>
+                                        <span>{t('settings.emotionMin')}</span>
+                                        <span>{t('settings.emotionMax')}</span>
                                     </div>
                                 </div>
                                 <div className="control-card compact">
                                     <div className="control-header">
-                                        <label>生成流暢度 (Sampling Steps)</label>
+                                        <label>{t('settings.samplingSteps')}</label>
                                         <span className="value-label">{settings.preferences.sampling_steps}</span>
                                     </div>
                                     <input
@@ -358,8 +360,8 @@ export default function AvatarSettingsModal({ onClose }) {
                                         onChange={e => handleParamChange('sampling_steps', parseInt(e.target.value))}
                                     />
                                     <div className="slider-ticks">
-                                        <span>快速</span>
-                                        <span>極致流暢</span>
+                                        <span>{t('settings.samplingMin')}</span>
+                                        <span>{t('settings.samplingMax')}</span>
                                     </div>
                                 </div>
                             </div>
@@ -368,14 +370,14 @@ export default function AvatarSettingsModal({ onClose }) {
 
                             <div className="control-card compact full-width">
                                 <div className="control-header">
-                                    <label>影片解析度 (Resolution)</label>
-                                    <span className="info-tooltip" title="解析度僅影響畫面清晰度，不影響影片流暢度(FPS固定25)">ℹ️</span>
+                                    <label>{t('settings.resolution')}</label>
+                                    <span className="info-tooltip" title={t('settings.resolutionTooltip') || '解析度僅影響畫面清晰度，不影響影片流暢度(FPS固定25)'}>ℹ️</span>
                                 </div>
                                 <div className="resolution-selector">
                                     {[
-                                        { label: '標準 (480p)', size: 480, desc: '檔案最小，適合 PPT' },
-                                        { label: '高清 (720p)', size: 720, desc: '畫質平衡' },
-                                        { label: '超清 (1080p)', size: 1920, desc: '最佳畫質，檔案大' }
+                                        { label: t('settings.resolutionSD'), size: 480, desc: t('settings.resolutionSDDesc') },
+                                        { label: t('settings.resolutionHD'), size: 720, desc: t('settings.resolutionHDDesc') },
+                                        { label: t('settings.resolutionFHD'), size: 1920, desc: t('settings.resolutionFHDDesc') }
                                     ].map((opt) => (
                                         <button
                                             key={opt.size}
@@ -395,7 +397,7 @@ export default function AvatarSettingsModal({ onClose }) {
                     </section>
 
                     <footer className="modal-footer-actions">
-                        <button className="confirm-btn premium-button" onClick={onClose}>關閉</button>
+                        <button className="confirm-btn premium-button" onClick={onClose}>{t('settings.close')}</button>
                     </footer>
                 </div>
             </div>

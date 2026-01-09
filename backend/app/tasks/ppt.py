@@ -29,9 +29,20 @@ async def run_assemble_task(full_job_id: str, file_id: str, slide_scripts: List[
         state.update_ppt_job(full_job_id, {"progress": p, "message": m})
     
     # Resolve original PPT path
+    logger.info(f"[PPT Task] Looking up file_id: {file_id}")
     original_file = state.get_uploaded_file(file_id)
     if not original_file:
-        raise Exception("Original file not found")
+        logger.error(f"[PPT Task] File not found in database: {file_id}")
+        raise Exception(f"Original file not found (file_id: {file_id}). The file may have been deleted or the session expired.")
+    
+    # Verify the file actually exists on disk
+    file_path = original_file.get("path")
+    if not file_path or not Path(file_path).exists():
+        logger.error(f"[PPT Task] File path invalid or missing: {file_path}")
+        raise Exception(f"Original file missing from disk: {file_path}")
+    
+    logger.info(f"[PPT Task] Found file: {file_path}")
+
     
     # Resolve Photo Path (if provided)
     photo_path = None

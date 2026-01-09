@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export function useScriptEditing(initialScriptData) {
     const [localScriptData, setLocalScriptData] = useState(initialScriptData);
-    const [editingIndex, setEditingIndex] = useState(null); // Index of slide being edited
+    const [editingIndex, setEditingIndex] = useState(null); // Index of slide being edited, or 'opening' for opening
     const [editText, setEditText] = useState("");
 
     // Update local data if prop changes (e.g. regenerated or language switch)
@@ -21,6 +21,20 @@ export function useScriptEditing(initialScriptData) {
     };
 
     const saveEditing = (index) => {
+        // Handle opening text editing
+        if (index === 'opening') {
+            const newFullScript = assembleFullScript(editText, localScriptData.slide_scripts);
+            setLocalScriptData(prev => ({
+                ...prev,
+                opening: editText,
+                full_script: newFullScript
+            }));
+            setEditingIndex(null);
+            setEditText("");
+            return;
+        }
+
+        // Handle slide script editing
         const updatedSlides = [...localScriptData.slide_scripts];
         updatedSlides[index] = {
             ...updatedSlides[index],
@@ -67,3 +81,4 @@ function assembleFullScript(opening, slides) {
     });
     return script;
 }
+

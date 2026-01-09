@@ -37,11 +37,37 @@ function ScriptDisplay({ scriptData: initialScriptData, slides, fileId, onStartN
         useScriptEditing(initialScriptData);
 
     // 使用 useCallback 優化，避免不必要的重新渲染
+    // Fallback for non-HTTPS environments where navigator.clipboard is unavailable
     const handleCopy = useCallback((text, index = null) => {
-        navigator.clipboard.writeText(text);
-        setCopiedIndex(index);
-        setTimeout(() => setCopiedIndex(null), 2000);
+        const copyToClipboard = (str) => {
+            // Try modern clipboard API first
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                return navigator.clipboard.writeText(str);
+            }
+            // Fallback for HTTP environments
+            const textArea = document.createElement('textarea');
+            textArea.value = str;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-9999px';
+            textArea.style.top = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Fallback copy failed:', err);
+            }
+            document.body.removeChild(textArea);
+            return Promise.resolve();
+        };
+
+        copyToClipboard(text).then(() => {
+            setCopiedIndex(index);
+            setTimeout(() => setCopiedIndex(null), 2000);
+        });
     }, []);
+
 
     const handleDownload = useCallback(() => {
         const blob = new Blob([localScriptData.full_script], { type: 'text/plain;charset=utf-8' });
@@ -187,9 +213,34 @@ function ScriptDisplay({ scriptData: initialScriptData, slides, fileId, onStartN
                     <div className="script-section-card glass-card">
                         <div className="flex items-center justify-between mb-4 border-b border-gray-700 pb-2">
                             <h3>{t('result.opening')}</h3>
-                            <button className="action-btn-text text-sm" onClick={() => handleGenerateAudio(initialScriptData.opening, 'opening')}>
-                                {activeAudioId === 'opening' && isGeneratingAudio ? '…' : '▶'} {t('tts.play')}
-                            </button>
+                            <div className="card-actions" style={{ display: 'flex', gap: '8px' }}>
+                                {editingIndex === 'opening' ? (
+                                    <>
+                                        <button className="btn-card-action btn-save" onClick={() => saveEditing('opening')} title={t('action.save')}>
+                                            💾
+                                        </button>
+                                        <button className="btn-card-action btn-cancel" onClick={cancelEditing} title={t('action.cancel')}>
+                                            ✖
+                                        </button>
+                                    </>
+                                ) : (
+                                    <>
+                                        <button
+                                            className={`btn-icon-action ${activeAudioId === 'opening' ? 'text-green-400 border-green-400' : ''}`}
+                                            onClick={() => handleGenerateAudio(localScriptData.opening, 'opening')}
+                                            title={t('tts.preview')}
+                                        >
+                                            {activeAudioId === 'opening' && isGeneratingAudio ? '…' : '▶'}
+                                        </button>
+                                        <button className="btn-icon-action" onClick={() => startEditing('opening', localScriptData.opening)} title={t('action.edit')}>
+                                            ✏️
+                                        </button>
+                                        <button className="btn-icon-action" onClick={() => handleCopy(localScriptData.opening, 'opening')} title={t('result.copy')}>
+                                            {copiedIndex === 'opening' ? '✓' : '⧉'}
+                                        </button>
+                                    </>
+                                )}
+                            </div>
                         </div>
 
                         {activeAudioId === 'opening' && audioUrl && (
@@ -201,9 +252,16 @@ function ScriptDisplay({ scriptData: initialScriptData, slides, fileId, onStartN
                             </div>
                         )}
 
-                        <div className="script-text">{initialScriptData.opening}</div>
+                        <div className="script-card-body">
+                            {editingIndex === 'opening' ? (
+                                <textarea className="script-edit-textarea" value={editText} onChange={(e) => setEditText(e.target.value)} autoFocus />
+                            ) : (
+                                <p className="script-text">{localScriptData.opening}</p>
+                            )}
+                        </div>
                     </div>
                 )}
+
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
 import './GenerationStep.css';
 
@@ -11,6 +12,7 @@ export default function TTSConfig({ onConfigChange, initialConfig }) {
         pitch: '+0Hz'
     });
     const [loading, setLoading] = useState(false);
+    const { t } = useTranslation();
 
     const languages = [
         { code: 'zh', label: '繁體中文' },
@@ -65,7 +67,7 @@ export default function TTSConfig({ onConfigChange, initialConfig }) {
             {/* Language Selection */}
             <div>
                 <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#334155', marginBottom: '12px' }}>
-                    語言 (Language)
+                    {t('settings.language')}
                 </label>
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                     {languages.map(lang => (
@@ -83,7 +85,7 @@ export default function TTSConfig({ onConfigChange, initialConfig }) {
             {/* Voice Selection */}
             <div>
                 <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#334155', marginBottom: '12px' }}>
-                    語音角色 (Voice)
+                    {t('settings.voice')}
                 </label>
                 <select
                     value={config.voice}
@@ -101,9 +103,9 @@ export default function TTSConfig({ onConfigChange, initialConfig }) {
                     }}
                 >
                     {loading ? (
-                        <option>載入中...</option>
+                        <option>{t('settings.loading')}</option>
                     ) : voices.length === 0 ? (
-                        <option value="">(無可用語音)</option>
+                        <option value="">{t('tts.noVoice')}</option>
                     ) : (
                         voices.map(v => (
                             <option key={v.short_name} value={v.short_name}>
@@ -117,7 +119,7 @@ export default function TTSConfig({ onConfigChange, initialConfig }) {
             {/* Speed Slider */}
             <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                    <label style={{ fontSize: '14px', fontWeight: 600, color: '#334155' }}>語速 (Rate)</label>
+                    <label style={{ fontSize: '14px', fontWeight: 600, color: '#334155' }}>{t('settings.rate')}</label>
                     <span style={{ fontSize: '12px', fontFamily: 'monospace', fontWeight: 700, color: '#2563eb', background: '#eff6ff', padding: '4px 10px', borderRadius: '6px' }}>{config.rate}</span>
                 </div>
                 <input
@@ -131,16 +133,16 @@ export default function TTSConfig({ onConfigChange, initialConfig }) {
                     style={{ width: '100%', accentColor: '#2563eb' }}
                 />
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '6px', fontSize: '11px', color: '#94a3b8' }}>
-                    <span>慢</span>
-                    <span>正常</span>
-                    <span>快</span>
+                    <span>{t('settings.rateMin')}</span>
+                    <span>{t('settings.rateNormal')}</span>
+                    <span>{t('settings.rateMax')}</span>
                 </div>
             </div>
 
             {/* Pitch Slider */}
             <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-                    <label style={{ fontSize: '14px', fontWeight: 600, color: '#334155' }}>音調 (Pitch)</label>
+                    <label style={{ fontSize: '14px', fontWeight: 600, color: '#334155' }}>{t('settings.pitch')}</label>
                     <span style={{ fontSize: '12px', fontFamily: 'monospace', fontWeight: 700, color: '#2563eb', background: '#eff6ff', padding: '4px 10px', borderRadius: '6px' }}>{config.pitch}</span>
                 </div>
                 <input
@@ -154,9 +156,9 @@ export default function TTSConfig({ onConfigChange, initialConfig }) {
                     style={{ width: '100%', accentColor: '#2563eb' }}
                 />
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '6px', fontSize: '11px', color: '#94a3b8' }}>
-                    <span>低沉</span>
-                    <span>正常</span>
-                    <span>高昂</span>
+                    <span>{t('settings.pitchMin')}</span>
+                    <span>{t('settings.pitchNormal')}</span>
+                    <span>{t('settings.pitchMax')}</span>
                 </div>
             </div>
         </div>

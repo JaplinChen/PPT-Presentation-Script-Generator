@@ -96,11 +96,19 @@ async def get_parse_status(file_id: str):
 
 @router.get("/files/{file_id}")
 async def get_file_info(file_id: str):
-    """Return metadata for an uploaded file."""
+    """Return metadata for an uploaded file (used for session sharing)."""
     file_info = state.get_uploaded_file(file_id)
     if not file_info:
         raise HTTPException(status_code=404, detail="File not found.")
-    return {"file_id": file_id, "filename": file_info["filename"], "summary": file_info["summary"]}
+    return {
+        "file_id": file_id,
+        "filename": file_info.get("filename"),
+        "path": file_info.get("path"),
+        "status": file_info.get("status"),
+        "slides": file_info.get("slides", []),
+        "summary": file_info.get("summary", {})
+    }
+
 
 @router.delete("/files/{file_id}")
 async def delete_file(file_id: str):

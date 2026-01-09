@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import FileUpload from './components/FileUpload';
 import ScriptConfig from './components/ScriptConfig';
@@ -18,6 +18,23 @@ import { useAppSettings } from './hooks/useAppSettings';
 import { useGeneration } from './hooks/useGeneration';
 import './App.css';
 import './App_layout.css';
+
+// Helper to get fileId from URL
+const getFileIdFromURL = () => {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('fileId') || params.get('file_id');
+};
+
+// Helper to update URL with fileId
+const updateURLWithFileId = (fileId) => {
+  const url = new URL(window.location.href);
+  if (fileId) {
+    url.searchParams.set('fileId', fileId);
+  } else {
+    url.searchParams.delete('fileId');
+  }
+  window.history.replaceState({}, '', url.toString());
+};
 
 function App() {
   const { t } = useTranslation();
@@ -46,6 +63,36 @@ function App() {
     error, setError,
     handleGenerateScript, resetGeneration
   } = useGeneration(fileId, llmSettings, scriptPrompt);
+
+  // URL Session Sync: Update URL when fileId changes
+  useEffect(() => {
+    updateURLWithFileId(fileId);
+  }, [fileId]);
+
+  // URL Session Sync: Load from URL on mount
+  useEffect(() => {
+    const urlFileId = getFileIdFromURL();
+    if (urlFileId && !fileId) {
+      console.log('[URL Session] Found fileId in URL:', urlFileId);
+      // Try to restore session from backend
+      api.getFileInfo(urlFileId)
+        .then(info => {
+          if (info && info.slides) {
+            console.log('[URL Session] Restored from URL:', urlFileId);
+            setFileId(urlFileId);
+            setSlides(info.slides);
+            setUploadedFile({ name: info.filename || 'Shared File', size: 0 });
+            setCurrentStep(2); // Go to config step
+          }
+        })
+        .catch(err => {
+          console.warn('[URL Session] Failed to restore from URL:', err);
+          // Clear invalid fileId from URL
+          updateURLWithFileId(null);
+        });
+    }
+  }, []); // Only on mount
+
 
   // Auto-save Session
   useEffect(() => {
