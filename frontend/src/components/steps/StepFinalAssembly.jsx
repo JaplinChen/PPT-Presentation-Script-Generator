@@ -1,5 +1,6 @@
 import React from 'react';
 import { api } from '../../services/api';
+import { getBackendUrl } from '../../services/config';
 
 export default function StepFinalAssembly({
     scriptData,
@@ -93,7 +94,7 @@ export default function StepFinalAssembly({
                             {/* Buttons: Modern & Gradient */}
                             <div className="flex gap-4 justify-center items-center mt-4">
                                 <a
-                                    href={`${api.API_BASE_URL || ''}${progress.result?.url_path}`}
+                                    href={getBackendUrl(progress.result?.url_path)}
                                     className="btn border-0 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 text-sm font-semibold shadow-lg shadow-blue-200/50 rounded-full h-10 min-h-0 flex items-center gap-2 transform active:scale-95 transition-all"
                                     download
                                 >

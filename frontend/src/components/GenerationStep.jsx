@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
+import { getBackendUrl } from '../services/config';
 import './GenerationStep.css';
 
 import StepAudioGeneration from './steps/StepAudioGeneration';
@@ -422,7 +423,7 @@ export default function GenerationStep({
                                     {/* Hidden auto-download trigger */}
                                     {progress.assemble.result?.url_path && (
                                         <a
-                                            href={`${api.API_BASE_URL || ''}${progress.assemble.result.url_path}`}
+                                            href={getBackendUrl(progress.assemble.result.url_path)}
                                             download
                                             style={{ display: 'none' }}
                                             ref={(link) => {

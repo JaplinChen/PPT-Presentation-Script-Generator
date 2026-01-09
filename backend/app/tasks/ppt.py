@@ -109,12 +109,8 @@ async def run_assemble_task(full_job_id: str, file_id: str, slide_scripts: List[
     for idx, vp in enumerate(video_paths):
         slide_num = idx + 1  # 1-indexed
         
-        # Check if this slide has an existing video
-        if slide_num in existing_videos:
-            abs_video_paths.append(existing_videos[slide_num])
-            logger.debug(f"  - Slide {slide_num}: Found existing video")
-        elif vp:
-            # Try the provided path
+        # Priority 1: Use explicitly provided video path
+        if vp:
             vp_str = str(vp)
             if vp_str.startswith('/outputs/'):
                 vp_abs = (settings.OUTPUT_DIR / vp_str.replace('/outputs/', '', 1)).absolute()
@@ -123,8 +119,15 @@ async def run_assemble_task(full_job_id: str, file_id: str, slide_scripts: List[
                 
             if vp_abs.exists():
                 abs_video_paths.append(str(vp_abs))
+                logger.debug(f"  - Slide {slide_num}: Using explicit video path: {vp_abs}")
+                continue
             else:
-                abs_video_paths.append(None)
+                logger.warning(f"  - Slide {slide_num}: Explicit video path not found: {vp_abs}")
+
+        # Priority 2: Fallback to existing video found on disk
+        if slide_num in existing_videos:
+            abs_video_paths.append(existing_videos[slide_num])
+            logger.debug(f"  - Slide {slide_num}: Using auto-discovered video: {existing_videos[slide_num]}")
         else:
             abs_video_paths.append(None)
 
