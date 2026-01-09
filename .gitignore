@@ -48,6 +48,19 @@ verify_*.py
 # 開發文件
 .gemini/
 
+# AI/IDE 工具配置
+.agent/
+.cursorrules
+.cursor/
+
+# 內部開發文件 (不公開)
+AI_RULES.md
+AVATAR_PROGRESS.md
+Anti Hallucination Ruleset.md
+CONTEXT.md
+PPT_Presentation_Guide.md
+[專案進度報告]*
+
 # 大型模型檔案和 checkpoints (超過 GitHub 限制)
 backend/checkpoints/
 checkpoints/
@@ -58,3 +71,6 @@ checkpoints/
 *.pkl
 *.bin
 gfpgan/
+
+# 資料庫
+*.db
